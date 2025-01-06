@@ -1,0 +1,167 @@
+﻿@page "/entries"
+
+@using Entities.DTO
+@using Services.Interface
+@using SMSDOME_Standard_Contest_BlazorServer.Pages.Component
+
+@inject IEntriesService _entriesSerivce
+@inject IJSRuntime _js;
+
+<div class="w-50 m-auto">
+    <h3>View Entries</h3>
+    <p>Displays all entries</p>
+    <div class="w-50 m-auto">
+        <EditForm Model="@option" OnValidSubmit="@Filter">
+            <div class="form-group">
+                <label class="" for="startDate">Start Date: </label>
+                <InputDate class="form-control" id="startDate" @bind-Value="option.StartDate" />
+            </div>
+
+            <div class="form-group">
+                <label class="" for="endDate">End Date: </label>
+                <InputDate class="form-control" id="endDate" @bind-Value="option.EndDate" />
+            </div>
+
+            <DropDownList @bind-Value="option.EntryValidity" Label="Entry Validity:" DataSource="@entryValidity"></DropDownList>
+
+            <button type="submit" class="btn btn-primary mt-3">Filter</button>
+        </EditForm>
+    </div>
+</div>
+
+
+@if (show == true)
+{
+    @if (data == null)
+    {
+        <div class="w-100 text-center mt-5">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+    }
+    else
+    {
+        <div class="w-50 m-auto">
+            <div class="w-50 m-auto">
+                <button @onclick="PurgeSelectedEntries_Click" class="btn btn-danger">Purge Selected Entries</button><br />
+                <button @onclick="ExportToCSV_Click" class="btn btn-outline-secondary">Export To CSV using comma</button><br />
+                <button @onclick="DownloadFiles_Click" class="btn btn-outline-secondary">Download Files</button><br />
+                <button @onclick="PurgeAllEntries_Click" class="btn btn-danger mb-3">Purge</button>
+            </div>
+
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    @foreach (var header in headers)
+                    {
+                        <th>@header.Key</th>
+                    }
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var keyValuePair in data)
+                {
+                    <tr>
+                        <td>
+                            <input type="checkbox" @onclick="@(e => OnSelectedEntry(keyValuePair.ElementAt(0).Value))" value="@keyValuePair.ElementAt(0).Value">
+                        </td>
+                        @foreach (var value in keyValuePair)
+                        {
+                            <td>@value.Value</td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+
+@code {
+    private List<int> selectedEntriesID = new List<int>();
+    private bool show = false;
+    private List<Dictionary<string, object>> data = null;
+    private Dictionary<string, object> headers = null;
+    private Option option = new Option()
+        {
+            StartDate = DateTime.UtcNow,
+            EndDate = DateTime.UtcNow,
+            EntryValidity = "",
+            PageSize = 50,
+            PageNumber = 1
+        };
+    Dictionary<string, object> entryValidity = new Dictionary<string, object>(){
+        {"Select All", ""},
+        {"Valid", 1},
+        {"InValid", 0}
+    };
+
+    private async Task Filter()
+    {
+        show = true;
+        var result = await _entriesSerivce.GetAllEntriesAsync("", option);
+        if (result.IsSuccess == true && result.Data.Count() > 0)
+        {
+            data = result.Data;
+            headers = result.Data[0];
+        }
+    }
+
+    private async Task PurgeSelectedEntries_Click()
+    {
+        var result = await _entriesSerivce.PurgeSelectedEntriesAsync("", selectedEntriesID);
+        if (result.IsSuccess == true)
+        {
+            data = null;
+            show = false;
+            selectedEntriesID.Clear();
+        }
+    }
+
+    private async Task PurgeAllEntries_Click()
+    {
+        var result = await _entriesSerivce.PurgeAllEntriesAsync("");
+        if (result.IsSuccess == true)
+        {
+            data = null;
+            show = false;
+            selectedEntriesID.Clear();
+        }
+    }
+
+    private async Task ExportToCSV_Click()
+    {
+        var result = await _entriesSerivce.GetEntriesCSV("");
+        if (result.IsSuccess == true)
+        {
+            data = null;
+            show = false;
+            selectedEntriesID.Clear();
+            await _js.InvokeVoidAsync("saveAsFile", "entries.csv", "text/csv", result.Data);
+        }
+    }
+
+    private async Task DownloadFiles_Click()
+    {
+
+    }
+
+    private void OnSelectedEntry(object e)
+    {
+        var checkedEntryID = Convert.ToInt32(e);
+        var isEntryChecked = selectedEntriesID.Contains(checkedEntryID);
+        if (isEntryChecked == false)
+        {
+            selectedEntriesID.Add(checkedEntryID);
+        }
+        else
+        {
+            selectedEntriesID.Remove(checkedEntryID);
+        }
+    }
+}

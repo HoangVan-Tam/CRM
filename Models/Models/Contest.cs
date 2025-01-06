@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Entities.Models
+{
+    public partial class Contest
+    {       
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ContestID { get; set; }
+        [Required]
+        public string ContestUniqueCode { get; set; }
+        public string NameContest { get; set; }
+        public string? DescriptionContest { get; set; }
+        public string Keyword { get; set; }
+        public DateTime TestDate { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public DateTime TerminationDate { get; set; }
+        public int AppId { get; set; }
+        public string AppSecret { get; set; }
+        public string? ValidSmsresponse { get; set; }
+        public string? InvalidSmsresponse { get; set; }
+        public string? RepeatedSmsresponse { get; set; }
+        public string? ValidWhatsappResponse { get; set; }
+        public string? InvalidWhatsappResponse { get; set; }
+        public string? RepeatedWhatsappResponse { get; set; }
+        public string? ValidOnlinePageResponse { get; set; }
+        public string? RepeatedOnlinePageResponse { get; set; }
+        public string? ValidOnlineCompletionResponse { get; set; }
+        public string? MissingFieldResponse { get; set; }
+        public string? EntryExclusionFields { get; set; }
+        public string? WinnerExclusionFields { get; set; }
+
+        public virtual ICollection<ContestFieldDetails> ContestFieldDetails { get; set; }
+    }
+}

@@ -1,0 +1,22 @@
+﻿.tab {
+    display: none;
+}
+.regex-result {
+    height: 40px;
+    margin: 0 0 0 0;
+    border: 1px solid;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    border-radius: .25rem;
+    justify-content: center;
+    width: 100px;
+}
+.box{
+    background-color: white;
+    box-shadow: 0 0 4px #D8D8D8;
+    border: 1px solid #f8f8f8;
+    border-radius:.25rem;
+}
+

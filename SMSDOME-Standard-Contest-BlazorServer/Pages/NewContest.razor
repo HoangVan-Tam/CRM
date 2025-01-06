@@ -1,0 +1,302 @@
+﻿@page "/newcontest"
+@using Entities.DTO
+@using Entities.Models
+@using Services.Interface
+@using System.Text.RegularExpressions;
+@using SMSDOME_Standard_Contest_BlazorServer.Pages.Component
+
+@inject IContestService _contestService
+@inject IContestFieldsService _contestColumnsService
+@inject IRegexValidationService _regexValidationService
+@inject NavigationManager NavigationManager
+
+<EditForm Model="@newContest" OnValidSubmit="@CreateNewContest">
+    <DataAnnotationsValidator />
+    <div>
+        <h1>Create New Contest</h1>
+        <div class="mb-3 row">
+            <div class="col-6">
+                <label for="nameContest" class="form-label">Name Contest</label>
+                <InputText class="form-control" id="nameContest" @bind-Value="newContest.NameContest" />
+                <ValidationMessage For="@(()=>newContest.NameContest)"></ValidationMessage>
+            </div>
+            <div class="col-6">
+                <label for="descriptionContest" class="form-label">Description Contest</label>
+                <InputTextArea class="form-control" id="descriptionContest" @bind-Value="newContest.DescriptionContest" />
+                <ValidationMessage For="@(()=>newContest.DescriptionContest)"></ValidationMessage>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-3">
+                <label for="keyword" class="form-label">Keyword</label>
+                <InputText class="form-control" id="keyword" @bind-Value="newContest.Keyword" />
+                <ValidationMessage For="@(()=>newContest.Keyword)"></ValidationMessage>
+            </div>
+            <div class="col-3">
+                <label for="appId" class="form-label">App ID</label>
+                <InputNumber class="form-control" id="appId" @bind-Value="newContest.AppId" />
+            </div>
+            <div class="col-3">
+                <label for="appSecret" class="form-label">App Secret</label>
+                <InputText class="form-control" id="appSecret" @bind-Value="newContest.AppSecret" />
+                <ValidationMessage For="@(()=>newContest.AppSecret)"></ValidationMessage>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-3">
+                <label for="testDate" class="form-label">Test Date</label>
+                <InputDate class="form-control" id="testDate" @bind-Value="newContest.TestDate" />
+            </div>
+            <div class="col-3">
+                <label for="startDate" class="form-label">Start Date</label>
+                <InputDate class="form-control" id="startDate" @bind-Value="newContest.StartDate" />
+            </div>
+            <div class="col-3">
+                <label for="endDate" class="form-label">End Date</label>
+                <InputDate class="form-control" id="endDate" @bind-Value="newContest.EndDate" />
+            </div>
+            <div class="col-3">
+                <label for="terminationDate" class="form-label">Termination Date</label>
+                <InputDate class="form-control" id="terminationDate" @bind-Value="newContest.TerminationDate" />
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="entryExclusionFields" class="form-label">Entry Exclusion Fields</label>
+            <InputText class="form-control" id="entryExclusionFields" @bind-Value="newContest.EntryExclusionFields" />
+        </div>
+        <div class="mb-3">
+            <label for="winnerExclusionFields" class="form-label">Winner Exclusion Fields</label>
+            <InputText class="form-control" id="winnerExclusionFields" @bind-Value="newContest.WinnerExclusionFields" />
+        </div>
+
+    </div>
+
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th>Field Name</th>
+                <th>Field Label</th>
+                <th>Show Online Page</th>
+                <th>Show Online Completion</th>
+                <th>Required</th>
+                <th>Order</th>
+                <th>Regex</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var (item, index) in lstContestFields.Select((item, index) => (item, index)))
+            {
+                <tr class="align-middle">
+                    <td class="d-flex" style="min-width: 320px">
+                        <InputText class="form-control" disabled="@(currentEdit!=index)" @bind-Value="item.FieldName" />
+                        <button type="button" class="ms-2 btn btn-outline-primary" @onclick="@(() => {
+                            if(currentEdit==index){
+                                currentEdit = -1;
+                            }else{
+                                currentEdit = index;
+                            }
+                            })">
+                            @if (currentEdit != index)
+                            {
+                                <i class="bi bi-pencil-square"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-check-lg"></i>
+                            }
+                        </button>
+                    </td>
+                    <td style="min-width: 320px">
+                        <InputText class="form-control" @bind-Value="item.FieldLabel" />
+                    </td>
+                    <td>
+                        <InputCheckbox @bind-Value="item.ShowOnlinePage"></InputCheckbox>
+                    </td>
+                    <td>
+                        <InputCheckbox @bind-Value="item.ShowOnlineCompletion"></InputCheckbox>
+                    </td>
+                    <td>
+                        <InputCheckbox @bind-Value="item.IsRequired"></InputCheckbox>
+                    </td>
+                    <td style="min-width: 100px; width: 100px">
+                        <InputNumber class="form-control" @bind-Value="item.Order" />
+                    </td>
+                    <td style="min-width: 320px; display: flex;">
+                        <select for="Regex" class="form-control"
+                        @bind="@item.Regex">
+                            <option value=0 selected>
+                                - Select -
+                            </option>
+                            @foreach (var regex in lstRegexValidations)
+                            {
+                                <option value="@regex.Pattern">
+                                    @regex.Name
+                                </option>
+                            }
+                        </select>
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-plus-square"></i></button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-outline-danger" @onclick="@(e => RemoveField_Click(item))">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <button type="button" id="btnAddField" class="btn btn-outline-primary" @onclick="@(e => AddField_Click())">Add Field</button>
+
+    <div class="mt-4">
+        <div class="d-flex align-items-center mb-3">
+            <InputCheckbox id="divSMSSubmission" @bind-Value="divSMSSubmission" style="height: 25px; width: 25px;"></InputCheckbox>
+            <label for="divSMSSubmission" class="m-0 ms-2 fs-4">Settings for SMS Submission</label>
+        </div>
+        @if (divSMSSubmission == true)
+        {
+            <div class="mb-3 row g-3">
+                <div class="col-6">
+                    <label for="nameContest" class="form-label">Fields</label>
+                    <MultipleDropDownList DataSource="@lstContestFieldsForSMS.Where(p=>!string.IsNullOrWhiteSpace(p.FieldName)).ToDictionary(key=>key.FieldLabel, value=>value.Regex)"></MultipleDropDownList>
+                </div>
+                <div class="col-6">
+                    <label for="nameContest" class="form-label">Validation Regex Full</label>
+                    <InputText class="form-control" id="nameContest" @bind-Value="newContest.ValidationRegexFull" />
+                </div>
+                <div class="col-6">
+                    <label for="nameContest" class="form-label">Valid SMS response</label>
+                    <InputTextArea class="form-control" id="nameContest" @bind-Value="newContest.ValidSMSResponse" />
+                </div>
+                <div class="col-6">
+                    <label for="nameContest" class="form-label">Invalid SMS response</label>
+                    <InputTextArea class="form-control" id="nameContest" @bind-Value="newContest.InvalidSMSResponse" />
+                </div>
+                <div class="col-6">
+                    <label for="nameContest" class="form-label">Repeated SMS response</label>
+                    <InputTextArea class="form-control" id="nameContest" @bind-Value="newContest.RepeatedSMSResponse" />
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="mt-4">
+        <div class="d-flex align-items-center mb-3">
+            <InputCheckbox id="divWhatsappSubmission" @bind-Value="divWhatsappSubmission" style="height: 25px; width: 25px;"></InputCheckbox>
+            <label for="divWhatsappSubmission" class="m-0 ms-2 fs-4">Settings for Whatsapp Submission</label>
+        </div>
+        @if (divWhatsappSubmission == true)
+        {
+            <div class="mb-3 row">
+                <div class="col-6">
+                    <label for="nameContest" class="form-label">Valid Whatsapp Response</label>
+                    <InputTextArea class="form-control" id="nameContest" @bind-Value="newContest.InvalidWhatsappResponse" />
+                </div>
+                <div class="col-6">
+                    <label for="nameContest" class="form-label">Invalid Whatsapp Response</label>
+                    <InputTextArea class="form-control" id="nameContest" @bind-Value="newContest.InvalidWhatsappResponse" />
+                </div>
+            </div>
+            <div class="mb-3 col-6">
+                <label for="nameContest" class="form-label">Repeated Whatsapp Response</label>
+                <InputTextArea class="form-control" id="nameContest" @bind-Value="newContest.RepeatedWhatsappResponse" />
+            </div>
+        }
+    </div>
+
+    <div class="mt-4">
+        <div class="d-flex align-items-center mb-3">
+            <InputCheckbox id="divOnlineSubmission" @bind-Value="divOnlineSubmission" style="height: 25px; width: 25px;"></InputCheckbox>
+            <label for="divOnlineSubmission" class="m-0 ms-2 fs-4">Settings for Web Submission</label>
+        </div>
+        @if (divOnlineSubmission == true)
+        {
+            <div class="mb-3 row">
+                <div class="col-6">
+                    <label for="nameContest" class="form-label">Valid Online Page Response</label>
+                    <InputTextArea class="form-control" id="nameContest" @bind-Value="newContest.ValidOnlinePageResponse" />
+                </div>
+                <div class="col-6">
+                    <label for="nameContest" class="form-label">Valid Online Completion Response</label>
+                    <InputTextArea class="form-control" id="nameContest" @bind-Value="newContest.ValidOnlineCompletionResponse" />
+                </div>
+
+            </div>
+            <div class="mb-3 row">
+                <div class="col-6">
+                    <label for="nameContest" class="form-label">Repeated Web Submission Response</label>
+                    <InputTextArea class="form-control" id="nameContest" @bind-Value="newContest.RepeatedOnlinePageResponse" />
+                </div>
+                <div class="col-6">
+                    <label for="nameContest" class="form-label">Missing Field Response</label>
+                    <InputTextArea class="form-control" id="nameContest" @bind-Value="newContest.MissingFieldResponse" />
+                </div>
+
+            </div>
+        }
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary my-3">Create</button>
+    </div>
+</EditForm>
+
+<!-- Modal -->
+<NewRegexValidationPopup RegexValidations="lstRegexValidations" OnCreateNewRegexValidation="HandleCreateNewRegexClick"></NewRegexValidationPopup>
+
+@code {
+    private NewContestInfomation newContest = new NewContestInfomation();
+    private List<FieldsForNewContest> lstContestFields = new List<FieldsForNewContest>();
+    private List<RegexValidation> lstRegexValidations = new List<RegexValidation>();
+    private List<FieldsForNewContest> lstContestFieldsForSMS = new List<FieldsForNewContest>();
+
+    int currentEdit = -1;
+    private bool divSMSSubmission = false;
+    private bool divOnlineSubmission = false;
+    private bool divAddOnlineSubmission = false;
+    private bool divWhatsappSubmission = false;
+    protected override async Task OnInitializedAsync()
+    {
+        var ddlField = await _contestColumnsService.LoadAllColumn();
+        var regexValidationServiceResponse = await _regexValidationService.LoadAllRegexAsync();
+        lstRegexValidations = regexValidationServiceResponse.Data;
+    }
+    
+    private async Task CreateNewContest()
+    {
+        var fields = lstContestFields.Where(p => p.ShowOnlineCompletion == true || p.ShowOnlinePage == true).ToList();
+        var response = await _contestService.CreateNewContestAsync(newContest, fields);
+        if (response.IsSuccess)
+        {
+            NavigationManager.NavigateTo("Contest");
+        }
+        else
+        {
+            var temp = response.Error;
+        }
+        // Process the valid form
+    }
+
+    private void AddField_Click()
+    {
+        lstContestFields.Add(new FieldsForNewContest());
+    }
+    private void RemoveField_Click(FieldsForNewContest field)
+    {
+        lstContestFields.Remove(field);
+    }
+    private void SetFieldName(FieldsForNewContest field)
+    {
+        field.FieldName = field.FieldLabel.ToUpperInvariant().Replace(" ", "");
+    }
+    private void HandleCreateNewRegexClick(RegexValidation arg)
+    {
+        // Handle the event from the child component
+        lstRegexValidations.Add(arg);
+    }
+    private void FieldsChanged(ChangeEventArgs __e)
+    {
+        var temp = __e?.Value?.ToString();
+    }
+}

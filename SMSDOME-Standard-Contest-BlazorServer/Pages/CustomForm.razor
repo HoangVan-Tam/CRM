@@ -1,0 +1,90 @@
+﻿@page "/CustomForm"
+@using System.Reflection
+@using Services.Common
+
+<h3>Custom Form</h3>
+<button class="btn btn-primary" @onclick="LoadForm_Click"> Add</button>
+@if (entries != null)
+{
+    <EditForm Model="@entries" OnValidSubmit="@Submit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        @foreach (var p in entries.GetType().GetProperties())
+        {
+            <input type="text"
+           placeholder="@p.Name"
+           value="@p.GetValue(entries)"
+           @onchange="(e) => SetValue(e, p, entries)">
+           <br />
+           <ValidationMessage For="() => p" />
+        }
+        <button type="submit">Submit</button>
+    </EditForm>
+}
+
+
+@code {
+    CustomClassBuilder CCB = new CustomClassBuilder("Student");
+    object entries = null;
+
+    private void Submit()
+    {
+        string columns = "";
+        string values = "";
+        var data = Helper.ToDictionary<string>(entries);
+        foreach (var item in data)
+        {
+            if (columns == "")
+            {
+                columns = item.Key;
+            }
+            else
+            {
+                columns = columns + ", " + item.Key;
+            }
+            if (values == "")
+            {
+                values = item.Value;
+            }
+            else
+            {
+                values = values + ", " + item.Value;
+            }
+        }
+
+        //var entry = (MyNamespace.MyClass)entries;
+    }
+
+    private void LoadForm_Click()
+    {
+        entries = CCB.CreateObject(new string[3] { "ID", "Name", "Address" }, new Type[3] { typeof(int), typeof(string), typeof(string) }, null, null);
+    }
+
+    private void SetValue(Microsoft.AspNetCore.Components.ChangeEventArgs e, PropertyInfo propertyInfo, object o)
+    {
+        var propertyType = propertyInfo.PropertyType;
+        if (e.Value.GetType() == propertyType)
+        {
+            propertyInfo.SetValue(o, e.Value);
+        }
+        else
+        {
+            switch (propertyType.Name)
+            {
+                case "String":
+                    propertyInfo.SetValue(o, e.Value.ToString());
+                    break;
+                case "DateTime":
+                    propertyInfo.SetValue(o, Convert.ToDateTime(e.Value));
+                    break;
+                case "Int32":
+                    propertyInfo.SetValue(o, Convert.ToInt32(e.Value));
+                    break;
+                case "Decimal":
+                    propertyInfo.SetValue(o, Convert.ToDecimal(e.Value));
+                    break;
+                default: break;
+            }
+        }
+    }
+}

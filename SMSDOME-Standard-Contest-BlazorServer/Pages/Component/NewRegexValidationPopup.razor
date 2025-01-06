@@ -1,0 +1,132 @@
+﻿@using Services.Interface
+@using Entities.DTO
+@using System.Text.RegularExpressions;
+@using Entities.Models
+
+@inject IRegexValidationService _regexValidationService
+@inject IToastService _toastSerivce
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 1280px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="staticBackdropLabel">Add New Regex</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @onclick="Close"></button>
+            </div>
+            <div class="modal-body" style="background-color: #F5F5F5;">
+                <EditForm Model="@newRegexValidation" OnValidSubmit="@CreateNewRegexValidation">
+                    <DataAnnotationsValidator />
+                    <div>
+                        <div class="row">
+                            <div class="col-8 p-3">
+                                <div class="p-3 h-100 box">
+                                    <div class="w-100">
+                                        <label for="pattern">Regular Expression</label>
+                                        <div class="d-flex mt-2">
+                                            <div class="w-100">
+                                                <InputText class="form-control me-2" id="pattern" @bind-Value="newRegexValidation.Pattern" />
+                                                <ValidationMessage For="@(()=>newRegexValidation.Pattern)"></ValidationMessage>
+                                            </div>
+                                            <p class="regex-result"
+                                            style="@(((newRegexValidation.Pattern == "" || newRegexValidation.Pattern == null) && !newRegexValidation.TestResult) ? "background-color:red; border-color:red;" : !(newRegexValidation.TestResult) ? "background-color:#9898ac; border-color:#9898ac;" : "background-color:green; border-color:green;")">
+                                                @(((newRegexValidation.Pattern == "" || newRegexValidation.Pattern == null) && !newRegexValidation.TestResult) ? "infinite" : !(newRegexValidation.TestResult) ? "no match" : "match")
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="w-100 mt-3">
+                                        <label for="pattern">Test String</label>
+                                        <textarea class="form-control mt-2" rows="5" id="testString" value="@newRegexValidation.TestString" @onchange="TestStringChanged" />
+                                        <ValidationMessage For="@(()=>newRegexValidation.TestString)"></ValidationMessage>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-4 p-3">
+                                <div class="p-3 box">
+                                    <h4>Save this Regex</h4>
+                                    <div class="w-100">
+                                        <label for="name">Name:</label>
+                                        <InputText class="form-control mt-2" id="name" @bind-Value="newRegexValidation.Name" />
+                                        <ValidationMessage For="@(()=>newRegexValidation.Name)"></ValidationMessage>
+                                    </div>
+                                    <div class="w-100 mt-3">
+                                        <label for="description">Description:</label>
+                                        <InputTextArea class="form-control mt-2" id="description" @bind-Value="newRegexValidation.Description" />
+                                        <ValidationMessage For="@(()=>newRegexValidation.Description)"></ValidationMessage>
+                                    </div>
+                                    <button class="btn btn-primary w-100 my-3">Save</button>
+                                    <select for="Regex" class="form-control">
+                                        <option value=0 selected>
+                                            - Top Regular Expression -
+                                        </option>
+                                        @foreach (var regex in RegexValidations)
+                                        {
+                                            <option value="@regex.Pattern" data-bs-toggle="tooltip" data-bs-placement="bottom" title="@regex.Description">
+                                                @regex.Name
+                                            </option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </EditForm>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @onclick="Close">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+        
+</script>
+@code {
+    [Parameter]
+    public List<RegexValidation> RegexValidations { get; set; }
+
+    private NewRegexValidation newRegexValidation;
+
+    [Parameter]
+    public EventCallback<RegexValidation> OnCreateNewRegexValidation { get; set; }
+
+    protected override void OnInitialized()
+    {
+        newRegexValidation = new NewRegexValidation();
+    }
+    private async Task CreateNewRegexValidation()
+    {
+        var response = await _regexValidationService.CreateNewRegexValidation(newRegexValidation);
+        if (response.IsSuccess)
+        {
+            await OnCreateNewRegexValidation.InvokeAsync(response.Data);
+            _toastSerivce.ShowSuccess("Create new regex validation successfully");
+            StateHasChanged();
+        }
+        else
+        {
+            _toastSerivce.ShowError(response.Error);
+        }
+    }
+    private void TestStringChanged(ChangeEventArgs __e)
+    {
+        newRegexValidation.TestString = __e?.Value?.ToString();
+        Regex regex = new Regex(@newRegexValidation.Pattern);
+        var matchResult = regex.Match(newRegexValidation.TestString);
+        if (matchResult.Success == true)
+        {
+            newRegexValidation.TestResult = true;
+            StateHasChanged();
+        }
+        else
+        {
+            newRegexValidation.TestResult = false;
+
+        }
+    }
+    private void Close()
+    {
+        StateHasChanged();
+    }
+}

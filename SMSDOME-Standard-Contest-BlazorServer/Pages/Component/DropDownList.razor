@@ -1,0 +1,27 @@
+﻿<div class="form-group">
+    <label class="" for="dropDownList">@Label </label>
+    <select class="form-select" aria-label="@Label" id="dropDownList" @onchange="OnValueChanged">
+        <option value="@DataSource.ElementAt(0).Value">@DataSource.ElementAt(0).Key</option>
+        @for (int i = 1; i < DataSource.Count(); i++)
+        {
+            <option value="@DataSource.ElementAt(i).Value">@DataSource.ElementAt(i).Key</option>
+        }
+    </select>
+</div>
+
+
+@code {
+    [Parameter]
+    public object Value { get; set; }
+    [Parameter]
+    public string Label { get; set; }
+    [Parameter]
+    public Dictionary<string, object> DataSource { get; set; }
+    [Parameter]
+    public EventCallback<object> ValueChanged { get; set; }
+    private Task OnValueChanged(ChangeEventArgs e)
+    {
+        Value = e.Value;
+        return ValueChanged.InvokeAsync(Value);
+    }
+}

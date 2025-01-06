@@ -1,0 +1,65 @@
+﻿@page "/contest"
+@using SMSDOME_Standard_Contest_BlazorServer.Mapper
+@using Entities.DTO
+@using Services.Interface
+
+@inject IContestService _contestService
+
+<h1>Contest</h1>
+<div class="text-end">
+    <a href="/newcontest" class="btn btn-light">Create New Contest</a>
+</div>
+@if (contests == null)
+{
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+}
+else
+{
+    <table class="table table-striped table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Contest Unique Code</th>
+                <th>Name Contest</th>
+                <th>Keyword</th>
+                <th>Test Date</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Termination Date</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var contest in contests)
+            {
+                <tr>
+                    <td>@contest.ContestUniqueCode</td>
+                    <td>@contest.NameContest</td>
+                    <td>@contest.Keyword</td>
+                    <td>@contest.TestDate.ToString("dd MMM yyyy")</td>
+                    <td>@contest.StartDate.ToString("dd MMM yyyy")</td>
+                    <td>@contest.EndDate.ToString("dd MMM yyyy")</td>
+                    <td>@contest.TerminationDate.ToString("dd MMM yyyy")</td>
+                    <th><button class="btn btn-primary">Detail</button></th>
+                    <th><button class="btn btn-primary">Edit</button></th>
+                    <td><button class="btn btn-danger">Delete</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@code {
+    private List<ContestOverView> contests;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var response = await _contestService.LoadAllContestAsync();
+        if (response.IsSuccess == true)
+        {
+            contests = response.Data;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+﻿@using Component
+@using Entities.ToastConfig
+
+<div class="toast-custom @ToastSettings.AdditionalClasses">
+    <div class="toast-header toast-custom-header">
+        <i class="@ToastSettings.IconClass toast__icon"></i>
+        <strong class="me-auto">@ToastSettings.Heading</strong>
+        <button type="button" class="btn-close" @onclick="Close"></button>
+    </div>
+    <div class="toast-body">
+        @ToastSettings.Message
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    private Toasts ToastContainer { get; set; }
+    [Parameter]
+    public Guid ToastId { get; set; }
+    [Parameter]
+    public ToastSettings ToastSettings { get; set; }
+    private void Close()
+    {
+        ToastContainer.RemoveToast(ToastId);
+    }
+}

@@ -1,0 +1,62 @@
+﻿@page "/pickwinner"
+
+@using Entities.DTO
+@using Services.Interface
+
+@inject IEntriesService _entriesSerivce
+
+<h3>Entries</h3>
+
+@if (data == null)
+{
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                @foreach (var header in headers)
+                {
+                    <td>@header.Key</td>
+                }
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var keyValuePair in data)
+            {
+                <tr>
+                    @foreach (var value in keyValuePair)
+                    {
+                        <td>@value.Value</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<button class="btn btn-primary" @onclick="Filter">Click me</button>
+@code {
+    private List<Dictionary<string, object>> data = null;
+    private Dictionary<string, object> headers = null;
+
+    private async Task Filter   ()
+    {
+        var option = new Option()
+            {
+                PageSize = 50,
+                PageNumber = 1
+            };
+        var result = await _entriesSerivce.GetAllEntriesAsync("", option);
+        if (result.IsSuccess == true)
+        {
+            data = result.Data;
+            headers = result.Data[0];
+
+        }
+    }
+}

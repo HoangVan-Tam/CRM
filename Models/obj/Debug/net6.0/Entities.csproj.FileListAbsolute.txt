@@ -1,0 +1,28 @@
+D:\NET CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\bin\Debug\net6.0\Entities.deps.json
+D:\NET CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\bin\Debug\net6.0\Entities.dll
+D:\NET CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\bin\Debug\net6.0\Entities.pdb
+D:\NET CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\Entities.csproj.AssemblyReference.cache
+D:\NET CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\NET CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\Entities.AssemblyInfoInputs.cache
+D:\NET CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\Entities.AssemblyInfo.cs
+D:\NET CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\Entities.csproj.CoreCompileInputs.cache
+D:\NET CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\Entities.dll
+D:\NET CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\refint\Entities.dll
+D:\NET CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\Entities.pdb
+D:\NET CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\ref\Entities.dll
+D:\NET CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\bin\Debug\net6.0\Entities.runtimeconfig.json
+D:\NET CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\Entities.genruntimeconfig.cache
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\bin\Debug\net6.0\Entities.deps.json
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\bin\Debug\net6.0\Entities.runtimeconfig.json
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\bin\Debug\net6.0\Entities.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\bin\Debug\net6.0\Entities.pdb
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\Entities.csproj.AssemblyReference.cache
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\Entities.AssemblyInfoInputs.cache
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\Entities.AssemblyInfo.cs
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\Entities.csproj.CoreCompileInputs.cache
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\Entities.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\refint\Entities.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\Entities.pdb
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\Entities.genruntimeconfig.cache
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\Models\obj\Debug\net6.0\ref\Entities.dll

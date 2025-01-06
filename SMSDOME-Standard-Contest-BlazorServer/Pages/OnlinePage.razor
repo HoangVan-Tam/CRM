@@ -1,0 +1,127 @@
+﻿@page "/onlinepage"
+@layout ClientLayout
+
+@using Entities.DTO
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@using Services.Common
+@using Services.Interface
+
+@inject IContestFieldDetailsService _contestColumnDetailService
+@inject IEntriesService _entriesSerivce
+@inject ProtectedSessionStorage _browserStorage
+
+
+<h3>OnlinePage</h3>
+@if (entries != null)
+{
+    <EditForm Model="@entries" OnValidSubmit="@Submit" OnInvalidSubmit="@InvalidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        @foreach (var p in entries.GetType().GetProperties())
+        {
+            <label>
+                @p.GetCustomAttributesData()[0].ConstructorArguments[0].Value
+                @switch (p.PropertyType.FullName)
+                {
+                    case "System.String":
+                        if (p.Name != "FileLink")
+                        {
+                            <input type="text" class="form-control"
+               value="@p.GetValue(entries)"
+               @onchange="(e) => Helper.SetValue(e, p, entries)">
+                        }
+                        else
+                        {
+                            <InputFile OnChange="@LoadFiles" class="form-control" />
+                        }
+                        break;
+                    case "Sytem.Int":
+                        break;
+                    case "":
+                        break;
+                }
+
+            </label>
+            <br />
+            <ValidationMessage For="@(() => p.Name)"></ValidationMessage>
+        }
+        <button type="submit">Submit</button>
+    </EditForm>
+}
+
+@code {
+    private string ContestEntriesTableName = "";
+    CustomClassBuilder CCB;
+    object entries = null;
+    private IBrowserFile receiptImageFile = null;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var contestUniqueCode = await _browserStorage.GetAsync<string>("contestUniqueCode");
+            ContestEntriesTableName = contestUniqueCode.Value;
+            CCB = new CustomClassBuilder(ContestEntriesTableName);
+            var response = await _contestColumnDetailService.GetAllFielsdOfTheContestForOnlinePageAsync(contestUniqueCode.Value);
+            List<string> lstColumnName = new List<string>();
+            List<bool> lstIsRequired = new List<bool>();
+            List<Type> lstColumnType = new List<Type>();
+            List<string> lstColumnLabel = new List<string>();
+            foreach (OnlinePageInfomation item in response.Data)
+            {
+                lstColumnLabel.Add(item.FieldLabel);
+                lstColumnName.Add(item.Field.FieldName);
+                lstColumnType.Add(Helper.GetType(item.Field.FieldType));
+                lstIsRequired.Add(item.Field.IsRequired);
+            }
+            entries = CCB.CreateObject(lstColumnName.ToArray(), lstColumnType.ToArray(), lstIsRequired.ToArray(), lstColumnLabel.ToArray());
+            StateHasChanged();
+        }
+
+    }
+
+    private void InvalidSubmit()
+    {
+
+    }
+
+    private void Submit()
+    {
+        string columns = "";
+        string values = "";
+        var data = Helper.ToDictionary<string>(entries);
+        foreach (var item in data)
+        {
+            columns = columns == "" ? columns + item.Key : columns + ", " + item.Key;
+            if (item.Value == "")
+            {
+                values = values + ", ''";
+            }
+            else
+            {
+                if (values != "")
+                {
+                    values = values + ", '" + item.Value + "'";
+                }
+                else
+                {
+                    values = values + "'" + item.Value + "'";
+                }
+            }
+        }
+        //_entriesSerivce.SaveEntries(ContestEntriesTableName, columns, values);
+        //var entry = (MyNamespace.MyClass)entries;
+    }
+
+    private void LoadFiles(InputFileChangeEventArgs e)
+    {
+        if (e.GetMultipleFiles().Count() > 1)
+        {
+
+        }
+        else
+        {
+            receiptImageFile = e.GetMultipleFiles()[0];
+        }
+    }
+}

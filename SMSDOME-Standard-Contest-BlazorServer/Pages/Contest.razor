@@ -12,28 +12,28 @@
 @if (contests == null)
 {
     <div class="spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
-    </div>
+    <span class="visually-hidden">Loading...</span>
+</div>
 }
 else
 {
     <table class="table table-striped table-hover table-bordered">
-        <thead>
-            <tr>
-                <th>Contest Unique Code</th>
-                <th>Name Contest</th>
-                <th>Keyword</th>
-                <th>Test Date</th>
-                <th>Start Date</th>
-                <th>End Date</th>
-                <th>Termination Date</th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var contest in contests)
+    <thead>
+        <tr>
+            <th>Contest Unique Code</th>
+            <th>Name Contest</th>
+            <th>Keyword</th>
+            <th>Test Date</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Termination Date</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contest in contests)
             {
                 <tr>
                     <td>@contest.ContestUniqueCode</td>

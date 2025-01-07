@@ -22,7 +22,8 @@
             </div>
             <div class="col-6">
                 <label for="descriptionContest" class="form-label">Description Contest</label>
-                <InputTextArea class="form-control" id="descriptionContest" @bind-Value="newContest.DescriptionContest" />
+                <InputTextArea class="form-control" id="descriptionContest"
+                    @bind-Value="newContest.DescriptionContest" />
                 <ValidationMessage For="@(()=>newContest.DescriptionContest)"></ValidationMessage>
             </div>
         </div>
@@ -123,8 +124,7 @@
                         <InputNumber class="form-control" @bind-Value="item.Order" />
                     </td>
                     <td style="min-width: 320px; display: flex;">
-                        <select for="Regex" class="form-control"
-                        @bind="@item.Regex">
+                        <select for="Regex" class="form-control" @bind="@item.Regex">
                             <option value=0 selected>
                                 - Select -
                             </option>
@@ -135,7 +135,8 @@
                                 </option>
                             }
                         </select>
-                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-plus-square"></i></button>
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"><i class="bi bi-plus-square"></i></button>
                     </td>
                     <td>
                         <button type="button" class="btn btn-outline-danger" @onclick="@(e => RemoveField_Click(item))">
@@ -147,11 +148,13 @@
 
         </tbody>
     </table>
-    <button type="button" id="btnAddField" class="btn btn-outline-primary" @onclick="@(e => AddField_Click())">Add Field</button>
+    <button type="button" id="btnAddField" class="btn btn-outline-primary" @onclick="@(e => AddField_Click())">Add
+        Field</button>
 
     <div class="mt-4">
         <div class="d-flex align-items-center mb-3">
-            <InputCheckbox id="divSMSSubmission" @bind-Value="divSMSSubmission" style="height: 25px; width: 25px;"></InputCheckbox>
+            <InputCheckbox id="divSMSSubmission" @bind-Value="divSMSSubmission" style="height: 25px; width: 25px;">
+            </InputCheckbox>
             <label for="divSMSSubmission" class="m-0 ms-2 fs-4">Settings for SMS Submission</label>
         </div>
         @if (divSMSSubmission == true)
@@ -159,7 +162,9 @@
             <div class="mb-3 row g-3">
                 <div class="col-6">
                     <label for="nameContest" class="form-label">Fields</label>
-                    <MultipleDropDownList DataSource="@lstContestFieldsForSMS.Where(p=>!string.IsNullOrWhiteSpace(p.FieldName)).ToDictionary(key=>key.FieldLabel, value=>value.Regex)"></MultipleDropDownList>
+                    <MultipleDropDownList
+                        DataSource="@lstContestFieldsForSMS.ToDictionary(key=>key.FieldLabel, value=>value.Regex)">
+                    </MultipleDropDownList>
                 </div>
                 <div class="col-6">
                     <label for="nameContest" class="form-label">Validation Regex Full</label>
@@ -183,7 +188,8 @@
 
     <div class="mt-4">
         <div class="d-flex align-items-center mb-3">
-            <InputCheckbox id="divWhatsappSubmission" @bind-Value="divWhatsappSubmission" style="height: 25px; width: 25px;"></InputCheckbox>
+            <InputCheckbox id="divWhatsappSubmission" @bind-Value="divWhatsappSubmission"
+                style="height: 25px; width: 25px;"></InputCheckbox>
             <label for="divWhatsappSubmission" class="m-0 ms-2 fs-4">Settings for Whatsapp Submission</label>
         </div>
         @if (divWhatsappSubmission == true)
@@ -207,7 +213,8 @@
 
     <div class="mt-4">
         <div class="d-flex align-items-center mb-3">
-            <InputCheckbox id="divOnlineSubmission" @bind-Value="divOnlineSubmission" style="height: 25px; width: 25px;"></InputCheckbox>
+            <InputCheckbox id="divOnlineSubmission" @bind-Value="divOnlineSubmission"
+                style="height: 25px; width: 25px;"></InputCheckbox>
             <label for="divOnlineSubmission" class="m-0 ms-2 fs-4">Settings for Web Submission</label>
         </div>
         @if (divOnlineSubmission == true)
@@ -219,14 +226,16 @@
                 </div>
                 <div class="col-6">
                     <label for="nameContest" class="form-label">Valid Online Completion Response</label>
-                    <InputTextArea class="form-control" id="nameContest" @bind-Value="newContest.ValidOnlineCompletionResponse" />
+                    <InputTextArea class="form-control" id="nameContest"
+                        @bind-Value="newContest.ValidOnlineCompletionResponse" />
                 </div>
 
             </div>
             <div class="mb-3 row">
                 <div class="col-6">
                     <label for="nameContest" class="form-label">Repeated Web Submission Response</label>
-                    <InputTextArea class="form-control" id="nameContest" @bind-Value="newContest.RepeatedOnlinePageResponse" />
+                    <InputTextArea class="form-control" id="nameContest"
+                        @bind-Value="newContest.RepeatedOnlinePageResponse" />
                 </div>
                 <div class="col-6">
                     <label for="nameContest" class="form-label">Missing Field Response</label>
@@ -243,7 +252,8 @@
 </EditForm>
 
 <!-- Modal -->
-<NewRegexValidationPopup RegexValidations="lstRegexValidations" OnCreateNewRegexValidation="HandleCreateNewRegexClick"></NewRegexValidationPopup>
+<NewRegexValidationPopup RegexValidations="lstRegexValidations" OnCreateNewRegexValidation="HandleCreateNewRegexClick">
+</NewRegexValidationPopup>
 
 @code {
     private NewContestInfomation newContest = new NewContestInfomation();
@@ -262,7 +272,7 @@
         var regexValidationServiceResponse = await _regexValidationService.LoadAllRegexAsync();
         lstRegexValidations = regexValidationServiceResponse.Data;
     }
-    
+
     private async Task CreateNewContest()
     {
         var fields = lstContestFields.Where(p => p.ShowOnlineCompletion == true || p.ShowOnlinePage == true).ToList();
@@ -280,7 +290,12 @@
 
     private void AddField_Click()
     {
-        lstContestFields.Add(new FieldsForNewContest());
+        InvokeAsync(() =>
+        {
+            lstContestFields.Add(new FieldsForNewContest());
+            StateHasChanged();
+        });
+
     }
     private void RemoveField_Click(FieldsForNewContest field)
     {

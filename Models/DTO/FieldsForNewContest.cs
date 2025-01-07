@@ -9,11 +9,11 @@ namespace Entities.DTO
     public class FieldsForNewContest
     {
         public string ContestUniqueCode { get; set; }
-        string _fieldLabel;
+
         public string FieldName { get; set; }
-       
+
         public string FieldType { get; set; }
-        
+        string _fieldLabel;
         public string FieldLabel
         {
             get => _fieldLabel;
@@ -21,8 +21,8 @@ namespace Entities.DTO
             {
                 var temp = "";
                 _fieldLabel = value;
-                var strings = _fieldLabel.Trim().Split(" ",StringSplitOptions.RemoveEmptyEntries);
-                foreach(var item in strings)
+                var strings = _fieldLabel.Trim().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                foreach (var item in strings)
                 {
                     temp = temp + item.Substring(0, 1).ToUpper() + item.Substring(1);
                 }
@@ -35,6 +35,5 @@ namespace Entities.DTO
         public bool ShowOnlinePage { get; set; } = false;
         public bool ShowOnlineCompletion { get; set; } = false;
         public bool IsRequired { get; set; } = false;
-
     }
 }

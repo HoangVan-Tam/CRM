@@ -1,0 +1,36 @@
+﻿@using SMSDOME_Standard_Contest_BlazorServer.Pages.Component
+<CascadingValue Value="this">
+    <CascadingValue Value="DataSource">
+        <Test></Test>
+    </CascadingValue>
+</CascadingValue>
+<button @onclick="Click">Click</button>
+@code {
+    public Dictionary<string, object> DataSource { get; set; }
+    protected override void OnInitialized()
+    {
+        DataSource = new Dictionary<string, object>
+{
+{ "Name", "^[a-zA-Z ]+$" },
+{ "MobileNo", @"^\+*\d+$" },
+{ "ReceiptNo", @"^\S*\d\S*$" },
+{ "NRIC", @"^[a-zA-Z]?\d{7}[a-zA-Z]$" },
+{ "Email", @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" },
+{ "Amount", @"^(?:[Ss]?\$)?(?:\d{1,10}(?:\,\d{3})*|(?:\d+))(?:\.\d{0,2})?$" },
+};
+        base.OnInitialized();
+    }
+    public void Click()
+    {
+        DataSource = new Dictionary<string, object>
+{
+{ "Name", "^[a-zA-Z ]+$" },
+{ "MobileNo", @"^\+*\d+$" },
+};
+        InvokeAsync(StateHasChanged);
+    }
+    public void NotifyChange()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+}

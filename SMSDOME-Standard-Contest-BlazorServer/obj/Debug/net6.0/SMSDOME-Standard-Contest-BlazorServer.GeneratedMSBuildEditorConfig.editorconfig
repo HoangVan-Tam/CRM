@@ -26,12 +26,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29tcG9uZW50L0Ryb3BEb3duTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/Pages/Component/MultipleDropDownList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29tcG9uZW50L011bHRpcGxlRHJvcERvd25MaXN0LnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/Pages/Component/NewRegexValidationPopup.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29tcG9uZW50L05ld1JlZ2V4VmFsaWRhdGlvblBvcHVwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/Pages/Component/Test.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29tcG9uZW50L1Rlc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/Pages/Component/Tests.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29tcG9uZW50L1Rlc3RzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/Pages/Component/Toasts/Toast.razor]
@@ -93,6 +97,10 @@ build_metadata.AdditionalFiles.CssScope =
 [/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/Pages/Component/MultipleDropDownList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29tcG9uZW50L011bHRpcGxlRHJvcERvd25MaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-o4fmvw824p
 
 [/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/Shared/ClientLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0NsaWVudExheW91dC5yYXpvcg==

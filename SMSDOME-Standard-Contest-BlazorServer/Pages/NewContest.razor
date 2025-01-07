@@ -162,8 +162,8 @@
             <div class="mb-3 row g-3">
                 <div class="col-6">
                     <label for="nameContest" class="form-label">Fields</label>
-                    <MultipleDropDownList
-                        DataSource="@lstContestFieldsForSMS.ToDictionary(key=>key.FieldLabel, value=>value.Regex)">
+                    <MultipleDropDownList T="string"
+                        DataSource="@lstContestFields.Where(p=>!string.IsNullOrEmpty(p.FieldName)).ToDictionary(p=>p.FieldLabel, p=>p.FieldName)">
                     </MultipleDropDownList>
                 </div>
                 <div class="col-6">
@@ -290,28 +290,15 @@
 
     private void AddField_Click()
     {
-        InvokeAsync(() =>
-        {
-            lstContestFields.Add(new FieldsForNewContest());
-            StateHasChanged();
-        });
-
+        lstContestFields.Add(new FieldsForNewContest());
     }
     private void RemoveField_Click(FieldsForNewContest field)
     {
         lstContestFields.Remove(field);
     }
-    private void SetFieldName(FieldsForNewContest field)
-    {
-        field.FieldName = field.FieldLabel.ToUpperInvariant().Replace(" ", "");
-    }
     private void HandleCreateNewRegexClick(RegexValidation arg)
     {
         // Handle the event from the child component
         lstRegexValidations.Add(arg);
-    }
-    private void FieldsChanged(ChangeEventArgs __e)
-    {
-        var temp = __e?.Value?.ToString();
     }
 }

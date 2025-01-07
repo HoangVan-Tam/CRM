@@ -1,0 +1,21 @@
+﻿<h3>test</h3>
+@foreach (var item in DataSource)
+{
+    @item.Key
+}
+@code {
+
+    [CascadingParameter]
+    public Tests? Ancestor { get; set; }
+
+    [CascadingParameter]
+    public Dictionary<string, object> DataSource { get; set; }
+    public void UpdateValue()
+    {
+        DataSource = new Dictionary<string, object>
+{
+{ "Name", "^[a-zA-Z ]+$" },
+};
+        Ancestor?.NotifyChange();
+    }
+}

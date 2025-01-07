@@ -199,6 +199,15 @@ D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Stand
 D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.pdb
 D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.genruntimeconfig.cache
 D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/ref/SMSDOME-Standard-Contest-BlazorServer.dll
+/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.csproj.AssemblyReference.cache
+/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.AssemblyInfoInputs.cache
+/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.AssemblyInfo.cs
+/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.csproj.CoreCompileInputs.cache
+/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.MvcApplicationPartsAssemblyInfo.cache
+/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.RazorAssemblyInfo.cache
+/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.RazorAssemblyInfo.cs
+/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.sourcelink.json
 /Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/web.config
 /Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/appsettings.Development.json
 /Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/appsettings.json
@@ -270,15 +279,6 @@ D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Stand
 /Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Entities.pdb
 /Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Services.pdb
 /Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/DAL.pdb
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.csproj.AssemblyReference.cache
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.GeneratedMSBuildEditorConfig.editorconfig
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.AssemblyInfoInputs.cache
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.AssemblyInfo.cs
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.csproj.CoreCompileInputs.cache
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.MvcApplicationPartsAssemblyInfo.cache
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.RazorAssemblyInfo.cache
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.RazorAssemblyInfo.cs
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.sourcelink.json
 /Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets.build.json
 /Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets.development.json
 /Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets/msbuild.SMSDOME-Standard-Contest-BlazorServer.Microsoft.AspNetCore.StaticWebAssets.props
@@ -297,3 +297,4 @@ D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Stand
 /Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.pdb
 /Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.genruntimeconfig.cache
 /Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/ref/SMSDOME-Standard-Contest-BlazorServer.dll
+/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/scopedcss/Pages/Component/MultipleDropDownList.razor.rz.scp.css

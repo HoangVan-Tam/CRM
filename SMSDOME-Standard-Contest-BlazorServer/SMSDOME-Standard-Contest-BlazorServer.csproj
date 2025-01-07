@@ -8,6 +8,14 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" '$(RunConfiguration)' == 'SMSDOME-Standard-Contest-BlazorServer' " />
+
+	<ItemGroup>
+	  <None Remove="Pages/Component/MultipleDropDownList.razor.css" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Pages/Component/MultipleDropDownList.razor.css" />
+	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Autofac" Version="6.5.0" />
 		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />

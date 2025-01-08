@@ -204,17 +204,17 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-7anqVlVbWmZjOc599J59SDK9ADV6Hk4MXKZZSReQxHE="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"590"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00227anqVlVbWmZjOc599J59SDK9ADV6Hk4MXKZZSReQxHE=\u0022"},{"Name":"Last-Modified","Value":"Fri, 03 Jan 2025 04:10:05 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/SMSDOME-Standard-Contest-BlazorServer/SMSDOME-Standard-Contest-BlazorServer.4ft9yfemps.bundle.scp.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\SMSDOME-Standard-Contest-BlazorServer.4ft9yfemps.bundle.scp.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"4ft9yfemps"},{"Name":"integrity","Value":"sha256-0KS8Gu7eS4mDC7VMtr\u002BcG1qu4CU2KGt/CFu\u002B6SiSccs="},{"Name":"label","Value":"_content/SMSDOME-Standard-Contest-BlazorServer/SMSDOME-Standard-Contest-BlazorServer.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4461"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00220KS8Gu7eS4mDC7VMtr\u002BcG1qu4CU2KGt/CFu\u002B6SiSccs=\u0022"},{"Name":"Last-Modified","Value":"Fri, 03 Jan 2025 09:05:06 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/SMSDOME-Standard-Contest-BlazorServer/SMSDOME-Standard-Contest-BlazorServer.bundle.scp.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\SMSDOME-Standard-Contest-BlazorServer.4ft9yfemps.bundle.scp.css'))</AssetFile>
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\SMSDOME-Standard-Contest-BlazorServer.gaalzrntmr.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-0KS8Gu7eS4mDC7VMtr\u002BcG1qu4CU2KGt/CFu\u002B6SiSccs="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4461"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00220KS8Gu7eS4mDC7VMtr\u002BcG1qu4CU2KGt/CFu\u002B6SiSccs=\u0022"},{"Name":"Last-Modified","Value":"Fri, 03 Jan 2025 09:05:06 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-qNmGLxlOo8KfENEUFrlZXtU\u002BfH2uGyOC17CYKXCu2BQ="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"6950"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022qNmGLxlOo8KfENEUFrlZXtU\u002BfH2uGyOC17CYKXCu2BQ=\u0022"},{"Name":"Last-Modified","Value":"Wed, 08 Jan 2025 10:11:30 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/SMSDOME-Standard-Contest-BlazorServer/SMSDOME-Standard-Contest-BlazorServer.gaalzrntmr.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\SMSDOME-Standard-Contest-BlazorServer.gaalzrntmr.bundle.scp.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"gaalzrntmr"},{"Name":"integrity","Value":"sha256-qNmGLxlOo8KfENEUFrlZXtU\u002BfH2uGyOC17CYKXCu2BQ="},{"Name":"label","Value":"_content/SMSDOME-Standard-Contest-BlazorServer/SMSDOME-Standard-Contest-BlazorServer.bundle.scp.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6950"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022qNmGLxlOo8KfENEUFrlZXtU\u002BfH2uGyOC17CYKXCu2BQ=\u0022"},{"Name":"Last-Modified","Value":"Wed, 08 Jan 2025 10:11:30 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
   </ItemGroup>
 </Project>

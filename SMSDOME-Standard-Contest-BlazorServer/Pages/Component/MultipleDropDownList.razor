@@ -1,93 +1,49 @@
-﻿@typeparam T
+﻿@using Entities.Component
+@typeparam T
+
 
 <div class='wrapper @(Active ? "active": "")'>
-    <div class='form-control select-btn' @onclick="@(()=>{Active = !Active;})">
-        <span>@Text</span>
+    <div class='form-control select-btn position-relative' >
+        <div class="position-absolute top-0 start-0 h-100 w-100" @onclick="@(()=>{Active = !Active;})"></div>
+        <div class="w-100 row gx-2">
+            @if (SelectedItems.Count > 0)
+            {
+                foreach (var item in SelectedItems)
+                {
+                    <div style="width: fit-content; z-index: 10">
+                        <p class="selected-item-text">
+                            <span>
+                                @item.Text
+                            </span>
+                            <span @onclick="@(e => OnClickedItem(item))"><i class="bi bi-x"></i></span>
+                        </p>
+                    </div>
+                }
+            }
+            else
+            {
+                <span>- Select @Label -</span>
+            }
+        </div>
         <i class="bi bi-chevron-down"></i>
     </div>
     <div class='content-dropdownlist @(Active ? "d-block": "d-none")'>
         <div class="search">
             <i class="bi bi-search"></i>
             <input spellcheck="false" type="text" placeholder="Search" class="form-control" value="@Search"
-                @oninput="SearchChanged">
+                   @oninput="SearchChanged">
         </div>
         <ul class="options">
             @foreach (var item in SearchDataSource)
             {
-                <li @onclick="@(e => OnClickedItem(item))" class="@(Text.Contains(item.Key) ? "selected" : "")">
-                    @item.Key</li>
+                <li @onclick="@(e => OnClickedItem(item))" class="@(SelectedItems.IndexOf(item) != -1 ? "selected" : "")">
+                    @item.Text
+                </li>
             }
         </ul>
-        <p
-            style='margin-top: 10px; @(SearchDataSource.Keys.Count() == 0 && !string.IsNullOrEmpty(Search) ? "": "display: none")'>
-            Oops! Country not found</p>
+        <p style='margin-top: 10px; @(SearchDataSource.Count() == 0 ? "": "display: none")'>
+            Oops! @Label not found
+        </p>
     </div>
 </div>
 
-
-@code {
-    [Parameter]
-    public Dictionary<string, T> DataSource { get; set; }
-    [Parameter]
-    public string Value { get; set; } = "";
-    [Parameter]
-    public string Label { get; set; } = "";
-    [Parameter]
-    public EventCallback<object> ValueChanged { get; set; }
-
-
-    private string Text;
-    private bool Active { get; set; } = false;
-    private string Search { get; set; }
-    private Dictionary<string, T> SearchDataSource { get; set; } = new Dictionary<string, T>();
-
-    protected override void OnParametersSet()
-    {
-        SearchDataSource = DataSource;
-        Text = Label;
-    }
-    private Task OnValueChanged(ChangeEventArgs e)
-    {
-        Value = e.Value?.ToString();
-        return ValueChanged.InvokeAsync(Value);
-    }
-    private void OnClickedItem(KeyValuePair<string, T> pair)
-    {
-        if (Text.Contains(pair.Key))
-        {
-            Text = Text.Replace("," + pair.Key, "").Replace(pair.Key, "").TrimStart(',').TrimEnd(',');
-            Text = Text.Replace(",,", ",");
-            Value = Value.Replace("," + pair.Value, "").Replace(pair.Value.ToString(), "").TrimStart(',').TrimEnd(',');
-            Value = Value.Replace(",,", ",");
-        }
-        else if (Text == Label)
-        {
-            Text = pair.Key;
-            Value = pair.Value.ToString();
-        }
-        else
-        {
-            Text = Text + "," + pair.Key;
-            Value = Value + "," + pair.Value;
-
-        }
-        if (Text == "")
-        {
-            Text = Label;
-        }
-    }
-
-    private void SearchChanged(ChangeEventArgs __e)
-    {
-        Search = __e?.Value?.ToString();
-        if (!string.IsNullOrEmpty(Search))
-        {
-            SearchDataSource = DataSource.Where(p => p.Key.ToLower().Contains(Search.ToLower())).ToDictionary(key => key.Key, value
-            => value.Value);
-        }
-        else
-        {
-            SearchDataSource = DataSource;
-        }
-    }
-}

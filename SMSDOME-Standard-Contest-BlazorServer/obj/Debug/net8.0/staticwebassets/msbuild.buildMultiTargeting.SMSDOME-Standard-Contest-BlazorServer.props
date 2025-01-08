@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\SMSDOME-Standard-Contest-BlazorServer.props" />
-</Project>

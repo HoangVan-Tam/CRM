@@ -3,7 +3,7 @@
   "ManifestType": "Build",
   "Endpoints": [
     {
-      "Route": "SMSDOME-Standard-Contest-BlazorServer.4ft9yfemps.styles.css",
+      "Route": "SMSDOME-Standard-Contest-BlazorServer.gaalzrntmr.styles.css",
       "AssetFile": "SMSDOME-Standard-Contest-BlazorServer.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -17,7 +17,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4461"
+          "Value": "6950"
         },
         {
           "Name": "Content-Type",
@@ -25,21 +25,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0KS8Gu7eS4mDC7VMtr+cG1qu4CU2KGt/CFu+6SiSccs=\""
+          "Value": "\"qNmGLxlOo8KfENEUFrlZXtU+fH2uGyOC17CYKXCu2BQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 03 Jan 2025 09:05:06 GMT"
+          "Value": "Wed, 08 Jan 2025 10:11:30 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "4ft9yfemps"
+          "Value": "gaalzrntmr"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-0KS8Gu7eS4mDC7VMtr+cG1qu4CU2KGt/CFu+6SiSccs="
+          "Value": "sha256-qNmGLxlOo8KfENEUFrlZXtU+fH2uGyOC17CYKXCu2BQ="
         },
         {
           "Name": "label",
@@ -62,7 +62,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4461"
+          "Value": "6950"
         },
         {
           "Name": "Content-Type",
@@ -70,17 +70,17 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0KS8Gu7eS4mDC7VMtr+cG1qu4CU2KGt/CFu+6SiSccs=\""
+          "Value": "\"qNmGLxlOo8KfENEUFrlZXtU+fH2uGyOC17CYKXCu2BQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 03 Jan 2025 09:05:06 GMT"
+          "Value": "Wed, 08 Jan 2025 10:11:30 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-0KS8Gu7eS4mDC7VMtr+cG1qu4CU2KGt/CFu+6SiSccs="
+          "Value": "sha256-qNmGLxlOo8KfENEUFrlZXtU+fH2uGyOC17CYKXCu2BQ="
         }
       ]
     },

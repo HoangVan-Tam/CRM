@@ -12,18 +12,8 @@ Welcome to your new app.
 @* <MultipleDropDownList DataSource="DataSource" Label="Select Regex"></MultipleDropDownList> *@
 <Tests></Tests>
 @code {
-    public Dictionary<string, object> DataSource { get; set; }
     protected override void OnInitialized()
     {
-        DataSource = new Dictionary<string, object>
-{
-{ "Name", "^[a-zA-Z ]+$" },
-{ "MobileNo", @"^\+*\d+$" },
-{ "ReceiptNo", @"^\S*\d\S*$" },
-{ "NRIC", @"^[a-zA-Z]?\d{7}[a-zA-Z]$" },
-{ "Email", @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" },
-{ "Amount", @"^(?:[Ss]?\$)?(?:\d{1,10}(?:\,\d{3})*|(?:\d+))(?:\.\d{0,2})?$" },
-};
         base.OnInitialized();
     }
 }

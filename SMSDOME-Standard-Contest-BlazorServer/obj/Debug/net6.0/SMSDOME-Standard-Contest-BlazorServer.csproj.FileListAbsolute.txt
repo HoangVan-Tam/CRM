@@ -1,300 +1,103 @@
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/appsettings.Development.json
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/appsettings.json
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.staticwebassets.runtime.json
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.exe
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.deps.json
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.runtimeconfig.json
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.pdb
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.CodeDom.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.csproj.AssemblyReference.cache
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.GeneratedMSBuildEditorConfig.editorconfig
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.AssemblyInfoInputs.cache
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.AssemblyInfo.cs
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.csproj.CoreCompileInputs.cache
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.MvcApplicationPartsAssemblyInfo.cache
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.RazorAssemblyInfo.cache
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.RazorAssemblyInfo.cs
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets.build.json
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets.development.json
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/scopedcss/Shared/MainLayout.razor.rz.scp.css
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/scopedcss/Shared/NavMenu.razor.rz.scp.css
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/scopedcss/bundle/SMSDOME-Standard-Contest-BlazorServer.styles.css
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/scopedcss/projectbundle/SMSDOME-Standard-Contest-BlazorServer.bundle.scp.css
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/refint/SMSDOME-Standard-Contest-BlazorServer.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.pdb
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.genruntimeconfig.cache
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/ref/SMSDOME-Standard-Contest-BlazorServer.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Newtonsoft.Json.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Humanizer.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Identity.Client.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Drawing.Common.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Runtime.Caching.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Security.Permissions.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Windows.Extensions.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Autofac.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/AutoMapper.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Autofac.Extensions.DependencyInjection.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/DAL.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Entities.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Services.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Entities.pdb
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Services.pdb
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/DAL.pdb
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/CsvHelper.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.AspNetCore.Authorization.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.AspNetCore.Components.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.AspNetCore.Metadata.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/scopedcss/Shared/ClientLayout.razor.rz.scp.css
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Azure.Core.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Azure.Storage.Blobs.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Azure.Storage.Common.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.AspNetCore.Components.Forms.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.AspNetCore.Components.Web.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Bcl.AsyncInterfaces.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.JSInterop.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.IO.Hashing.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.IO.Pipelines.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Memory.Data.dll
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.staticwebassets.endpoints.json
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets.build.endpoints.json
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets/msbuild.SMSDOME-Standard-Contest-BlazorServer.Microsoft.AspNetCore.StaticWebAssets.props
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets/msbuild.SMSDOME-Standard-Contest-BlazorServer.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets/msbuild.build.SMSDOME-Standard-Contest-BlazorServer.props
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.SMSDOME-Standard-Contest-BlazorServer.props
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.SMSDOME-Standard-Contest-BlazorServer.props
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets.pack.json
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-.C9DB7564.Up2Date
-D:/NET CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets.upToDateCheck.txt
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.csproj.AssemblyReference.cache
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.GeneratedMSBuildEditorConfig.editorconfig
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.AssemblyInfoInputs.cache
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.AssemblyInfo.cs
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.csproj.CoreCompileInputs.cache
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.MvcApplicationPartsAssemblyInfo.cache
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.RazorAssemblyInfo.cache
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.RazorAssemblyInfo.cs
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/web.config
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/appsettings.Development.json
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/appsettings.json
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.staticwebassets.runtime.json
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.staticwebassets.endpoints.json
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.exe
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.deps.json
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.runtimeconfig.json
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.pdb
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Autofac.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Autofac.Extensions.DependencyInjection.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/AutoMapper.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Azure.Core.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Azure.Storage.Blobs.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Azure.Storage.Common.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/CsvHelper.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Humanizer.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.AspNetCore.Authorization.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.AspNetCore.Components.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.AspNetCore.Components.Forms.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.AspNetCore.Components.Web.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.AspNetCore.Metadata.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Bcl.AsyncInterfaces.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Identity.Client.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.JSInterop.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Newtonsoft.Json.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.CodeDom.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Drawing.Common.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.IO.Hashing.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.IO.Pipelines.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Memory.Data.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Runtime.Caching.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Security.Permissions.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Windows.Extensions.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/DAL.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Entities.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Services.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Entities.pdb
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Services.pdb
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/DAL.pdb
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/scopedcss/Shared/ClientLayout.razor.rz.scp.css
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/scopedcss/Shared/MainLayout.razor.rz.scp.css
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/scopedcss/Shared/NavMenu.razor.rz.scp.css
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/scopedcss/bundle/SMSDOME-Standard-Contest-BlazorServer.styles.css
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/scopedcss/projectbundle/SMSDOME-Standard-Contest-BlazorServer.bundle.scp.css
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets.build.json
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets.development.json
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets.build.endpoints.json
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets/msbuild.SMSDOME-Standard-Contest-BlazorServer.Microsoft.AspNetCore.StaticWebAssets.props
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets/msbuild.SMSDOME-Standard-Contest-BlazorServer.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets/msbuild.build.SMSDOME-Standard-Contest-BlazorServer.props
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.SMSDOME-Standard-Contest-BlazorServer.props
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.SMSDOME-Standard-Contest-BlazorServer.props
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets.pack.json
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets.upToDateCheck.txt
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-.C9DB7564.Up2Date
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/refint/SMSDOME-Standard-Contest-BlazorServer.dll
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.pdb
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.genruntimeconfig.cache
-D:/NET-CORE/Test/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/ref/SMSDOME-Standard-Contest-BlazorServer.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.csproj.AssemblyReference.cache
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.GeneratedMSBuildEditorConfig.editorconfig
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.AssemblyInfoInputs.cache
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.AssemblyInfo.cs
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.csproj.CoreCompileInputs.cache
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.MvcApplicationPartsAssemblyInfo.cache
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.RazorAssemblyInfo.cache
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.RazorAssemblyInfo.cs
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.sourcelink.json
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/web.config
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/appsettings.Development.json
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/appsettings.json
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.staticwebassets.runtime.json
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.deps.json
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.runtimeconfig.json
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.pdb
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Autofac.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Autofac.Extensions.DependencyInjection.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/AutoMapper.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Azure.Core.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Azure.Storage.Blobs.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Azure.Storage.Common.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/CsvHelper.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Humanizer.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.AspNetCore.Authorization.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.AspNetCore.Components.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.AspNetCore.Components.Forms.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.AspNetCore.Components.Web.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.AspNetCore.Metadata.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Bcl.AsyncInterfaces.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Identity.Client.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.JSInterop.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Newtonsoft.Json.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.CodeDom.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Drawing.Common.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.IO.Hashing.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.IO.Pipelines.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Memory.Data.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Runtime.Caching.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Security.Permissions.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/System.Windows.Extensions.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/DAL.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Entities.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Services.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Entities.pdb
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/Services.pdb
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/bin/Debug/net6.0/DAL.pdb
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets.build.json
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets.development.json
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets/msbuild.SMSDOME-Standard-Contest-BlazorServer.Microsoft.AspNetCore.StaticWebAssets.props
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets/msbuild.build.SMSDOME-Standard-Contest-BlazorServer.props
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.SMSDOME-Standard-Contest-BlazorServer.props
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.SMSDOME-Standard-Contest-BlazorServer.props
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/staticwebassets.pack.json
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/scopedcss/Shared/ClientLayout.razor.rz.scp.css
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/scopedcss/Shared/MainLayout.razor.rz.scp.css
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/scopedcss/Shared/NavMenu.razor.rz.scp.css
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/scopedcss/bundle/SMSDOME-Standard-Contest-BlazorServer.styles.css
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/scopedcss/projectbundle/SMSDOME-Standard-Contest-BlazorServer.bundle.scp.css
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-.C9DB7564.Up2Date
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/refint/SMSDOME-Standard-Contest-BlazorServer.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.pdb
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/SMSDOME-Standard-Contest-BlazorServer.genruntimeconfig.cache
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/ref/SMSDOME-Standard-Contest-BlazorServer.dll
-/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/Debug/net6.0/scopedcss/Pages/Component/MultipleDropDownList.razor.rz.scp.css
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.csproj.AssemblyReference.cache
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\web.config
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\appsettings.Development.json
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\appsettings.json
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.staticwebassets.runtime.json
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.staticwebassets.endpoints.json
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.exe
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.deps.json
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.runtimeconfig.json
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.pdb
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Autofac.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Autofac.Extensions.DependencyInjection.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\AutoMapper.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Azure.Core.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Azure.Storage.Blobs.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Azure.Storage.Common.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\CsvHelper.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Humanizer.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Web.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.JSInterop.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\System.CodeDom.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\System.IO.Hashing.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\System.IO.Pipelines.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\System.Memory.Data.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\DAL.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Entities.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Services.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Entities.pdb
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\Services.pdb
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\bin\Debug\net6.0\DAL.pdb
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.GeneratedMSBuildEditorConfig.editorconfig
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.AssemblyInfoInputs.cache
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.AssemblyInfo.cs
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.csproj.CoreCompileInputs.cache
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.MvcApplicationPartsAssemblyInfo.cache
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.RazorAssemblyInfo.cache
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.RazorAssemblyInfo.cs
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.sourcelink.json
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\scopedcss\Shared\ClientLayout.razor.rz.scp.css
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\scopedcss\bundle\SMSDOME-Standard-Contest-BlazorServer.styles.css
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\scopedcss\projectbundle\SMSDOME-Standard-Contest-BlazorServer.bundle.scp.css
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\staticwebassets.build.json
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\staticwebassets.development.json
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\staticwebassets.build.endpoints.json
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.SMSDOME-Standard-Contest-BlazorServer.Microsoft.AspNetCore.StaticWebAssets.props
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.SMSDOME-Standard-Contest-BlazorServer.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.build.SMSDOME-Standard-Contest-BlazorServer.props
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.SMSDOME-Standard-Contest-BlazorServer.props
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.SMSDOME-Standard-Contest-BlazorServer.props
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\staticwebassets.pack.json
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\SMSDOME-.C9DB7564.Up2Date
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\refint\SMSDOME-Standard-Contest-BlazorServer.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.pdb
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\SMSDOME-Standard-Contest-BlazorServer.genruntimeconfig.cache
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\ref\SMSDOME-Standard-Contest-BlazorServer.dll
+D:\NET-CORE\Test\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest\SMSDOME-Standard-Contest-BlazorServer\obj\Debug\net6.0\scopedcss\Pages\Component\MultipleDropDownList.razor.rz.scp.css

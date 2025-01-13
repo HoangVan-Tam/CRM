@@ -1,37 +1,37 @@
-.navbar-toggler[b-cgckdclycz] {
+.navbar-toggler[b-lf7c72vyiz] {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.top-row[b-cgckdclycz] {
+.top-row[b-lf7c72vyiz] {
     height: 3.5rem;
     background-color: rgba(0,0,0,0.4);
 }
 
-.navbar-brand[b-cgckdclycz] {
+.navbar-brand[b-lf7c72vyiz] {
     font-size: 1.1rem;
 }
 
-.oi[b-cgckdclycz] {
+.oi[b-lf7c72vyiz] {
     width: 2rem;
     font-size: 1.1rem;
     vertical-align: text-top;
     top: -2px;
 }
 
-.nav-item[b-cgckdclycz] {
+.nav-item[b-lf7c72vyiz] {
     font-size: 0.9rem;
     padding-bottom: 0.5rem;
 }
 
-    .nav-item:first-of-type[b-cgckdclycz] {
+    .nav-item:first-of-type[b-lf7c72vyiz] {
         padding-top: 1rem;
     }
 
-    .nav-item:last-of-type[b-cgckdclycz] {
+    .nav-item:last-of-type[b-lf7c72vyiz] {
         padding-bottom: 1rem;
     }
 
-    .nav-item[b-cgckdclycz]  a {
+    .nav-item[b-lf7c72vyiz]  a {
         color: #d7d7d7;
         border-radius: 4px;
         height: 3rem;
@@ -40,23 +40,26 @@
         line-height: 3rem;
     }
 
-.nav-item[b-cgckdclycz]  a.active {
+.nav-item[b-lf7c72vyiz]  a.active {
     background-color: rgba(255,255,255,0.25);
     color: white;
 }
 
-.nav-item[b-cgckdclycz]  a:hover {
+.nav-item[b-lf7c72vyiz]  a:hover {
     background-color: rgba(255,255,255,0.1);
     color: white;
 }
 
 @media (min-width: 641px) {
-    .navbar-toggler[b-cgckdclycz] {
+    .navbar-toggler[b-lf7c72vyiz] {
         display: none;
     }
 
-    .collapse[b-cgckdclycz] {
+    .collapse[b-lf7c72vyiz] {
         /* Never collapse the sidebar for wide screens */
         display: block;
     }
 }
+
+
+

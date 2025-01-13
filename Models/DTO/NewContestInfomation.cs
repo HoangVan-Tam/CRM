@@ -47,7 +47,7 @@ namespace Entities.DTO
         public string InvalidWhatsappResponse { get; set; }
         public string RepeatedWhatsappResponse { get; set; }
         public string ValidationRegexFull { get; set; }
-        public string Fields { get; set; }
+        public string SMSFields { get; set; }
 
         //Online page response
         public string ValidOnlinePageResponse { get; set; }

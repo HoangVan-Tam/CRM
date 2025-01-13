@@ -8,6 +8,7 @@ namespace Entities.DTO
 {
     public class FieldsForNewContest
     {
+        public Guid ID { get; set; } = Guid.NewGuid();
         public string ContestUniqueCode { get; set; }
 
         public string FieldName { get; set; }

@@ -12,27 +12,25 @@ namespace SMSDOME_Standard_Contest_BlazorServer.Pages.Component
         [Parameter]
         public string Label { get; set; } = "Data";
         [Parameter]
-        public EventCallback<object> ValueChanged { get; set; }
+        public EventCallback<List<DropDownItemData<T>>> ValueChanged { get; set; }
 
 
         private string Text;
         private bool Active { get; set; } = false;
         private string Search { get; set; }
         private List<DropDownItemData<T>> SearchDataSource { get; set; } = new List<DropDownItemData<T>>();
-        private List<DropDownItemData<T>> SelectedItems { get; set; }
+        private List<DropDownItemData<T>> SelectedItems { get; set; } = new List<DropDownItemData<T>>();
         protected override void OnParametersSet()
         {
             SearchDataSource = DataSource;
-            SelectedItems = new List<DropDownItemData<T>>();
         }
 
         private void OnClickedItem(DropDownItemData<T> item)
         {
-
-            if (SelectedItems.Contains(item))
+            var isSelectedItem = SelectedItems.Where(p => p.Id == item.Id).FirstOrDefault() == null ? false : true;
+            if (isSelectedItem)
             {
                 SelectedItems.Remove(item);
-
             }
             else
             {
@@ -40,6 +38,8 @@ namespace SMSDOME_Standard_Contest_BlazorServer.Pages.Component
             }
             Text = string.Join(",", SelectedItems.Select(p => p.Text));
             Value = string.Join(",", SelectedItems.Select(p => p.Code));
+
+            ValueChanged.InvokeAsync(SelectedItems);
         }
         private void SearchChanged(ChangeEventArgs __e)
         {

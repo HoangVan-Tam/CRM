@@ -3,10 +3,10 @@
 
 
 <div class='wrapper @(Active ? "active": "")'>
-    <div class='form-control select-btn position-relative' >
-        <div class="position-absolute top-0 start-0 h-100 w-100" @onclick="@(()=>{Active = !Active;})"></div>
-        <div class="w-100 row gx-2">
-            @if (SelectedItems.Count > 0)
+    <div class='form-control select-btn position-relative'>
+        <div class="position-absolute top-0 start-0 h-100 w-100 z-1" @onclick="@(()=>{Active = !Active;})"></div>
+        <div class="w-100 row gx-2 me-2">
+            @if (SelectedItems.Count() > 0)
             {
                 foreach (var item in SelectedItems)
                 {
@@ -31,12 +31,13 @@
         <div class="search">
             <i class="bi bi-search"></i>
             <input spellcheck="false" type="text" placeholder="Search" class="form-control" value="@Search"
-                   @oninput="SearchChanged">
+                @oninput="SearchChanged">
         </div>
         <ul class="options">
             @foreach (var item in SearchDataSource)
             {
-                <li @onclick="@(e => OnClickedItem(item))" class="@(SelectedItems.IndexOf(item) != -1 ? "selected" : "")">
+                <li @onclick="@(e => OnClickedItem(item))"
+                    class="@(SelectedItems.Where(p=>p.Id == item.Id).FirstOrDefault() != null ? "selected" : "")">
                     @item.Text
                 </li>
             }
@@ -46,4 +47,3 @@
         </p>
     </div>
 </div>
-

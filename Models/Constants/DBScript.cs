@@ -27,7 +27,7 @@ namespace Entities.Constants
                 "[DateResent] [datetime2] (7) NULL, " +
                 "[DateVerified][datetime2] (7) NULL, " +
                 "[DateRejected][datetime2] (7) NULL, " +
-                "AddMoreColumn" + 
+                "AddMoreColumn" +
                 "CONSTRAINT [PK_BC_230101_KEYWORD] PRIMARY KEY CLUSTERED " +
                 "( " +
                 "[EntryID] ASC " +

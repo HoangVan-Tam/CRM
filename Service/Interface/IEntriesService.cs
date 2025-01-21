@@ -16,5 +16,6 @@ namespace Services.Interface
         Task<FunctionResults<string>> PurgeSelectedEntriesAsync(string ContestEntriesTableName, List<int> entriesID);
         Task<FunctionResults<string>> PurgeAllEntriesAsync(string ContestEntriesTableName);
         Task<FunctionResults<byte[]>> GetEntriesCSV(string ContestUniqueCode);
+        Task<FunctionResults<string>> SubmitEntry(Parameters parameters, string contestUniqueCode);
     }
 }

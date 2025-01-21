@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System.Data;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Services.Common
 {
@@ -124,6 +125,32 @@ namespace Services.Common
             {
                 throw;
             }
+        }
+
+        public static string NormalizeSpaces(string value)
+        {
+            value = Regex.Replace(value, @"[\n\r\t]", " ");  // Convert all  \n = CR(Carriage Return)   \r = LF(Line Feed)   \t = tab to a single space.
+            value = Regex.Replace(value, @"\s+", " ");       // Convert all whitespaces to a single space.
+            return value.Trim();
+        }
+
+        public static string CleanMessage(Parameters param, string Keyword)
+        {
+            //Remove Keyword and Append Number to String.
+            var json = param.Message.ToString();
+            json = json.Replace("<>", " ").Replace("\r\n", " ").Replace("\n\r", " ").Replace("\n", " ").Replace("\r", " ");
+            json = NormalizeSpaces(json).Trim();
+
+            if (json.Trim().ToUpper().StartsWith(Keyword.ToUpper() + " "))
+            {
+                var KeywordNFirstSpace = json.Split(' ')[0];
+                json = json.Remove(0, KeywordNFirstSpace.Length);
+            }
+            json = json.Trim();
+
+            json = param.MobileNo.ToString() + " " + json;
+
+            return json;
         }
     }
 }

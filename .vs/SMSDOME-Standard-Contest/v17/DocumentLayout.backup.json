@@ -3,12 +3,92 @@
   "WorkspaceRootPath": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{73CE22D0-AF8B-4C36-9CE6-C1034194CA6D}|Service\\Services.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\service\\interface\\irestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73CE22D0-AF8B-4C36-9CE6-C1034194CA6D}|Service\\Services.csproj|solutionrelative:service\\interface\\irestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73CE22D0-AF8B-4C36-9CE6-C1034194CA6D}|Service\\Services.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\service\\implement\\restservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73CE22D0-AF8B-4C36-9CE6-C1034194CA6D}|Service\\Services.csproj|solutionrelative:service\\implement\\restservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\controllers\\restcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\controllers\\restcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5049B519-AFF9-4ED5-8F25-1E692121C1E2}|Models\\Entities.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\models\\dto\\parameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5049B519-AFF9-4ED5-8F25-1E692121C1E2}|Models\\Entities.csproj|solutionrelative:models\\dto\\parameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\smsdome-standard-contest-blazorserver.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\smsdome-standard-contest-blazorserver.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\mapper\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\mapper\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\pages\\component\\multipledropdownlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\pages\\component\\multipledropdownlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\shared\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\shared\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\shared\\clientlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\shared\\clientlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\pages\\_host.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\pages\\_host.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\pages\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\pages\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\pages\\component\\multipledropdownlist.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\pages\\component\\multipledropdownlist.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\pages\\error.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\pages\\error.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\shared\\surveyprompt.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\shared\\surveyprompt.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\shared\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\shared\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\wwwroot\\js\\custom-function.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\wwwroot\\js\\custom-function.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\pages\\component\\multipledropdownlist.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -67,10 +147,6 @@
       "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\pages\\component\\toasts\\toasts.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\shared\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\shared\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\pages\\gateway.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\pages\\gateway.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -83,20 +159,8 @@
       "RelativeMoniker": "D:0:0:{73CE22D0-AF8B-4C36-9CE6-C1034194CA6D}|Service\\Services.csproj|solutionrelative:service\\implement\\toastservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\pages\\error.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\pages\\error.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\shared\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\shared\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\shared\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\shared\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\pages\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -123,10 +187,6 @@
       "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\wwwroot\\css\\toast.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\wwwroot\\js\\custom-function.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\wwwroot\\js\\custom-function.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
@@ -135,16 +195,8 @@
       "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\wwwroot\\css\\custom.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\pages\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\pages\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\pages\\contest.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\pages\\contest.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\shared\\surveyprompt.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\shared\\surveyprompt.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5049B519-AFF9-4ED5-8F25-1E692121C1E2}|Models\\Entities.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\models\\dto\\newcontestinfomation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -153,10 +205,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\pages\\component\\toasts\\toast.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\pages\\component\\toasts\\toast.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\pages\\_host.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\pages\\_host.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\wwwroot\\css\\bootstrap\\bootstrap.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -169,10 +217,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{73CE22D0-AF8B-4C36-9CE6-C1034194CA6D}|Service\\Services.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\service\\interface\\iregexvalidationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{73CE22D0-AF8B-4C36-9CE6-C1034194CA6D}|Service\\Services.csproj|solutionrelative:service\\interface\\iregexvalidationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\shared\\clientlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\shared\\clientlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{73CE22D0-AF8B-4C36-9CE6-C1034194CA6D}|Service\\Services.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\service\\interface\\itoastservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -211,10 +255,6 @@
       "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\mapper\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\mapper\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5049B519-AFF9-4ED5-8F25-1E692121C1E2}|Models\\Entities.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\models\\models\\regexvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5049B519-AFF9-4ED5-8F25-1E692121C1E2}|Models\\Entities.csproj|solutionrelative:models\\models\\regexvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -227,24 +267,12 @@
       "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\pages\\winner.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -301,10 +329,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5049B519-AFF9-4ED5-8F25-1E692121C1E2}|Models\\Entities.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\models\\dto\\contestoverview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5049B519-AFF9-4ED5-8F25-1E692121C1E2}|Models\\Entities.csproj|solutionrelative:models\\dto\\contestoverview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\smsdome-standard-contest-blazorserver\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A0BAF2FD-1EE8-43FA-A02F-A650FDFB6D1B}|SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj|solutionrelative:smsdome-standard-contest-blazorserver\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B6C1C29F-8BC2-44C4-B678-10FB60F80611}|Repository\\DAL.csproj|d:\\net-core\\test\\smsdome-standard-contest\\smsdome-standard-contest\\repository\\implement\\linqtosqlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -406,83 +430,296 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RendererSynchronizationContext.cs",
-              "DocumentMoniker": "C:\\Users\\tam.hoang\\AppData\\Local\\SourceServer\\1bcbc03152324a656382d0380fae6f85898ed2d4d38750668e71040888368d14\\src\\Components\\Components\\src\\Rendering\\RendererSynchronizationContext.cs",
-              "ToolTip": "C:\\Users\\tam.hoang\\AppData\\Local\\SourceServer\\1bcbc03152324a656382d0380fae6f85898ed2d4d38750668e71040888368d14\\src\\Components\\Components\\src\\Rendering\\RendererSynchronizationContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "IRestService.cs",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Interface\\IRestService.cs",
+              "RelativeDocumentMoniker": "Service\\Interface\\IRestService.cs",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Interface\\IRestService.cs",
+              "RelativeToolTip": "Service\\Interface\\IRestService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T09:50:57.745Z",
+              "WhenOpened": "2025-01-20T08:23:28.369Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MultipleDropDownList.razor.cs",
-              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor.cs",
-              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor.cs",
-              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor.cs",
-              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBkAAAA8AAAAAAAAAA==",
+              "Title": "RestService.cs",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Implement\\RestService.cs",
+              "RelativeDocumentMoniker": "Service\\Implement\\RestService.cs",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Implement\\RestService.cs",
+              "RelativeToolTip": "Service\\Implement\\RestService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T05:04:03.116Z",
+              "WhenOpened": "2025-01-20T08:23:07.454Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "Parameters.cs",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\DTO\\Parameters.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\Parameters.cs",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\DTO\\Parameters.cs",
+              "RelativeToolTip": "Models\\DTO\\Parameters.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T07:37:23.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SMSDOME-Standard-Contest-BlazorServer",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-20T07:31:10.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RESTController.cs",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Controllers\\RESTController.cs",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Controllers\\RESTController.cs",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Controllers\\RESTController.cs",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Controllers\\RESTController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T07:25:39.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "MultipleDropDownList.razor",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor",
               "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor",
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-01-03T05:05:17.928Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MultipleDropDownList.razor.css",
-              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor.css",
-              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor.css",
-              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor.css",
-              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor.css",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAqwHAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-08T04:35:37.841Z",
+              "DocumentIndex": 15,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\_Layout.cshtml",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\_Layout.cshtml",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\_Layout.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAIBJwAwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-03-09T07:14:26.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_Host.cshtml",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\_Host.cshtml",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\_Host.cshtml",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\_Host.cshtml",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\_Host.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-26T08:49:19.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\_Imports.razor",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\_Imports.razor",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\_Imports.razor",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-03-09T07:12:21.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Properties\\launchSettings.json",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAIAAAAAAAAAAABRwBQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-14T07:23:50.091Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "ClientProxyExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\tam.hoang\\AppData\\Local\\Temp\\.vsdbgsrc\\4bd458c67fb2e250596d5439e276402905cd15529ba8f14d44186d3494f08ffe\\ClientProxyExtensions.cs",
-              "ToolTip": "C:\\Users\\tam.hoang\\AppData\\Local\\Temp\\.vsdbgsrc\\4bd458c67fb2e250596d5439e276402905cd15529ba8f14d44186d3494f08ffe\\ClientProxyExtensions.cs [Read Only]",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAACAAAAAQAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T05:12:12.978Z",
-              "EditorCaption": " [Read Only]"
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\NavMenu.razor",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\NavMenu.razor",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\NavMenu.razor",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\NavMenu.razor",
+              "ViewState": "AgIAABgAAAAAAAAAAIBJwCkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-03-09T07:13:43.324Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ExecutionContext.cs",
-              "DocumentMoniker": "C:\\Users\\tam.hoang\\AppData\\Local\\Temp\\.vsdbgsrc\\50c0acac28e5ef4e47c0d0892746a521e2628a81ba670fd5f7ce0c672bd8ca89\\ExecutionContext.cs",
-              "ToolTip": "C:\\Users\\tam.hoang\\AppData\\Local\\Temp\\.vsdbgsrc\\50c0acac28e5ef4e47c0d0892746a521e2628a81ba670fd5f7ce0c672bd8ca89\\ExecutionContext.cs [Read Only]",
-              "ViewState": "AgIAALMAAAAAAAAAAADwv8oAAAACAAAAAQAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Program.cs",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Program.cs",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Program.cs",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Program.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T05:12:14.367Z",
-              "EditorCaption": " [Read Only]"
+              "WhenOpened": "2023-02-08T07:46:44.593Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Mapper\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Mapper\\MappingProfile.cs",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Mapper\\MappingProfile.cs",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Mapper\\MappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T06:50:56.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MultipleDropDownList.razor.cs",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor.cs",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor.cs",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor.cs",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-08T05:04:03.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Error.cshtml.cs",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Error.cshtml.cs",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Error.cshtml.cs",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Error.cshtml.cs",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Error.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T08:23:26.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\appsettings.Development.json",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\appsettings.Development.json",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-14T07:14:02.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ClientLayout.razor",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\ClientLayout.razor",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\ClientLayout.razor",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\ClientLayout.razor",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\ClientLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-03-10T07:39:22.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\MainLayout.razor",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\MainLayout.razor",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\MainLayout.razor",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-03-09T07:13:41.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "App.razor",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\App.razor",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\App.razor",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\App.razor",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-03-09T07:12:22.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "SurveyPrompt.razor",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\SurveyPrompt.razor",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\SurveyPrompt.razor",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\SurveyPrompt.razor",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\SurveyPrompt.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-03-09T07:13:47.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "NavMenu.razor.css",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\NavMenu.razor.css",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\NavMenu.razor.css",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\NavMenu.razor.css",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\NavMenu.razor.css",
+              "ViewState": "AgIAAB4AAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-03T08:25:17.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "custom-function.js",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\js\\custom-function.js",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\js\\custom-function.js",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\js\\custom-function.js",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\js\\custom-function.js",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAiwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2023-03-09T03:24:34.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "DropDownItemData.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\Component\\DropDownItemData.cs",
               "RelativeDocumentMoniker": "Models\\Component\\DropDownItemData.cs",
@@ -495,7 +732,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 27,
+              "Title": "ExecutionContext.cs",
+              "DocumentMoniker": "C:\\Users\\tam.hoang\\AppData\\Local\\Temp\\.vsdbgsrc\\50c0acac28e5ef4e47c0d0892746a521e2628a81ba670fd5f7ce0c672bd8ca89\\ExecutionContext.cs",
+              "ToolTip": "C:\\Users\\tam.hoang\\AppData\\Local\\Temp\\.vsdbgsrc\\50c0acac28e5ef4e47c0d0892746a521e2628a81ba670fd5f7ce0c672bd8ca89\\ExecutionContext.cs",
+              "ViewState": "AgIAALMAAAAAAAAAAADwv8oAAAACAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-08T05:12:14.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ClientProxyExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\tam.hoang\\AppData\\Local\\Temp\\.vsdbgsrc\\4bd458c67fb2e250596d5439e276402905cd15529ba8f14d44186d3494f08ffe\\ClientProxyExtensions.cs",
+              "ToolTip": "C:\\Users\\tam.hoang\\AppData\\Local\\Temp\\.vsdbgsrc\\4bd458c67fb2e250596d5439e276402905cd15529ba8f14d44186d3494f08ffe\\ClientProxyExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAACAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-08T05:12:12.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "MultipleDropDownList.razor.css",
+              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor.css",
+              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor.css",
+              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor.css",
+              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\MultipleDropDownList.razor.css",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAqwHAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-08T04:35:37.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "RendererSynchronizationContext.cs",
+              "DocumentMoniker": "C:\\Users\\tam.hoang\\AppData\\Local\\SourceServer\\1bcbc03152324a656382d0380fae6f85898ed2d4d38750668e71040888368d14\\src\\Components\\Components\\src\\Rendering\\RendererSynchronizationContext.cs",
+              "ToolTip": "C:\\Users\\tam.hoang\\AppData\\Local\\SourceServer\\1bcbc03152324a656382d0380fae6f85898ed2d4d38750668e71040888368d14\\src\\Components\\Components\\src\\Rendering\\RendererSynchronizationContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-08T09:50:57.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "DropDownList.razor",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\DropDownList.razor",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\DropDownList.razor",
@@ -508,20 +791,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 29,
               "Title": "NewContest.razor",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\NewContest.razor",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\NewContest.razor",
               "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\NewContest.razor",
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\NewContest.razor",
-              "ViewState": "AgIAAL8AAAAAAAAAAAAkwKoAAADtAAAAAAAAAA==",
+              "ViewState": "AgIAAL8AAAAAAAAAAAAkwKoAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2023-02-07T18:27:09.418Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 28,
               "Title": "RemoteJSRuntime.cs",
               "DocumentMoniker": "C:\\Users\\tam.hoang\\AppData\\Local\\SourceServer\\6faacbe7f151ee442097b7b1778956eecba903237c198d3318d5f20e5e9726c7\\src\\Components\\Server\\src\\Circuits\\RemoteJSRuntime.cs",
               "ToolTip": "C:\\Users\\tam.hoang\\AppData\\Local\\SourceServer\\6faacbe7f151ee442097b7b1778956eecba903237c198d3318d5f20e5e9726c7\\src\\Components\\Server\\src\\Circuits\\RemoteJSRuntime.cs",
@@ -532,7 +815,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 26,
               "Title": "ComponentBase.cs",
               "DocumentMoniker": "C:\\Users\\tam.hoang\\AppData\\Local\\SourceServer\\a393219ddd6ee10a07a9596b9debf291e5892e2697e9c11dfa5247970faa8faf\\src\\Components\\Components\\src\\ComponentBase.cs",
               "ToolTip": "C:\\Users\\tam.hoang\\AppData\\Local\\SourceServer\\a393219ddd6ee10a07a9596b9debf291e5892e2697e9c11dfa5247970faa8faf\\src\\Components\\Components\\src\\ComponentBase.cs",
@@ -543,7 +826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 32,
               "Title": "Index.razor",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Index.razor",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Index.razor",
@@ -556,7 +839,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 31,
               "Title": "ComponentState.cs",
               "DocumentMoniker": "C:\\Users\\tam.hoang\\AppData\\Local\\SourceServer\\f553f35f9f7b95fe8bff87132230d05790f1424222505cff30a70a2347f1061e\\src\\Components\\Components\\src\\Rendering\\ComponentState.cs",
               "ToolTip": "C:\\Users\\tam.hoang\\AppData\\Local\\SourceServer\\f553f35f9f7b95fe8bff87132230d05790f1424222505cff30a70a2347f1061e\\src\\Components\\Components\\src\\Rendering\\ComponentState.cs",
@@ -567,7 +850,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 33,
               "Title": "RegexValidationService.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Implement\\RegexValidationService.cs",
               "RelativeDocumentMoniker": "Service\\Implement\\RegexValidationService.cs",
@@ -580,29 +863,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 34,
               "Title": "Renderer.cs",
               "DocumentMoniker": "C:\\Users\\tam.hoang\\AppData\\Local\\Temp\\.vsdbgsrc\\3adaeae50d39dc7423a3f8e9deff6d632d6036ab37d8b32baf8dc2c4ada3ecc4\\Renderer.cs",
-              "ToolTip": "C:\\Users\\tam.hoang\\AppData\\Local\\Temp\\.vsdbgsrc\\3adaeae50d39dc7423a3f8e9deff6d632d6036ab37d8b32baf8dc2c4ada3ecc4\\Renderer.cs [Read Only]",
+              "ToolTip": "C:\\Users\\tam.hoang\\AppData\\Local\\Temp\\.vsdbgsrc\\3adaeae50d39dc7423a3f8e9deff6d632d6036ab37d8b32baf8dc2c4ada3ecc4\\Renderer.cs",
               "ViewState": "AgIAAJ4CAAAAAAAAAAAIwLkCAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-08T05:12:11.247Z",
-              "EditorCaption": " [Read Only]"
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 35,
               "Title": "ComponentBase.cs",
               "DocumentMoniker": "C:\\Users\\tam.hoang\\AppData\\Local\\Temp\\.vsdbgsrc\\58d282ff72923984c4bfa1e5e1ccf6e285259766942a05c5cec4dab8f4345f4c\\ComponentBase.cs",
-              "ToolTip": "C:\\Users\\tam.hoang\\AppData\\Local\\Temp\\.vsdbgsrc\\58d282ff72923984c4bfa1e5e1ccf6e285259766942a05c5cec4dab8f4345f4c\\ComponentBase.cs [Read Only]",
+              "ToolTip": "C:\\Users\\tam.hoang\\AppData\\Local\\Temp\\.vsdbgsrc\\58d282ff72923984c4bfa1e5e1ccf6e285259766942a05c5cec4dab8f4345f4c\\ComponentBase.cs",
               "ViewState": "AgIAAH4AAAAAAAAAAAAIwKEAAAADAAAAAQAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-08T05:12:07.28Z",
-              "EditorCaption": " [Read Only]"
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 37,
               "Title": "Toasts.razor",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\Toasts\\Toasts.razor",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\Toasts\\Toasts.razor",
@@ -615,20 +898,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 36,
               "Title": "SMSDOME-Standard-Contest-BlazorServer.csproj",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj",
               "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj",
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAkAAABhAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAIBJwAkAAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-12-12T06:53:15.396Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 41,
               "Title": "MainLayout.razor.css",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\MainLayout.razor.css",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\MainLayout.razor.css",
@@ -636,23 +919,12 @@
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\MainLayout.razor.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-03T08:25:21.415Z"
+              "WhenOpened": "2025-01-03T08:25:21.415Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "MainLayout.razor",
-              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\MainLayout.razor",
-              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\MainLayout.razor",
-              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\MainLayout.razor",
-              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\MainLayout.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-03-09T07:13:41.629Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 40,
               "Title": "ToastService.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Implement\\ToastService.cs",
               "RelativeDocumentMoniker": "Service\\Implement\\ToastService.cs",
@@ -660,11 +932,12 @@
               "RelativeToolTip": "Service\\Implement\\ToastService.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAqwBsAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T09:42:45.02Z"
+              "WhenOpened": "2024-12-30T09:42:45.02Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 38,
               "Title": "Gateway.razor",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Gateway.razor",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Gateway.razor",
@@ -672,59 +945,25 @@
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Gateway.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-03-17T03:03:42.315Z"
+              "WhenOpened": "2023-03-17T03:03:42.315Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 39,
               "Title": "NewRegexValidationPopup.razor",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\NewRegexValidationPopup.razor",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\NewRegexValidationPopup.razor",
               "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\NewRegexValidationPopup.razor",
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\NewRegexValidationPopup.razor",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAACNAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwBsAAACNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-12T10:43:52.54Z"
+              "WhenOpened": "2024-12-12T10:43:52.54Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\NavMenu.razor",
-              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\NavMenu.razor",
-              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\NavMenu.razor",
-              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\NavMenu.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-03-09T07:13:43.324Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Error.cshtml.cs",
-              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Error.cshtml.cs",
-              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Error.cshtml.cs",
-              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Error.cshtml.cs",
-              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Error.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T08:23:26.763Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "NavMenu.razor.css",
-              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\NavMenu.razor.css",
-              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\NavMenu.razor.css",
-              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\NavMenu.razor.css",
-              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\NavMenu.razor.css",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-03T08:25:17.119Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 44,
               "Title": "Entries.razor",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Entries.razor",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Entries.razor",
@@ -732,11 +971,12 @@
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Entries.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-02-07T18:33:27.045Z"
+              "WhenOpened": "2023-02-07T18:33:27.045Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 45,
               "Title": "FetchData.razor",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\FetchData.razor",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\FetchData.razor",
@@ -744,11 +984,12 @@
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\FetchData.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-26T08:41:18.435Z"
+              "WhenOpened": "2024-08-26T08:41:18.435Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 42,
               "Title": "Error.cshtml",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Error.cshtml",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Error.cshtml",
@@ -756,11 +997,12 @@
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Error.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-02-07T18:59:04.326Z"
+              "WhenOpened": "2023-02-07T18:59:04.326Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 43,
               "Title": "CustomForm.razor",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\CustomForm.razor",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\CustomForm.razor",
@@ -768,11 +1010,12 @@
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\CustomForm.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-02-08T07:54:12.677Z"
+              "WhenOpened": "2023-02-08T07:54:12.677Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 46,
               "Title": "dropdownlist.css",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\dropdownlist.css",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\dropdownlist.css",
@@ -780,23 +1023,25 @@
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\dropdownlist.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAawA0AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-03T04:25:30.553Z"
+              "WhenOpened": "2025-01-03T04:25:30.553Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 47,
               "Title": "toast.css",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\toast.css",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\toast.css",
               "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\toast.css",
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\toast.css",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACkAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAIBJwCkAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-03T01:33:01.062Z"
+              "WhenOpened": "2025-01-03T01:33:01.062Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 48,
               "Title": "site.css",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\site.css",
@@ -804,83 +1049,51 @@
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\site.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-08-26T08:49:44.617Z"
+              "WhenOpened": "2024-08-26T08:49:44.617Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 49,
               "Title": "Custom.css",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\Custom.css",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\Custom.css",
               "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\Custom.css",
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\Custom.css",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAIBJwBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-08-26T08:49:43.161Z"
+              "WhenOpened": "2024-08-26T08:49:43.161Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "custom-function.js",
-              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\js\\custom-function.js",
-              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\js\\custom-function.js",
-              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\js\\custom-function.js",
-              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\js\\custom-function.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAA6wBQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2023-03-09T03:24:34.785Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\_Layout.cshtml",
-              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\_Layout.cshtml",
-              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-03-09T07:14:26.483Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 50,
               "Title": "Contest.razor",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Contest.razor",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Contest.razor",
               "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Contest.razor",
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Contest.razor",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAAsAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAIBJwAsAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-03-09T07:59:12.931Z"
+              "WhenOpened": "2023-03-09T07:59:12.931Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "SurveyPrompt.razor",
-              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\SurveyPrompt.razor",
-              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\SurveyPrompt.razor",
-              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\SurveyPrompt.razor",
-              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\SurveyPrompt.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-03-09T07:13:47.707Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 51,
               "Title": "NewContestInfomation.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\DTO\\NewContestInfomation.cs",
               "RelativeDocumentMoniker": "Models\\DTO\\NewContestInfomation.cs",
               "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\DTO\\NewContestInfomation.cs",
               "RelativeToolTip": "Models\\DTO\\NewContestInfomation.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAUwDEAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAywDEAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T03:56:43.158Z"
+              "WhenOpened": "2024-12-11T03:56:43.158Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 52,
               "Title": "Toast.razor",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\Toasts\\Toast.razor",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\Toasts\\Toast.razor",
@@ -888,23 +1101,12 @@
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Component\\Toasts\\Toast.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-30T10:13:38.177Z"
+              "WhenOpened": "2024-12-30T10:13:38.177Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "_Host.cshtml",
-              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\_Host.cshtml",
-              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\_Host.cshtml",
-              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\_Host.cshtml",
-              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\_Host.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-26T08:49:19.104Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 53,
               "Title": "bootstrap.min.css",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
@@ -912,11 +1114,12 @@
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAB4AQAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-08-26T08:43:42.631Z"
+              "WhenOpened": "2024-08-26T08:43:42.631Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 54,
               "Title": "NewRegexValidation.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\DTO\\NewRegexValidation.cs",
               "RelativeDocumentMoniker": "Models\\DTO\\NewRegexValidation.cs",
@@ -924,11 +1127,12 @@
               "RelativeToolTip": "Models\\DTO\\NewRegexValidation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T06:44:12.275Z"
+              "WhenOpened": "2024-12-12T06:44:12.275Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 55,
               "Title": "IRegexValidationService.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Interface\\IRegexValidationService.cs",
               "RelativeDocumentMoniker": "Service\\Interface\\IRegexValidationService.cs",
@@ -936,47 +1140,38 @@
               "RelativeToolTip": "Service\\Interface\\IRegexValidationService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T06:48:55.524Z"
+              "WhenOpened": "2025-01-02T06:48:55.524Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "ClientLayout.razor",
-              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\ClientLayout.razor",
-              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\ClientLayout.razor",
-              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Shared\\ClientLayout.razor",
-              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Shared\\ClientLayout.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-03-10T07:39:22.105Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 56,
               "Title": "IToastService.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Interface\\IToastService.cs",
               "RelativeDocumentMoniker": "Service\\Interface\\IToastService.cs",
               "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Interface\\IToastService.cs",
               "RelativeToolTip": "Service\\Interface\\IToastService.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAAA8AAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAABBwA8AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T09:31:02.959Z"
+              "WhenOpened": "2024-12-30T09:31:02.959Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 57,
               "Title": "PickWinner.razor",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\PickWinner.razor",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\PickWinner.razor",
               "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\PickWinner.razor",
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\PickWinner.razor",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-14T07:13:36.055Z"
+              "WhenOpened": "2024-03-14T07:13:36.055Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 58,
               "Title": "ToastInstance.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\ToastConfig\\ToastInstance.cs",
               "RelativeDocumentMoniker": "Models\\ToastConfig\\ToastInstance.cs",
@@ -984,11 +1179,12 @@
               "RelativeToolTip": "Models\\ToastConfig\\ToastInstance.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T09:35:28.704Z"
+              "WhenOpened": "2024-12-30T09:35:28.704Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 59,
               "Title": "ToastPosition.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\ToastConfig\\ToastPosition.cs",
               "RelativeDocumentMoniker": "Models\\ToastConfig\\ToastPosition.cs",
@@ -996,11 +1192,12 @@
               "RelativeToolTip": "Models\\ToastConfig\\ToastPosition.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T09:38:44.349Z"
+              "WhenOpened": "2024-12-30T09:38:44.349Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 60,
               "Title": "ToastSettings.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\ToastConfig\\ToastSettings.cs",
               "RelativeDocumentMoniker": "Models\\ToastConfig\\ToastSettings.cs",
@@ -1008,11 +1205,12 @@
               "RelativeToolTip": "Models\\ToastConfig\\ToastSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T09:36:36.056Z"
+              "WhenOpened": "2024-12-30T09:36:36.056Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 61,
               "Title": "Services.csproj",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Services.csproj",
               "RelativeDocumentMoniker": "Service\\Services.csproj",
@@ -1025,7 +1223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 62,
               "Title": "IEntriesService.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Interface\\IEntriesService.cs",
               "RelativeDocumentMoniker": "Service\\Interface\\IEntriesService.cs",
@@ -1033,11 +1231,12 @@
               "RelativeToolTip": "Service\\Interface\\IEntriesService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAACCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-02-07T18:58:45.791Z"
+              "WhenOpened": "2023-02-07T18:58:45.791Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 63,
               "Title": "ToastLevel.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\ToastConfig\\ToastLevel.cs",
               "RelativeDocumentMoniker": "Models\\ToastConfig\\ToastLevel.cs",
@@ -1045,11 +1244,12 @@
               "RelativeToolTip": "Models\\ToastConfig\\ToastLevel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T09:40:45.008Z"
+              "WhenOpened": "2024-12-30T09:40:45.008Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 64,
               "Title": "bootstrap.min.css.map",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
@@ -1057,23 +1257,12 @@
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-01-02T03:56:41.533Z"
+              "WhenOpened": "2025-01-02T03:56:41.533Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Mapper\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Mapper\\MappingProfile.cs",
-              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Mapper\\MappingProfile.cs",
-              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Mapper\\MappingProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T06:50:56.715Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 65,
               "Title": "RegexValidation.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\Models\\RegexValidation.cs",
               "RelativeDocumentMoniker": "Models\\Models\\RegexValidation.cs",
@@ -1081,23 +1270,25 @@
               "RelativeToolTip": "Models\\Models\\RegexValidation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T06:45:49.28Z"
+              "WhenOpened": "2024-08-29T06:45:49.28Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 66,
               "Title": "OnlinePage.razor",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\OnlinePage.razor",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\OnlinePage.razor",
               "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\OnlinePage.razor",
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\OnlinePage.razor",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAF0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAIBJwF0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-02-07T18:31:07.135Z"
+              "WhenOpened": "2023-02-07T18:31:07.135Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 67,
               "Title": "Winner.razor",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Winner.razor",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Winner.razor",
@@ -1105,23 +1296,12 @@
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Winner.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-10T08:50:52.456Z"
+              "WhenOpened": "2024-12-10T08:50:52.456Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\_Imports.razor",
-              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\_Imports.razor",
-              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\_Imports.razor",
-              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\_Imports.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-03-09T07:12:21.093Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 68,
               "Title": "Counter.razor",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Pages\\Counter.razor",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Counter.razor",
@@ -1129,11 +1309,12 @@
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Pages\\Counter.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-03-09T05:07:02.792Z"
+              "WhenOpened": "2023-03-09T05:07:02.792Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 69,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\appsettings.json",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\appsettings.json",
@@ -1141,23 +1322,12 @@
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2023-03-09T07:12:23.204Z"
+              "WhenOpened": "2023-03-09T07:12:23.204Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
-              "Title": "App.razor",
-              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\App.razor",
-              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\App.razor",
-              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\App.razor",
-              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\App.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-03-09T07:12:22.077Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 70,
               "Title": "web.config",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\web.config",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\web.config",
@@ -1165,35 +1335,25 @@
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\web.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-12-30T09:45:19.055Z"
+              "WhenOpened": "2024-12-30T09:45:19.055Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Program.cs",
-              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\Program.cs",
-              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\Program.cs",
-              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACAAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-02-08T07:46:44.593Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 71,
               "Title": "ContestFieldDetailsService.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Implement\\ContestFieldDetailsService.cs",
               "RelativeDocumentMoniker": "Service\\Implement\\ContestFieldDetailsService.cs",
               "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Implement\\ContestFieldDetailsService.cs",
               "RelativeToolTip": "Service\\Implement\\ContestFieldDetailsService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwB8AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T09:34:00.483Z"
+              "WhenOpened": "2024-12-30T09:34:00.483Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 72,
               "Title": "ContestService.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Implement\\ContestService.cs",
               "RelativeDocumentMoniker": "Service\\Implement\\ContestService.cs",
@@ -1206,7 +1366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 74,
               "Title": "GenericRepository.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Repository\\Implement\\GenericRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Implement\\GenericRepository.cs",
@@ -1214,11 +1374,12 @@
               "RelativeToolTip": "Repository\\Implement\\GenericRepository.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAASwDcAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-02-07T18:52:40.765Z"
+              "WhenOpened": "2023-02-07T18:52:40.765Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 75,
               "Title": "IGenericRepository.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Repository\\Interface\\IGenericRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Interface\\IGenericRepository.cs",
@@ -1226,11 +1387,12 @@
               "RelativeToolTip": "Repository\\Interface\\IGenericRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-02-08T18:50:04.34Z"
+              "WhenOpened": "2023-02-08T18:50:04.34Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 73,
               "Title": "IContestService.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Interface\\IContestService.cs",
               "RelativeDocumentMoniker": "Service\\Interface\\IContestService.cs",
@@ -1238,11 +1400,12 @@
               "RelativeToolTip": "Service\\Interface\\IContestService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T10:18:00.727Z"
+              "WhenOpened": "2024-12-12T10:18:00.727Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 76,
               "Title": "EntriesService.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Implement\\EntriesService.cs",
               "RelativeDocumentMoniker": "Service\\Implement\\EntriesService.cs",
@@ -1255,7 +1418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 77,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Repository\\Implement\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "Repository\\Implement\\UnitOfWork.cs",
@@ -1263,11 +1426,12 @@
               "RelativeToolTip": "Repository\\Implement\\UnitOfWork.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAtwEkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-02-08T07:49:30.683Z"
+              "WhenOpened": "2023-02-08T07:49:30.683Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 78,
               "Title": "OnlinePageInfomation.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\DTO\\OnlinePageInfomation.cs",
               "RelativeDocumentMoniker": "Models\\DTO\\OnlinePageInfomation.cs",
@@ -1275,11 +1439,12 @@
               "RelativeToolTip": "Models\\DTO\\OnlinePageInfomation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwBMAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-01-04T10:52:13.033Z"
+              "WhenOpened": "2023-01-04T10:52:13.033Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 80,
               "Title": "ContestFieldDetails.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\Models\\ContestFieldDetails.cs",
               "RelativeDocumentMoniker": "Models\\Models\\ContestFieldDetails.cs",
@@ -1287,11 +1452,12 @@
               "RelativeToolTip": "Models\\Models\\ContestFieldDetails.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAQwA0AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T06:46:09.335Z"
+              "WhenOpened": "2024-08-29T06:46:09.335Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 81,
               "Title": "ContestFields.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\Models\\ContestFields.cs",
               "RelativeDocumentMoniker": "Models\\Models\\ContestFields.cs",
@@ -1299,11 +1465,12 @@
               "RelativeToolTip": "Models\\Models\\ContestFields.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T06:42:47.525Z"
+              "WhenOpened": "2024-08-29T06:42:47.525Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 79,
               "Title": "Option.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\DTO\\Option.cs",
               "RelativeDocumentMoniker": "Models\\DTO\\Option.cs",
@@ -1311,11 +1478,12 @@
               "RelativeToolTip": "Models\\DTO\\Option.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-02-01T03:56:53.237Z"
+              "WhenOpened": "2023-02-01T03:56:53.237Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 83,
               "Title": "ContestOverView.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\DTO\\ContestOverView.cs",
               "RelativeDocumentMoniker": "Models\\DTO\\ContestOverView.cs",
@@ -1323,11 +1491,12 @@
               "RelativeToolTip": "Models\\DTO\\ContestOverView.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-01-04T10:52:20.13Z"
+              "WhenOpened": "2023-01-04T10:52:20.13Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 82,
               "Title": "FunctionResults.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\DTO\\FunctionResults.cs",
               "RelativeDocumentMoniker": "Models\\DTO\\FunctionResults.cs",
@@ -1335,23 +1504,12 @@
               "RelativeToolTip": "Models\\DTO\\FunctionResults.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-01-04T10:37:50.755Z"
+              "WhenOpened": "2023-01-04T10:37:50.755Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\appsettings.Development.json",
-              "ToolTip": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\appsettings.Development.json",
-              "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-14T07:14:02.638Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 84,
               "Title": "LinqToSQLRepository.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Repository\\Implement\\LinqToSQLRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Implement\\LinqToSQLRepository.cs",
@@ -1359,11 +1517,12 @@
               "RelativeToolTip": "Repository\\Implement\\LinqToSQLRepository.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAawB4AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-02-07T18:41:55.053Z"
+              "WhenOpened": "2023-02-07T18:41:55.053Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 85,
               "Title": "Contest.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\Models\\Contest.cs",
               "RelativeDocumentMoniker": "Models\\Models\\Contest.cs",
@@ -1371,11 +1530,12 @@
               "RelativeToolTip": "Models\\Models\\Contest.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAxwAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-02-07T18:58:56.676Z"
+              "WhenOpened": "2023-02-07T18:58:56.676Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 86,
               "Title": "CustomClassBuilder.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Common\\CustomClassBuilder.cs",
               "RelativeDocumentMoniker": "Service\\Common\\CustomClassBuilder.cs",
@@ -1383,11 +1543,12 @@
               "RelativeToolTip": "Service\\Common\\CustomClassBuilder.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAowAoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-03-09T09:40:03.519Z"
+              "WhenOpened": "2023-03-09T09:40:03.519Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 87,
               "Title": "Helper.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Common\\Helper.cs",
               "RelativeDocumentMoniker": "Service\\Common\\Helper.cs",
@@ -1400,7 +1561,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 107,
               "Title": "20240830034841_init_1.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\Migrations\\20240830034841_init_1.cs",
               "RelativeDocumentMoniker": "Models\\Migrations\\20240830034841_init_1.cs",
@@ -1408,11 +1569,12 @@
               "RelativeToolTip": "Models\\Migrations\\20240830034841_init_1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-04T04:22:09.961Z"
+              "WhenOpened": "2024-09-04T04:22:09.961Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 89,
               "Title": "StandardContest2023Context.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\Models\\StandardContest2023Context.cs",
               "RelativeDocumentMoniker": "Models\\Models\\StandardContest2023Context.cs",
@@ -1420,11 +1582,12 @@
               "RelativeToolTip": "Models\\Models\\StandardContest2023Context.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAwBQAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-02-07T18:26:44.152Z"
+              "WhenOpened": "2023-02-07T18:26:44.152Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 106,
               "Title": "20240829090446_init.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\Migrations\\20240829090446_init.cs",
               "RelativeDocumentMoniker": "Models\\Migrations\\20240829090446_init.cs",
@@ -1432,11 +1595,12 @@
               "RelativeToolTip": "Models\\Migrations\\20240829090446_init.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T02:04:27.056Z"
+              "WhenOpened": "2024-08-30T02:04:27.056Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 88,
               "Title": "IContestFieldDetailsRepository.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Repository\\Interface\\IContestFieldDetailsRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Interface\\IContestFieldDetailsRepository.cs",
@@ -1444,11 +1608,12 @@
               "RelativeToolTip": "Repository\\Interface\\IContestFieldDetailsRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T09:03:30.06Z"
+              "WhenOpened": "2024-08-29T09:03:30.06Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 90,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Repository\\Interface\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "Repository\\Interface\\IUnitOfWork.cs",
@@ -1456,11 +1621,12 @@
               "RelativeToolTip": "Repository\\Interface\\IUnitOfWork.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T08:53:56.005Z"
+              "WhenOpened": "2024-08-29T08:53:56.005Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 92,
               "Title": "IContestFieldsRepository.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Repository\\Interface\\IContestFieldsRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Interface\\IContestFieldsRepository.cs",
@@ -1468,11 +1634,12 @@
               "RelativeToolTip": "Repository\\Interface\\IContestFieldsRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T08:54:41.29Z"
+              "WhenOpened": "2024-08-29T08:54:41.29Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 91,
               "Title": "ContestFieldsRepository.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Repository\\Implement\\ContestFieldsRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Implement\\ContestFieldsRepository.cs",
@@ -1480,11 +1647,12 @@
               "RelativeToolTip": "Repository\\Implement\\ContestFieldsRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T08:55:30.584Z"
+              "WhenOpened": "2024-08-29T08:55:30.584Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 93,
               "Title": "ILinqToSQLRepository.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Repository\\Interface\\ILinqToSQLRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Interface\\ILinqToSQLRepository.cs",
@@ -1492,11 +1660,12 @@
               "RelativeToolTip": "Repository\\Interface\\ILinqToSQLRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-02-07T19:03:17.434Z"
+              "WhenOpened": "2023-02-07T19:03:17.434Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 94,
               "Title": "20240829072502_init.cs",
               "DocumentMoniker": "D:\\NET CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\Migrations\\20240829072502_init.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\NET CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\Migrations\\20240829072502_init.cs",
@@ -1507,7 +1676,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 95,
               "Title": "20240829072335_init.cs",
               "DocumentMoniker": "D:\\NET CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\Migrations\\20240829072335_init.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\NET CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\Migrations\\20240829072335_init.cs",
@@ -1518,7 +1687,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 96,
               "Title": "20240829071257_init.cs",
               "DocumentMoniker": "D:\\NET CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\Migrations\\20240829071257_init.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\NET CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\Migrations\\20240829071257_init.cs",
@@ -1529,7 +1698,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 97,
               "Title": "open-iconic-bootstrap.min.css",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
               "RelativeDocumentMoniker": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
@@ -1537,11 +1706,12 @@
               "RelativeToolTip": "SMSDOME-Standard-Contest-BlazorServer\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-08-26T08:49:35.378Z"
+              "WhenOpened": "2024-08-26T08:49:35.378Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 98,
               "Title": "DBScript.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\Constants\\DBScript.cs",
               "RelativeDocumentMoniker": "Models\\Constants\\DBScript.cs",
@@ -1549,11 +1719,12 @@
               "RelativeToolTip": "Models\\Constants\\DBScript.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAQwEEAAAB7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-01-04T08:23:50.468Z"
+              "WhenOpened": "2023-01-04T08:23:50.468Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 99,
               "Title": "RegexValidationRepository.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Repository\\Implement\\RegexValidationRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Implement\\RegexValidationRepository.cs",
@@ -1561,11 +1732,12 @@
               "RelativeToolTip": "Repository\\Implement\\RegexValidationRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-04-25T19:29:55.603Z"
+              "WhenOpened": "2023-04-25T19:29:55.603Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 100,
               "Title": "Services",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Service\\Services.csproj",
               "RelativeDocumentMoniker": "Service\\Services.csproj",
@@ -1577,7 +1749,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 101,
               "Title": "ContestFieldDetailsRepository.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Repository\\Implement\\ContestFieldDetailsRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Implement\\ContestFieldDetailsRepository.cs",
@@ -1585,11 +1757,12 @@
               "RelativeToolTip": "Repository\\Implement\\ContestFieldDetailsRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-02-08T18:49:44.654Z"
+              "WhenOpened": "2023-02-08T18:49:44.654Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 102,
               "Title": "ContestRepository.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Repository\\Implement\\ContestRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Implement\\ContestRepository.cs",
@@ -1597,11 +1770,12 @@
               "RelativeToolTip": "Repository\\Implement\\ContestRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-02-07T18:54:00.108Z"
+              "WhenOpened": "2023-02-07T18:54:00.108Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 104,
               "Title": "TableName.cs",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\Constants\\TableName.cs",
               "RelativeDocumentMoniker": "Models\\Constants\\TableName.cs",
@@ -1609,21 +1783,23 @@
               "RelativeToolTip": "Models\\Constants\\TableName.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-01-31T02:57:24.737Z"
+              "WhenOpened": "2023-01-31T02:57:24.737Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 103,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ViewState": "AgIAAAQSAAAAAAAAAAAuwBYSAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2023-02-07T10:57:24.456Z"
+              "WhenOpened": "2023-02-07T10:57:24.456Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 105,
               "Title": "Entities.csproj",
               "DocumentMoniker": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\SMSDOME-Standard-Contest\\Models\\Entities.csproj",
               "RelativeDocumentMoniker": "Models\\Entities.csproj",

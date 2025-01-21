@@ -5,14 +5,19 @@ using Entities.Constants;
 using Entities.DTO;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json.Linq;
+using Services.Common;
 using Services.Interface;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Services.Implement
@@ -24,7 +29,7 @@ namespace Services.Implement
         private SqlConnection _sqlConnection;
         private IConfiguration _config;
 
-        public EntriesService(IUnitOfWork unitOfWork, IMapper mapper, SqlConnection sqlConnection, IConfiguration config )
+        public EntriesService(IUnitOfWork unitOfWork, IMapper mapper, SqlConnection sqlConnection, IConfiguration config)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -134,7 +139,7 @@ namespace Services.Implement
                 response.Message = "Insert Entry Successfully";
                 await _sqlConnection.CloseAsync();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 await _sqlConnection.CloseAsync();
                 response.IsSuccess = false;
@@ -181,6 +186,23 @@ namespace Services.Implement
                 await _sqlConnection.CloseAsync();
             }
             return response;
+        }
+
+        public Task<FunctionResults<string>> APISubmitEntry(Parameters parameters, string contestUniqueCode)
+        {
+            // DateEntry, EntryText, IsValid, Reason, Response, VerificationCode, Chances, EntrySource,
+            var defaultProps = new Dictionary<string, object> { { "IsVerified", 0 }, { "IsRejected", 0 }, { "DateEntry", DateTime.UtcNow } };
+            var nameTable = "BC_" + contestUniqueCode;
+            if (parameters.EntrySource.Equals("Sms", StringComparison.InvariantCultureIgnoreCase))
+            {
+                defaultProps.Add("EntrySource", "SMS");
+            }
+            else if (parameters.EntrySource.Equals("Whatsapp", StringComparison.InvariantCultureIgnoreCase))
+            {
+                defaultProps.Add("EntrySource", "Whatsapp");
+            }
+            FunctionResults<string> response = new FunctionResults<string>();
+            var CleanedMessage = Helper.CleanMessage(parameters);
         }
     }
 }

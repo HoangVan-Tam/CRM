@@ -13,7 +13,7 @@
                     <div style="width: fit-content; z-index: 10">
                         <p class="selected-item-text">
                             <span>
-                                @item.Text
+                                @DataSource.Where(p=>p.Id == item.Id).FirstOrDefault()?.Text
                             </span>
                             <span @onclick="@(e => OnClickedItem(item))"><i class="bi bi-x"></i></span>
                         </p>

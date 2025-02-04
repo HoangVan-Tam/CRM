@@ -22,11 +22,11 @@ namespace Services.Implement
         }
 
         public async Task<FunctionResults<List<OnlinePageInfomation>>> GetAllFielsdOfTheContestForOnlinePageAsync(string contestUniqueCode)
-        { 
+        {
             FunctionResults<List<OnlinePageInfomation>> response = new FunctionResults<List<OnlinePageInfomation>>();
             try
             {
-                var lstContests = await _unitOfWork.ContestFieldDetail.FindAllWithIncludeAsync(p => p.Contest.ContestUniqueCode == contestUniqueCode && p.ShowOnlinePage == true, x=>x.Field);
+                var lstContests = await _unitOfWork.ContestFieldDetail.FindAllWithIncludeAsync(p => p.Contest.ContestUniqueCode == contestUniqueCode && p.ShowOnlinePage == true, x => x.RegexValidation);
                 if (lstContests.Count() > 0)
                 {
                     response.Data = _mapper.Map<List<OnlinePageInfomation>>(lstContests);

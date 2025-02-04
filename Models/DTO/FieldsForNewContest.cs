@@ -30,7 +30,7 @@ namespace Entities.DTO
                 FieldName = temp;
             }
         }
-        public string Regex { get; set; }
+        public int RegexID { get; set; }
         public int Order { get; set; }
         public int FieldId { get; set; }
         public bool ShowOnlinePage { get; set; } = false;

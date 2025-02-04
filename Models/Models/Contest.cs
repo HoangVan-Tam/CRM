@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Entities.Models
 {
     public partial class Contest
-    {       
+    {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ContestID { get; set; }
@@ -21,6 +21,8 @@ namespace Entities.Models
         public DateTime TerminationDate { get; set; }
         public int AppId { get; set; }
         public string AppSecret { get; set; }
+        public string SMSSubmitFields { get; set; }
+        public string? ValidationRegexFull { get; set; }
         public string? ValidSmsresponse { get; set; }
         public string? InvalidSmsresponse { get; set; }
         public string? RepeatedSmsresponse { get; set; }
@@ -30,9 +32,12 @@ namespace Entities.Models
         public string? ValidOnlinePageResponse { get; set; }
         public string? RepeatedOnlinePageResponse { get; set; }
         public string? ValidOnlineCompletionResponse { get; set; }
+        public string? ErrorMessageAmount { get; set; }
         public string? MissingFieldResponse { get; set; }
         public string? EntryExclusionFields { get; set; }
         public string? WinnerExclusionFields { get; set; }
+        public decimal Amount { get; set; }
+        public decimal TierAmount { get; set; } = 0;
 
         public virtual ICollection<ContestFieldDetails> ContestFieldDetails { get; set; }
     }

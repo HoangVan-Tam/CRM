@@ -47,7 +47,7 @@ namespace Entities.DTO
         public string InvalidWhatsappResponse { get; set; }
         public string RepeatedWhatsappResponse { get; set; }
         public string ValidationRegexFull { get; set; }
-        public string SMSFields { get; set; }
+        public string SMSSubmitFields { get; set; }
 
         //Online page response
         public string ValidOnlinePageResponse { get; set; }
@@ -60,6 +60,6 @@ namespace Entities.DTO
         public string EntryExclusionFields { get; set; } = "Response,NRIC_NoPrefix,VerificationCode,Chances,NRIC,EntryText,DateVerified,DateRejected,DateResent,IsRejected,IsVerified";
         public string WinnerExclusionFields { get; set; } = "Response,NRIC_NoPrefix,VerificationCode,Chances,EntrySource,NRIC,IsValid,IsRejected,DateVerified,DateRejected,DateResent,IsVerified,Reason,EntryText";
 
-        List<FieldsForNewContest> contestFields { get; set; }
+        public List<FieldsForNewContest> contestFields { get; set; } = new List<FieldsForNewContest>();
     }
 }

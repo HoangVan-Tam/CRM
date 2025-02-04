@@ -17,7 +17,7 @@ namespace Entities.Models
         }
 
         public virtual DbSet<Contest> Contests { get; set; } = null!;
-        public virtual DbSet<ContestFields> ContestFields { get; set; } = null!;
+        // public virtual DbSet<ContestFields> ContestFields { get; set; } = null!;
         public virtual DbSet<ContestFieldDetails> ContestFieldDetails { get; set; } = null!;
         public virtual DbSet<RegexValidation> RegexValidations { get; set; } = null!;
 

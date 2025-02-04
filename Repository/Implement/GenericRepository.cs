@@ -13,7 +13,7 @@ namespace DAL.Implement
         private StandardContest2023Context _context;
         private DbSet<T> table;
 
-        public GenericRepository (StandardContest2023Context context)
+        public GenericRepository(StandardContest2023Context context)
         {
             _context = context;
             table = _context.Set<T>();
@@ -48,6 +48,17 @@ namespace DAL.Implement
         public async Task<T> FindAsync(Expression<Func<T, bool>> filterExpression)
         {
             return await table.Where(filterExpression).FirstOrDefaultAsync();
+        }
+        public async Task<T> FindAsync(Expression<Func<T, bool>> filterExpression, params Expression<Func<T, Object>>[] includes)
+        {
+            IQueryable<T> query = null;
+            foreach (var include in includes)
+            {
+                query = includes.Aggregate(query,
+                  (current, include) => current.Include(include));
+            }
+            query = query.Where(filterExpression);
+            return await query.FirstOrDefaultAsync();
         }
         public async Task<List<T>> FindAllAsync(Expression<Func<T, bool>> filterExpression)
         {

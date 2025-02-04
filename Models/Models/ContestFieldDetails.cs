@@ -14,17 +14,17 @@ namespace Entities.Models
         public bool? ShowOnlineCompletion { get; set; }
         public bool? IsRequired { get; set; }
         public string? FieldLabel { get; set; }
+        public string? FieldName { get; set; }
+        public string? FormControl { get; set; }
+        public string? FieldType { get; set; }
         [Required]
         public int Order { get; set; }
 
-        [ForeignKey("FieldRefID")]
-        public int FieldID { get; set; }
-        public virtual ContestFields Field { get; set; }
         [ForeignKey("ContestRefID")]
         public int ContestID { get; set; }
         public virtual Contest Contest { get; set; }
         [ForeignKey("RegexValidationRefID")]
-        public string RegexID { get; set; }
+        public int RegexID { get; set; }
         public virtual RegexValidation RegexValidation { get; set; }
     }
 }

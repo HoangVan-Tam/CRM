@@ -87,7 +87,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var (item, index) in lstContestFields.Select((item, index) => (item, index)))
+            @foreach (var (item, index) in newContest.contestFields.Select((item, index) => (item, index)))
             {
                 <tr class="align-middle">
                     <td class="d-flex" style="min-width: 320px">
@@ -125,14 +125,14 @@
                         <InputNumber class="form-control" @bind-Value="item.Order" />
                     </td>
                     <td style="min-width: 320px; display: flex;">
-                        <select for="Regex" class="form-control" value="@item.Regex"
+                        <select for="Regex" class="form-control" value="@item.RegexID"
                             @onchange="@(e => OnSelectRegexValueChange(e,item))">
                             <option value=0 selected>
                                 - Select -
                             </option>
                             @foreach (var regex in lstRegexValidations)
                             {
-                                <option value="@regex.Pattern">
+                                <option value="@regex.ID">
                                     @regex.Name
                                 </option>
                             }
@@ -169,7 +169,7 @@
                 <div class="col-6">
                     <label for="nameContest" class="form-label">Fields</label>
                     <MultipleDropDownList T="string" Label="Field"
-                        DataSource="@lstContestFields.Where(p => !string.IsNullOrEmpty(p.FieldName)).Select(p => new DropDownItemData<string>(){Code = p.Regex, Text = p.FieldName, Id = p.ID }).ToList()"
+                        DataSource="@newContest.contestFields.Where(p => !string.IsNullOrEmpty(p.FieldName)).Select(p => new DropDownItemData<string>(){Code = p.RegexID.ToString(), Text = p.FieldName, Id = p.ID }).ToList()"
                         ValueChanged="FieldsOfSMSOnChange">
                     </MultipleDropDownList>
 
@@ -265,7 +265,6 @@
 
 @code {
     private NewContestInfomation newContest = new NewContestInfomation();
-    public List<FieldsForNewContest> lstContestFields = new List<FieldsForNewContest>();
     private List<RegexValidation> lstRegexValidations = new List<RegexValidation>();
     private List<DropDownItemData<string>> lstContestFieldsForSMS = new List<DropDownItemData<string>>();
     int currentEdit = -1;
@@ -282,7 +281,7 @@
 
     private async Task CreateNewContest()
     {
-        var fields = lstContestFields.Where(p => p.ShowOnlineCompletion == true || p.ShowOnlinePage == true).ToList();
+        var fields = newContest.contestFields.Where(p => p.ShowOnlineCompletion == true || p.ShowOnlinePage == true).ToList();
         var response = await _contestService.CreateNewContestAsync(newContest, fields);
         if (response.IsSuccess)
         {
@@ -297,11 +296,11 @@
 
     private void AddField_Click()
     {
-        lstContestFields.Add(new FieldsForNewContest());
+        newContest.contestFields.Add(new FieldsForNewContest());
     }
     private void RemoveField_Click(FieldsForNewContest field)
     {
-        lstContestFields.Remove(field);
+        newContest.contestFields.Remove(field);
     }
     private void HandleCreateNewRegexClick(RegexValidation arg)
     {
@@ -311,10 +310,10 @@
     private void OnSelectRegexValueChange(ChangeEventArgs __e, FieldsForNewContest selectedField)
     {
         var selectedRegexValue = __e?.Value?.ToString();
-        var field = lstContestFields.Where(p => p.ID == selectedField.ID).FirstOrDefault();
+        var field = newContest.contestFields.Where(p => p.ID == selectedField.ID).FirstOrDefault();
         if (field != null)
         {
-            field.Regex = selectedRegexValue;
+            field.RegexID = Convert.ToInt32(selectedRegexValue);
 
             UpdateSelectedRegexValueForSMS(selectedRegexValue, selectedField);
         }
@@ -323,19 +322,23 @@
     {
         lstContestFieldsForSMS = selectedItems;
         var fields = string.Join(",", selectedItems.Select(p => p.Text).ToList());
-        newContest.SMSFields = fields;
+        newContest.SMSSubmitFields = fields;
 
-        var regexs = selectedItems.Select(p => p.Code).ToList();
+        var selectedRegexIDs = selectedItems.Select(p => Convert.ToInt32(p.Code)).ToList();
         var regexsFullString = "";
-        foreach (var item in regexs)
+        foreach (var item in selectedRegexIDs)
         {
-            if (regexsFullString == "")
+            var regexPattern = lstRegexValidations.Where(p => p.ID == item).Select(p => p.Pattern).FirstOrDefault();
+            if (regexPattern != null)
             {
-                regexsFullString = "(" + item + ")";
-            }
-            else
-            {
-                regexsFullString = regexsFullString + "( " + item + ")";
+                if (regexsFullString == "")
+                {
+                    regexsFullString = "(" + regexPattern + ")";
+                }
+                else
+                {
+                    regexsFullString = regexsFullString + "( " + regexPattern + ")";
+                }
             }
         }
         newContest.ValidationRegexFull = regexsFullString;

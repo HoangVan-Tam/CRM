@@ -28,7 +28,7 @@ namespace DAL.Implement
             await cmd.ExecuteNonQueryAsync();
         }
 
-        public async Task CreateEntriesTableAsync(string nameTable, List<Field> columns, SqlConnection sqlConnection, SqlTransaction sqlTransaction)
+        public async Task CreateEntriesTableAsync(string nameTable, List<FieldsForNewContest> columns, SqlConnection sqlConnection, SqlTransaction sqlTransaction)
         {
             string queryString = Constants.DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD.Replace("230101_KEYWORD", nameTable);
             if (columns.Count() == 0)

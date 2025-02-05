@@ -15,18 +15,12 @@ namespace Entities.Constants
                 "CREATE TABLE [dbo].[BC_230101_KEYWORD]( " +
                 "[EntryID][int] IDENTITY(1, 1) NOT NULL, " +
                 "[DateEntry] [datetime2] (7) NOT NULL, " +
-                "[EntryText] [nvarchar] (500) NOT NULL," +
-                "[IsValid] [bit] NOT NULL, " +
-                "[IsVerified] [bit] NOT NULL, " +
-                "[IsRejected] [bit] NOT NULL, " +
+                "[IsValid] [bit] NOT NULL, " +             
                 "[Reason] [varchar] (250) NOT NULL, " +
                 "[Response] [nvarchar] (500) NOT NULL, " +
                 "[VerificationCode] [varchar] (20) NOT NULL, " +
                 "[Chances] [int] NOT NULL, " +
-                "[EntrySource] [varchar] (50) NOT NULL, " +
-                "[DateResent] [datetime2] (7) NULL, " +
-                "[DateVerified][datetime2] (7) NULL, " +
-                "[DateRejected][datetime2] (7) NULL, " +
+                "[EntrySource] [varchar] (50) NOT NULL, " +               
                 "AddMoreColumn" +
                 "CONSTRAINT [PK_BC_230101_KEYWORD] PRIMARY KEY CLUSTERED " +
                 "( " +
@@ -47,7 +41,6 @@ namespace Entities.Constants
             "NOT NULL, " +
             "[EntryID] [int] NOT NULL, " +
             "[MobileNo] [varchar] (250) NOT NULL, " +
-            "[NRIC_NoPrefix] [varchar] (50) NOT NULL, " +
             "CONSTRAINT[PK_BC_230101_KEYWORD_Winners] PRIMARY KEY CLUSTERED " +
             "( " +
             "[WinnerID] ASC " +

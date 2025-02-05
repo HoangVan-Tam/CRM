@@ -52,7 +52,7 @@ namespace Services.Implement
             return response;
         }
 
-        public async Task<FunctionResults<List<string>>> CreateNewContestAsync(NewContestInfomation newContestIfno, List<FieldsForNewContest> lstFields )
+        public async Task<FunctionResults<List<string>>> CreateNewContestAsync(NewContestInfomation newContestIfno )
         {
             FunctionResults<List<string>> response = new FunctionResults<List<string>>();
             await _sqlConnection.OpenAsync();
@@ -63,13 +63,13 @@ namespace Services.Implement
                 var contestUniqueCode = (newContest.StartDate.ToString("yyMMdd") + "_" + newContest.Keyword).ToUpper();
                 newContest.ContestUniqueCode = contestUniqueCode;
                 await _unitOfWork.Contest.InsertAsync(newContest);
-                foreach (var col in lstFields)
+                foreach (var col in newContestIfno.contestFields)
                 {
                     col.ContestUniqueCode = contestUniqueCode;
                     var contestColumnDetail = _mapper.Map<ContestFieldDetails>(col);
                     await _unitOfWork.ContestFieldDetail.InsertAsync(contestColumnDetail);
                 }
-                await _unitOfWork.LinqToSQL.CreateEntriesTableAsync(contestUniqueCode, _mapper.Map<List<Field>>(lstFields), _sqlConnection, transaction);
+                await _unitOfWork.LinqToSQL.CreateEntriesTableAsync(contestUniqueCode, newContestIfno.contestFields, _sqlConnection, transaction);
                 await _unitOfWork.LinqToSQL.CreateWinnerTableAsync(contestUniqueCode, _sqlConnection, transaction);
                 await _unitOfWork.SaveAsync();
                 await transaction.CommitAsync();

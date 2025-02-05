@@ -10,7 +10,7 @@ namespace Services.Interface
     public interface IContestService
     {
         Task<FunctionResults<List<ContestOverView>>> LoadAllContestAsync();
-        Task<FunctionResults<List<string>>> CreateNewContestAsync(NewContestInfomation newContestIfno, List<FieldsForNewContest> lstColumns);
+        Task<FunctionResults<List<string>>> CreateNewContestAsync(NewContestInfomation newContestIfno);
         Task<FunctionResults<object>> CheckDoesContestExist(string contestUniqueCode);
     }
 }

@@ -11,7 +11,7 @@ namespace DAL.Interface
 {
     public interface ILinqToSQLRepository
     {
-        Task CreateEntriesTableAsync(string nameTable, List<Field> columns, SqlConnection sqlConnection, SqlTransaction sqlTransaction);
+        Task CreateEntriesTableAsync(string nameTable, List<FieldsForNewContest> columns, SqlConnection sqlConnection, SqlTransaction sqlTransaction);
         Task CreateWinnerTableAsync(string nameTable, SqlConnection sqlConnection, SqlTransaction sqlTransaction);
         Task InsertAsync(string tableName, string columns, string value, SqlConnection sqlConnection);
         Task<List<Dictionary<string, object>>> GetAllEntries(string nameTable, Option option, List<string> entryExclusionFields,  SqlConnection sqlConnection);

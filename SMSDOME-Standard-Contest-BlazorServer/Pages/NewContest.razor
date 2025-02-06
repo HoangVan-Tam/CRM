@@ -133,7 +133,7 @@
                         </td>
                         <td style="min-width: 320px; display: flex;">
                             <select for="Regex" class="form-control" value="@item.RegexID"
-                                    @onchange="@(e => OnSelectRegexValueChange(e,item))">
+                                @onchange="@(e => OnSelectRegexValueChange(e,item))">
                                 <option value=0 selected>
                                     - Select -
                                 </option>
@@ -145,7 +145,7 @@
                                 }
                             </select>
                             <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-                                    data-bs-target="#staticBackdrop">
+                                data-bs-target="#staticBackdrop">
                                 <i class="bi bi-plus-square"></i>
                             </button>
                         </td>

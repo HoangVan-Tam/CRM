@@ -21,10 +21,11 @@ namespace Entities.Models
         public int Order { get; set; }
 
         [ForeignKey("ContestRefID")]
-        public int ContestID { get; set; }
+        public string ContestID { get; set; }
         public virtual Contest Contest { get; set; }
-        [ForeignKey("RegexValidationRefID")]
-        public int RegexID { get; set; }
+
+        [ForeignKey("RegexRefID")]
+        public int RegexValidationID { get; set; }
         public virtual RegexValidation RegexValidation { get; set; }
     }
 }

@@ -24,11 +24,11 @@ namespace Entities.Migrations
 
             modelBuilder.Entity("Entities.Models.Contest", b =>
                 {
-                    b.Property<int>("ContestID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("ContestID")
+                        .HasColumnType("nvarchar(450)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContestID"), 1L, 1);
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("AppId")
                         .HasColumnType("int");
@@ -48,6 +48,9 @@ namespace Entities.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("EntryExclusionFields")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ErrorMessageAmount")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("InvalidSmsresponse")
@@ -89,6 +92,9 @@ namespace Entities.Migrations
                     b.Property<DateTime>("TestDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<decimal>("TierAmount")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("ValidOnlineCompletionResponse")
                         .HasColumnType("nvarchar(max)");
 
@@ -114,14 +120,15 @@ namespace Entities.Migrations
 
             modelBuilder.Entity("Entities.Models.ContestFieldDetails", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("FieldDetailID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FieldDetailID"), 1L, 1);
 
-                    b.Property<int>("ContestID")
-                        .HasColumnType("int");
+                    b.Property<string>("ContestID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FieldLabel")
                         .HasColumnType("nvarchar(max)");
@@ -141,9 +148,6 @@ namespace Entities.Migrations
                     b.Property<int>("Order")
                         .HasColumnType("int");
 
-                    b.Property<int>("RegexID")
-                        .HasColumnType("int");
-
                     b.Property<int>("RegexValidationID")
                         .HasColumnType("int");
 
@@ -153,7 +157,7 @@ namespace Entities.Migrations
                     b.Property<bool?>("ShowOnlinePage")
                         .HasColumnType("bit");
 
-                    b.HasKey("ID");
+                    b.HasKey("FieldDetailID");
 
                     b.HasIndex("ContestID");
 

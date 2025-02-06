@@ -59,7 +59,9 @@ namespace Entities.DTO
         public string MissingFieldResponse { get; set; }
         public string EntryExclusionFields { get; set; } = "Response,NRIC_NoPrefix,VerificationCode,Chances,NRIC,EntryText,DateVerified,DateRejected,DateResent,IsRejected,IsVerified";
         public string WinnerExclusionFields { get; set; } = "Response,NRIC_NoPrefix,VerificationCode,Chances,EntrySource,NRIC,IsValid,IsRejected,DateVerified,DateRejected,DateResent,IsVerified,Reason,EntryText";
-
+        public string? ErrorMessageAmount { get; set; } = "";
+        public decimal Amount { get; set; } = 0;
+        public decimal TierAmount { get; set; } = 0;
         public List<FieldsForNewContest> contestFields { get; set; } = new List<FieldsForNewContest>();
     }
 }

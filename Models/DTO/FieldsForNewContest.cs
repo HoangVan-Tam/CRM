@@ -30,9 +30,8 @@ namespace Entities.DTO
                 FieldName = temp;
             }
         }
-        public int RegexID { get; set; }
+        public int RegexValidationID { get; set; }
         public int Order { get; set; }
-        public int FieldId { get; set; }
         public bool ShowOnlinePage { get; set; } = false;
         public bool ShowOnlineCompletion { get; set; } = false;
         public bool IsRequired { get; set; } = false;

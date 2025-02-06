@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entities.Migrations
 {
     [DbContext(typeof(StandardContest2023Context))]
-    [Migration("20240830034841_init_1")]
-    partial class init_1
+    [Migration("20250205084334_Initial3")]
+    partial class Initial3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,11 +26,11 @@ namespace Entities.Migrations
 
             modelBuilder.Entity("Entities.Models.Contest", b =>
                 {
-                    b.Property<int>("ContestID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("ContestID")
+                        .HasColumnType("nvarchar(450)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContestID"), 1L, 1);
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("AppId")
                         .HasColumnType("int");
@@ -50,6 +50,9 @@ namespace Entities.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("EntryExclusionFields")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ErrorMessageAmount")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("InvalidSmsresponse")
@@ -78,6 +81,10 @@ namespace Entities.Migrations
                     b.Property<string>("RepeatedWhatsappResponse")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("SMSSubmitFields")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
@@ -86,6 +93,9 @@ namespace Entities.Migrations
 
                     b.Property<DateTime>("TestDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<decimal>("TierAmount")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("ValidOnlineCompletionResponse")
                         .HasColumnType("nvarchar(max)");
@@ -99,6 +109,9 @@ namespace Entities.Migrations
                     b.Property<string>("ValidWhatsappResponse")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ValidationRegexFull")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("WinnerExclusionFields")
                         .HasColumnType("nvarchar(max)");
 
@@ -109,19 +122,26 @@ namespace Entities.Migrations
 
             modelBuilder.Entity("Entities.Models.ContestFieldDetails", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("FieldDetailID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FieldDetailID"), 1L, 1);
 
-                    b.Property<int>("ContestID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("FieldID")
-                        .HasColumnType("int");
+                    b.Property<string>("ContestID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FieldLabel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FieldName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FieldType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FormControl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("IsRequired")
@@ -129,10 +149,6 @@ namespace Entities.Migrations
 
                     b.Property<int>("Order")
                         .HasColumnType("int");
-
-                    b.Property<string>("RegexID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("RegexValidationID")
                         .HasColumnType("int");
@@ -143,36 +159,13 @@ namespace Entities.Migrations
                     b.Property<bool?>("ShowOnlinePage")
                         .HasColumnType("bit");
 
-                    b.HasKey("ID");
+                    b.HasKey("FieldDetailID");
 
                     b.HasIndex("ContestID");
-
-                    b.HasIndex("FieldID");
 
                     b.HasIndex("RegexValidationID");
 
                     b.ToTable("ContestFieldDetails");
-                });
-
-            modelBuilder.Entity("Entities.Models.ContestFields", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
-
-                    b.Property<string>("FieldName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FieldType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("ContestFields");
                 });
 
             modelBuilder.Entity("Entities.Models.RegexValidation", b =>
@@ -207,12 +200,6 @@ namespace Entities.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Entities.Models.ContestFields", "Field")
-                        .WithMany("ContestFieldDetails")
-                        .HasForeignKey("FieldID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Entities.Models.RegexValidation", "RegexValidation")
                         .WithMany("ContestFieldDetails")
                         .HasForeignKey("RegexValidationID")
@@ -221,17 +208,10 @@ namespace Entities.Migrations
 
                     b.Navigation("Contest");
 
-                    b.Navigation("Field");
-
                     b.Navigation("RegexValidation");
                 });
 
             modelBuilder.Entity("Entities.Models.Contest", b =>
-                {
-                    b.Navigation("ContestFieldDetails");
-                });
-
-            modelBuilder.Entity("Entities.Models.ContestFields", b =>
                 {
                     b.Navigation("ContestFieldDetails");
                 });

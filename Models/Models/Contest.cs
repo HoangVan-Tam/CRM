@@ -8,8 +8,7 @@ namespace Entities.Models
     public partial class Contest
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ContestID { get; set; }
+        public string ContestID { get; set; } = Guid.NewGuid().ToString() + DateTime.UtcNow.ToString("HHmmssff");
         [Required]
         public string ContestUniqueCode { get; set; }
         public string NameContest { get; set; }

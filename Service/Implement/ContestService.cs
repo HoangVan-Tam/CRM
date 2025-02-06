@@ -20,7 +20,7 @@ namespace Services.Implement
         private readonly IMapper _mapper;
         private SqlConnection _sqlConnection;
         private IConfiguration _config;
-        public ContestService (IUnitOfWork unitOfWork, IMapper mapper, SqlConnection sqlConnection, IConfiguration config)
+        public ContestService(IUnitOfWork unitOfWork, IMapper mapper, SqlConnection sqlConnection, IConfiguration config)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -52,7 +52,7 @@ namespace Services.Implement
             return response;
         }
 
-        public async Task<FunctionResults<List<string>>> CreateNewContestAsync(NewContestInfomation newContestIfno )
+        public async Task<FunctionResults<List<string>>> CreateNewContestAsync(NewContestInfomation newContestIfno)
         {
             FunctionResults<List<string>> response = new FunctionResults<List<string>>();
             await _sqlConnection.OpenAsync();
@@ -67,6 +67,7 @@ namespace Services.Implement
                 {
                     col.ContestUniqueCode = contestUniqueCode;
                     var contestColumnDetail = _mapper.Map<ContestFieldDetails>(col);
+                    contestColumnDetail.ContestID = newContest.ContestID;
                     await _unitOfWork.ContestFieldDetail.InsertAsync(contestColumnDetail);
                 }
                 await _unitOfWork.LinqToSQL.CreateEntriesTableAsync(contestUniqueCode, newContestIfno.contestFields, _sqlConnection, transaction);

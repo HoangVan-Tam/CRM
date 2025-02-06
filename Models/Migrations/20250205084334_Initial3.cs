@@ -5,30 +5,15 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Entities.Migrations
 {
-    public partial class init : Migration
+    public partial class Initial3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "ContestFields",
-                columns: table => new
-                {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FieldName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FieldType = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ContestFields", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Contests",
                 columns: table => new
                 {
-                    ContestID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ContestID = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ContestUniqueCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NameContest = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DescriptionContest = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -39,6 +24,8 @@ namespace Entities.Migrations
                     TerminationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     AppId = table.Column<int>(type: "int", nullable: false),
                     AppSecret = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SMSSubmitFields = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ValidationRegexFull = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ValidSmsresponse = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     InvalidSmsresponse = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RepeatedSmsresponse = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -48,9 +35,12 @@ namespace Entities.Migrations
                     ValidOnlinePageResponse = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RepeatedOnlinePageResponse = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ValidOnlineCompletionResponse = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ErrorMessageAmount = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MissingFieldResponse = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EntryExclusionFields = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    WinnerExclusionFields = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    WinnerExclusionFields = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    TierAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -76,26 +66,22 @@ namespace Entities.Migrations
                 name: "ContestFieldDetails",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
+                    FieldDetailID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IsOnlinePage = table.Column<bool>(type: "bit", nullable: true),
-                    IsOnlineCompletion = table.Column<bool>(type: "bit", nullable: true),
+                    ShowOnlinePage = table.Column<bool>(type: "bit", nullable: true),
+                    ShowOnlineCompletion = table.Column<bool>(type: "bit", nullable: true),
                     IsRequired = table.Column<bool>(type: "bit", nullable: true),
                     FieldLabel = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FieldID = table.Column<int>(type: "int", nullable: false),
-                    ContestID = table.Column<int>(type: "int", nullable: false),
-                    RegexID = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FieldName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FormControl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FieldType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Order = table.Column<int>(type: "int", nullable: false),
+                    ContestID = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     RegexValidationID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ContestFieldDetails", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_ContestFieldDetails_ContestFields_FieldID",
-                        column: x => x.FieldID,
-                        principalTable: "ContestFields",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                    table.PrimaryKey("PK_ContestFieldDetails", x => x.FieldDetailID);
                     table.ForeignKey(
                         name: "FK_ContestFieldDetails_Contests_ContestID",
                         column: x => x.ContestID,
@@ -116,11 +102,6 @@ namespace Entities.Migrations
                 column: "ContestID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ContestFieldDetails_FieldID",
-                table: "ContestFieldDetails",
-                column: "FieldID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ContestFieldDetails_RegexValidationID",
                 table: "ContestFieldDetails",
                 column: "RegexValidationID");
@@ -130,9 +111,6 @@ namespace Entities.Migrations
         {
             migrationBuilder.DropTable(
                 name: "ContestFieldDetails");
-
-            migrationBuilder.DropTable(
-                name: "ContestFields");
 
             migrationBuilder.DropTable(
                 name: "Contests");

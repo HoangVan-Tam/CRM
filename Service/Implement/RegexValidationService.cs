@@ -37,22 +37,23 @@ namespace Services.Implement
             return response;
         }
 
-        public async Task<FunctionResults<RegexValidation>> CreateNewRegexValidation(NewRegexValidation newRegexValidation)
+        public async Task<FunctionResults<RegexValidation>>
+        CreateNewRegexValidation(NewRegexValidation newRegexValidation)
         {
             FunctionResults<RegexValidation> response = new FunctionResults<RegexValidation>();
             try
             {
                 var newRegex = _mapper.Map<RegexValidation>(newRegexValidation);
                 var isExistRegexName = await _unitOfWork.RegexValidation.FindAsync(p => p.Name == newRegex.Name);
-                if(isExistRegexName != null)
+                if (isExistRegexName != null)
                 {
                     response.IsSuccess = false;
                     response.Error = "Name of the regex is repeated";
                     return response;
                 }
-               await _unitOfWork.RegexValidation.InsertAsync(newRegex);
-               await _unitOfWork.SaveAsync();
-               response.Data = newRegex;
+                await _unitOfWork.RegexValidation.InsertAsync(newRegex);
+                await _unitOfWork.SaveAsync();
+                response.Data = newRegex;
             }
             catch (Exception ex)
             {

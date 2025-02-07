@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DAL.Interface;
+using Entities.Constants;
 using Entities.DTO;
 using Entities.Models;
 using Microsoft.Data.SqlClient;
@@ -70,8 +71,9 @@ namespace Services.Implement
                     contestColumnDetail.ContestID = newContest.ContestID;
                     await _unitOfWork.ContestFieldDetail.InsertAsync(contestColumnDetail);
                 }
-                await _unitOfWork.LinqToSQL.CreateEntriesTableAsync(contestUniqueCode, newContestIfno.contestFields, _sqlConnection, transaction);
-                await _unitOfWork.LinqToSQL.CreateWinnerTableAsync(contestUniqueCode, _sqlConnection, transaction);
+                await _unitOfWork.LinqToSQL.CreateContestTableAsync(contestUniqueCode, newContestIfno.contestFields, _sqlConnection, transaction, Constants.TYPETABLE.ENTRIES);
+                await _unitOfWork.LinqToSQL.CreateContestTableAsync(contestUniqueCode, null, _sqlConnection, transaction, Constants.TYPETABLE.WINNERS);
+                await _unitOfWork.LinqToSQL.CreateContestTableAsync(contestUniqueCode, null, _sqlConnection, transaction, Constants.TYPETABLE.LOG);
                 await _unitOfWork.SaveAsync();
                 await transaction.CommitAsync();
                 await _sqlConnection.CloseAsync();

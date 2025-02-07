@@ -13,7 +13,7 @@ namespace SMSDOME_Standard_Contest_BlazorServer.Mapper
             CreateMap<ContestFieldDetails, OnlinePageInfomation>().ForPath(dest => dest.Field.IsRequired, input => input.MapFrom(i => i.IsRequired))
                 .ForPath(dest => dest.Field.FieldName, input => input.MapFrom(i => i.FieldName))
                 .ForPath(dest => dest.Field.FieldType, input => input.MapFrom(i => i.FieldType)).ReverseMap();
-            CreateMap<ContestFieldDetails, FieldsForNewContest>().ReverseMap().ForMember(p => p.ID, opt => opt.Ignore());
+            CreateMap<ContestFieldDetails, FieldsForNewContest>().ReverseMap().ForMember(p => p.FieldDetailID, opt => opt.Ignore());
             CreateMap<ContestFields, Field>().ReverseMap();
             CreateMap<ContestFields, FieldsForNewContest>().ReverseMap();
             CreateMap<FieldsForNewContest, Field>().ReverseMap();

@@ -28,55 +28,55 @@ namespace DAL.Implement
             await cmd.ExecuteNonQueryAsync();
         }
 
-        public async Task CreateEntriesTableAsync(string nameTable, List<FieldsForNewContest> columns, SqlConnection sqlConnection, SqlTransaction sqlTransaction)
+        public async Task CreateContestTableAsync(string nameTable, List<FieldsForNewContest> columns, SqlConnection sqlConnection, SqlTransaction sqlTransaction, Constants.TYPETABLE  type)
         {
-            string queryString = Constants.DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD.Replace("230101_KEYWORD", nameTable);
-            if (columns.Count() == 0)
+            string queryString = "";
+            switch (type)
             {
-                queryString = queryString.Replace("AddMoreColumn", "");
-            }
-            else
-            {
-                var additionalColumn = "";
-                foreach (var column in columns)
-                {
-                    switch (column.FieldType)
+                case Constants.TYPETABLE.ENTRIES:
+                    queryString = Constants.DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD.Replace("230101_KEYWORD", nameTable);
+                    if (columns.Count() == 0)
                     {
-                        case "String":
-                            additionalColumn = additionalColumn + "[" + column.FieldName + "] " + "[" + "nvarchar" + "] " + (column.FieldName == "FileLink" ? "(1500)" : "(250)") + (column.IsRequired ? "NOT NULL, " : ", ");
-                            break;
-                        case "DateTime":
-                            additionalColumn = additionalColumn + "[" + column.FieldName + "] " + "[" + "datetime2" + "] " + (column.IsRequired ? "NOT NULL, " : ", ");
-                            break;
-                        case "Int":
-                            additionalColumn = additionalColumn + "[" + column.FieldName + "] " + "[" + "int" + "] " + (column.IsRequired ? "NOT NULL, " : ", ");
-                            break;
-                        case "Decimal":
-                            additionalColumn = additionalColumn + "[" + column.FieldName + "] " + "[" + "money" + "] " + (column.IsRequired ? "NOT NULL, " : ", ");
-                            break;
-                        case "Boolean":
-                            additionalColumn = additionalColumn + "[" + column.FieldName + "] " + "[" + "bit" + "] " + (column.IsRequired ? "NOT NULL, " : ", ");
-                            break;
-                        default: break;
+                        queryString = queryString.Replace("AddMoreColumn", "");
                     }
-                }
+                    else
+                    {
+                        var additionalColumn = "";
+                        foreach (var column in columns)
+                        {
+                            switch (column.FieldType)
+                            {
+                                case "String":
+                                    additionalColumn = additionalColumn + "[" + column.FieldName + "] " + "[" + "nvarchar" + "] " + (column.FieldName == "FileLink" ? "(1500)" : "(250)") + (column.IsRequired ? "NOT NULL, " : ", ");
+                                    break;
+                                case "DateTime":
+                                    additionalColumn = additionalColumn + "[" + column.FieldName + "] " + "[" + "datetime2" + "] " + (column.IsRequired ? "NOT NULL, " : ", ");
+                                    break;
+                                case "Int":
+                                    additionalColumn = additionalColumn + "[" + column.FieldName + "] " + "[" + "int" + "] " + (column.IsRequired ? "NOT NULL, " : ", ");
+                                    break;
+                                case "Decimal":
+                                    additionalColumn = additionalColumn + "[" + column.FieldName + "] " + "[" + "money" + "] " + (column.IsRequired ? "NOT NULL, " : ", ");
+                                    break;
+                                case "Boolean":
+                                    additionalColumn = additionalColumn + "[" + column.FieldName + "] " + "[" + "bit" + "] " + (column.IsRequired ? "NOT NULL, " : ", ");
+                                    break;
+                                default: break;
+                            }
+                        }
 
-                queryString = queryString.Replace("AddMoreColumn", additionalColumn);
-            }
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = sqlConnection;
-            cmd.Transaction = sqlTransaction;
-            var lstCmd = queryString.Split("GO").ToList();
-            foreach (var item in lstCmd)
-            {
-                cmd.CommandText = item;
-                await cmd.ExecuteNonQueryAsync();
-            }
-        }
+                        queryString = queryString.Replace("AddMoreColumn", additionalColumn);
+                    }
+                    break;
+                case Constants.TYPETABLE.WINNERS:
+                    queryString = Constants.DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD_Winner.Replace("230101_KEYWORD", nameTable); 
+                    break;
+                case Constants.TYPETABLE.LOG:
+                    queryString = Constants.DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD_Logs.Replace("230101_KEYWORD", nameTable); 
+                    break;
+                default: break;
 
-        public async Task CreateWinnerTableAsync(string nameTable, SqlConnection sqlConnection, SqlTransaction sqlTransaction)
-        {
-            string queryString = Constants.DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD_Winner.Replace("230101_KEYWORD", nameTable);
+            }
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = sqlConnection;
             cmd.Transaction = sqlTransaction;
@@ -149,9 +149,30 @@ namespace DAL.Implement
             await cmd.ExecuteNonQueryAsync();
         }
 
-        //public async Task<List<Dictionary<string, object>>> PickWinners(string nameTable, Option option, SqlConnection sqlConnection)
-        //{
-
-        //}
+        public async Task<List<Dictionary<string, object>>> FindEntries (string nameTable,Dictionary<string, object> props, SqlConnection sqlConnection)
+        {
+            var conditionCmds = new List<string>();
+            foreach(var item in props)
+            {
+                conditionCmds.Add(item.Key + " = " + item.Value.ToString());
+            }
+            string queryString = Constants.DBSCRIPT_SELECT_ENTRIES_BY_CONDITION.Replace("[BC_230101_KEYWORD]", nameTable);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.AddWithValue("@table", nameTable);
+            cmd.Parameters.AddWithValue("@condition", string.Join("and", conditionCmds));
+            cmd.Connection = sqlConnection;
+            cmd.CommandText = queryString;
+            List<Dictionary<string, object>> lstDictionaries = new List<Dictionary<string, object>>();
+            using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+            {
+                while (reader.Read())
+                {
+                    var keyValuePair = Enumerable.Range(0, reader.FieldCount)
+                 .ToDictionary(reader.GetName, reader.GetValue).ToDictionary(p => p.Key, p => p.Value);
+                    lstDictionaries.Add(keyValuePair);
+                }
+            }
+            return lstDictionaries;
+        }
     }
 }

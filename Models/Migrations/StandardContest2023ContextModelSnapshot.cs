@@ -168,11 +168,11 @@ namespace Entities.Migrations
 
             modelBuilder.Entity("Entities.Models.RegexValidation", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("RegexID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RegexID"), 1L, 1);
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -185,7 +185,7 @@ namespace Entities.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("RegexID");
 
                     b.ToTable("RegexValidations");
                 });

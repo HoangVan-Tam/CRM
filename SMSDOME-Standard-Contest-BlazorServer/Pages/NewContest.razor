@@ -132,14 +132,14 @@
                             <InputNumber class="form-control" @bind-Value="item.Order" />
                         </td>
                         <td style="min-width: 320px; display: flex;">
-                            <select for="Regex" class="form-control" value="@item.RegexID"
+                            <select for="Regex" class="form-control" value="@item.RegexValidationID"
                                 @onchange="@(e => OnSelectRegexValueChange(e,item))">
                                 <option value=0 selected>
                                     - Select -
                                 </option>
                                 @foreach (var regex in lstRegexValidations)
                                 {
-                                    <option value="@regex.ID">
+                                    <option value="@regex.RegexID">
                                         @regex.Name
                                     </option>
                                 }
@@ -178,7 +178,7 @@
                 <div class="col-6">
                     <label for="nameContest" class="form-label">Fields</label>
                     <MultipleDropDownList T="string" Label="Field"
-                        DataSource="@newContest.contestFields.Where(p => !string.IsNullOrEmpty(p.FieldName)).Select(p => new DropDownItemData<string>(){Code = p.RegexID.ToString(), Text = p.FieldName, Id = p.ID }).ToList()"
+                        DataSource="@newContest.contestFields.Where(p => !string.IsNullOrEmpty(p.FieldName)).Select(p => new DropDownItemData<string>(){Code = p.RegexValidationID.ToString(), Text = p.FieldName, Id = p.ID }).ToList()"
                         ValueChanged="FieldsOfSMSOnChange">
                     </MultipleDropDownList>
 
@@ -321,7 +321,7 @@
         var field = newContest.contestFields.Where(p => p.ID == selectedField.ID).FirstOrDefault();
         if (field != null)
         {
-            field.RegexID = Convert.ToInt32(selectedRegexValue);
+            field.RegexValidationID = Convert.ToInt32(selectedRegexValue);
 
             UpdateSelectedRegexValueForSMS(selectedRegexValue, selectedField);
         }
@@ -336,7 +336,7 @@
         var regexsFullString = "";
         foreach (var item in selectedRegexIDs)
         {
-            var regexPattern = lstRegexValidations.Where(p => p.ID == item).Select(p => p.Pattern).FirstOrDefault();
+            var regexPattern = lstRegexValidations.Where(p => p.RegexID == item).Select(p => p.Pattern).FirstOrDefault();
             if (regexPattern != null)
             {
                 if (regexsFullString == "")

@@ -9,9 +9,10 @@ namespace Entities.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+        public int FieldDetailID { get; set; }
         public bool? ShowOnlinePage { get; set; }
         public bool? ShowOnlineCompletion { get; set; }
+        public bool? IsUnique { get; set; }
         public bool? IsRequired { get; set; }
         public string? FieldLabel { get; set; }
         public string? FieldName { get; set; }

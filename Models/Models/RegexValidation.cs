@@ -9,7 +9,7 @@ namespace Entities.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+        public int RegexID { get; set; }
         public string Pattern { get; set; } = null!;
         public string Name { get; set; } = null!;
         public string? Description { get; set; }

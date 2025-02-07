@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Azure;
 using CsvHelper;
 using DAL.Interface;
 using Entities.Constants;
@@ -12,6 +13,7 @@ using Newtonsoft.Json.Linq;
 using Services.Common;
 using Services.Interface;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
@@ -189,213 +191,191 @@ namespace Services.Implement
             return response;
         }
 
-        //public async Task<FunctionResults<string>> APISubmitEntry(Parameters parameters, string contestUniqueCode)
-        //{
-        //    // DateEntry, EntryText, IsValid, Reason, Response, VerificationCode, Chances, EntrySource,
-        //    var contest = await _unitOfWork.Contest.FindAsync(p => p.ContestUniqueCode == contestUniqueCode, c => c.ContestFieldDetails, c => c.ContestFieldDetails.Select(o => o.RegexValidation));
-        //    if (contest != null)
-        //    {
-        //        var props = new Dictionary<string, object> { { "IsVerified", 0 }, { "IsRejected", 0 } };
-        //        var nameTable = "BC_" + contestUniqueCode;
-        //        if (parameters.EntrySource.Equals("Sms", StringComparison.InvariantCultureIgnoreCase))
-        //        {
-        //            props.Add("EntrySource", "SMS");
-        //        }
-        //        else if (parameters.EntrySource.Equals("Whatsapp", StringComparison.InvariantCultureIgnoreCase))
-        //        {
-        //            props.Add("EntrySource", "Whatsapp");
-        //        }
-        //        FunctionResults<string> response = new FunctionResults<string>();
-        //        var CleanedMessage = Helper.CleanMessage(parameters, contest.Keyword);
-        //        var CreatedOn = parameters.CreatedOn != null && parameters.CreatedOn != "" ? DateTime.Parse(parameters.CreatedOn.ToString()).ToUniversalTime() : System.DateTime.UtcNow;
-        //        props.Add("DateEntry", CreatedOn);
+        public async Task<FunctionResults<string>> APISubmitEntry(Parameters parameters, string contestUniqueCode)
+        {
+            // DateEntry, EntryText, IsValid, Reason, Response, VerificationCode, Chances, EntrySource,
+            var contest = await _unitOfWork.Contest.FindAsync(p => p.ContestUniqueCode == contestUniqueCode, c => c.ContestFieldDetails, c => c.ContestFieldDetails.Select(o => o.RegexValidation));
+            if (contest != null)
+            {
+                var props = new Dictionary<string, object>();
+                var nameTable = "BC_" + contestUniqueCode;
+                if (parameters.EntrySource.Equals("Sms", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    props.Add("EntrySource", "SMS");
+                }
+                else if (parameters.EntrySource.Equals("Whatsapp", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    props.Add("EntrySource", "Whatsapp");
+                }
+                FunctionResults<string> response = new FunctionResults<string>();
+                var CleanedMessage = Helper.CleanMessage(parameters, contest.Keyword);
+                var CreatedOn = parameters.CreatedOn != null && parameters.CreatedOn != "" ? DateTime.Parse(parameters.CreatedOn.ToString()).ToUniversalTime() : System.DateTime.UtcNow;
+                props.Add("DateEntry", CreatedOn);
 
-        //        var ValidationResults = PreMatchFieldValidations(contest, CreatedOn);
-        //        if (!ValidationResults.IsSuccess)
-        //        {
-        //            props.Add("IsValid", false);
-        //            props.Add("Reasons", ValidationResults.Error);
-        //            props.Add("Response", ValidationResults.Message);
-        //        }
+                var ValidationResults = PreMatchFieldValidations(contest, CreatedOn);
+                if (!ValidationResults.IsSuccess)
+                {
+                    props.Add("IsValid", false);
+                    props.Add("Reasons", ValidationResults.Error);
+                    props.Add("Response", ValidationResults.Message);
+                }
 
-        //        #region SpecificRegexMatching
-        //        Regex regex = new Regex(contest.ValidationRegexFull, RegexOptions.IgnoreCase);
-        //        var MatchedMessage = regex.Match(CleanedMessage.Trim());
-        //        // Set Fields which dont require validation
-        //        props.Add("MobileNo", parameters.MobileNo);
-        //        props.Add("EntryText", parameters.Message.ToString());
-        //        props.Add("FileLink", (parameters.EntrySource == "MMS" || parameters.EntrySource == "Whatsapp") && !string.IsNullOrEmpty(parameters.FileLink) ? parameters.FileLink.ToString() : "");
+                #region SpecificRegexMatching
+                Regex regex = new Regex(contest.ValidationRegexFull, RegexOptions.IgnoreCase);
+                var MatchedMessage = regex.Match(CleanedMessage.Trim());
 
-        //        if (MatchedMessage.Success)
-        //        {
-        //            //Matched fields will now have a space infront of them because the space is now inside the regex of each field.
-        //            var MatchedResultList = MatchedMessage.Groups.Cast<Group>().Select(match => match.Value).Skip(1).ToList().Select(s => s.Trim()).ToList();
+                // Set Fields which dont require validation
+                props.Add("MobileNo", parameters.MobileNo);
+                props.Add("EntryText", parameters.Message.ToString());
+                props.Add("FileLink", (parameters.EntrySource == "MMS" || parameters.EntrySource == "Whatsapp") && !string.IsNullOrEmpty(parameters.FileLink) ? parameters.FileLink.ToString() : "");
 
-        //            var FieldsL = contest.SMSSubmitFields.Split(',').ToList();
-        //            for (int k = 0; k < FieldsL.Count; k++)
-        //            {
-        //                //logic will handle invalid or blank amounts
-        //                var field = contest.ContestFieldDetails.Where(p => p.FieldName == FieldsL[k]).FirstOrDefault();
-        //                if (field != null)
-        //                {
-        //                    //Other fields which require special Regex
-        //                    if (FieldsL[k] == "ReceiptNo")
-        //                    {
-        //                        var regexReceipt = new Regex(@field.RegexValidation.Pattern);
-        //                        Regex rgx = new Regex("[^a-zA-Z0-9]");
-        //                        var str = rgx.Replace(MatchedResultList[k], "");
+                if (MatchedMessage.Success)
+                {
+                    //Matched fields will now have a space infront of them because the space is now inside the regex of each field.
+                    var MatchedResultList = MatchedMessage.Groups.Cast<Group>().Select(match => match.Value).Skip(1).ToList().Select(s => s.Trim()).ToList();
 
-        //                        //var AMTmatch = regexReceipt.Match(MatchedResultList[k]);
-        //                        var rgxMatch = regexReceipt.Match(str);
+                    var FieldsL = contest.SMSSubmitFields.Split(',').ToList();
+                    for (int k = 0; k < FieldsL.Count; k++)
+                    {
+                        //logic will handle invalid or blank amounts
+                        var field = contest.ContestFieldDetails.Where(p => p.FieldName == FieldsL[k]).FirstOrDefault();
+                        if (field != null)
+                        {
+                            //Other fields which require special Regex
+                            if (FieldsL[k] == "ReceiptNo")
+                            {
+                                var regexReceipt = new Regex(@field.RegexValidation.Pattern);
+                                Regex rgx = new Regex("[^a-zA-Z0-9]");
+                                var str = rgx.Replace(MatchedResultList[k], "");
 
-        //                        if (rgxMatch.Success)
-        //                        {
-        //                            props.Add(FieldsL[k], rgxMatch.Value);
-        //                        }
-        //                    }
-        //                    else
-        //                    {
-        //                        var regexPattern = field.RegexValidation.Pattern;
-        //                        var rgx = new Regex(@regexPattern);
-        //                        var matchRegex = rgx.Match(MatchedResultList[k]);
-        //                        if (matchRegex.Success)
-        //                        {
-        //                            props.Add(FieldsL[k], MatchedResultList[k]);
-        //                        }
-        //                    }
-        //                }
-        //            }
-        //            ValidationResults = null;
-        //            ValidationResults = ValidationLogics(FunctRes.Entry, FunctRes.Entry.EntrySource);
-        //            if (!ValidationResults.IsSuccessful)
-        //            {
-        //                FunctRes.Entry.IsValid = false;
+                                //var AMTmatch = regexReceipt.Match(MatchedResultList[k]);
+                                var rgxMatch = regexReceipt.Match(str);
 
-        //                FunctRes.ListOfReasonsForPossibleFailures.Add(ValidationResults.ReasonForFailure);
-        //                FunctRes.ListOfResponsesForPossibleFailures.Add(ValidationResults.ResponseForFailure);
+                                if (rgxMatch.Success)
+                                {
+                                    props.Add(FieldsL[k], rgxMatch.Value);
+                                }
+                            }
+                            else
+                            {
+                                var regexPattern = field.RegexValidation.Pattern;
+                                var rgx = new Regex(@regexPattern);
+                                var matchRegex = rgx.Match(MatchedResultList[k]);
+                                if (matchRegex.Success)
+                                {
+                                    props.Add(FieldsL[k], MatchedResultList[k]);
+                                }
+                            }
+                        }
+                    }
+                    //Check Repeat Validation
+                    var uniqueFields = contest.ContestFieldDetails.Where(p => p.IsUnique == true);
+                    var isUniqueEntry = await CheckUniqueOfEntryAsync(contestUniqueCode, uniqueFields, props);
+                    if (!isUniqueEntry)
+                    {
+                        props.Add("IsValid", false);
+                        props.Add("ProcessEntryStatus", Constants.ProcessEntryStatus.Repeated);
+                    }
+                    props.Add("IsSaveable", false);
+                }
+                else
+                {
+                    //If Invalid, for loop form regex on the fly to determine which field have error(use Key) RegexKeyPairValue,
 
-        //            }
+                    var FieldsL = contest.SMSSubmitFields.Split(',').ToList();
+                    var BuildingRegex = "";
+                    for (int k = 0; k < FieldsL.Count; k++)
+                    {
+                        var CurrentFieldRegex = contest.ContestFieldDetails.Where(p=>p.FieldName == FieldsL[k]).Select(p=>p.RegexValidation.Pattern).FirstOrDefault();
+                        if(CurrentFieldRegex != null)
+                        {
+                            if (BuildingRegex == "")
+                            {
+                                BuildingRegex = "(" + CurrentFieldRegex.Remove(CurrentFieldRegex.Length - 1).Remove(0, 1) + ")";
+                            }
+                            else
+                            {
+                                BuildingRegex = BuildingRegex + "(" + " " + CurrentFieldRegex.Remove(CurrentFieldRegex.Length - 1).Remove(0, 1) + ")";
+                            }
 
-        //            FunctRes.IsSavable = true;
-        //        }
-        //        #endregion
-        //    }
-        //    return new FunctionResults<string>();
-        //}
+                            var TestingRegex = k == FieldsL.Count - 1 ? "^" + BuildingRegex + "$" : "^" + BuildingRegex + "( ?)";
 
-        //public FunctionResults<string> ValidationLogics(Contest contest, string type)
-        //{
-        //    //Validation
+                            Regex InvalidedRegex = new Regex(TestingRegex, RegexOptions.IgnoreCase);
+                            var MatchNowOrNot = InvalidedRegex.Match(CleanedMessage.Trim());
 
-        //    #region Validation
+                            if (!MatchNowOrNot.Success)
+                            {
+                                //Validation has failed at this field, therefore we assume this field to be the one causing the error.
+                                props.Add("Reason", FieldsL[k] + " Is Not Valid!");
+                            }
+                        }
+                    }
 
-        //    var regex = new Regex("");
-        //    var Match = regex.Match("");
+                    props.Add("IsValid", false);
+                    props.Add("IsSaveable", false);
+                    props.Add("ProcessEntryStatus", Constants.ProcessEntryStatus.FieldInvalid);
+                }
+                #endregion
 
-        //    if (type == "WEB") //Only online Entries need to validate Field By Field.
-        //    {
-        //        regex = new Regex(ValidationRegexMobileNo, RegexOptions.IgnoreCase);
-        //        Match = regex.Match(Entry.MobileNo.Trim());
+                //upload filelink to azure blob
+                if (props["FileLink"].ToString() != "" && props["EntrySource"].ToString() == "Whatsapp")
+                {
+                    //get filename
+                    Uri uri = new Uri(props["FileLink"].ToString());
+                    string filename = string.Empty;
 
-        //        if (!Match.Success)
-        //        {
-        //            return new ValidationResult(false) { ReasonForFailure = "Mobile is Invalid!", ResponseForFailure = "Mobile is Invalid!"/*errMessage*/ };
-        //        }
+                    filename = System.IO.Path.GetFileName(uri.LocalPath);
 
-        //        regex = new Regex(ValidationRegexName, RegexOptions.IgnoreCase);
-        //        Match = regex.Match(Entry.Name.Trim());
+                    using (var webClient = new WebClient())
+                    {
+                        byte[] imageBytes = webClient.DownloadData(props["FileLink"].ToString());
 
-        //        if (!Match.Success)
-        //        {
-        //            return new ValidationResult(false) { ReasonForFailure = "Name is Invalid!", ResponseForFailure = "Name is Invalid!"/*errMessage*/ };
-        //        }
+                        string fl;
+                        var fileresult = SendByteToAzureStorage(FunctRes.Entry, imageBytes, filename, out fl);
 
-        //        //regex = new Regex(ValidationRegexNRIC, RegexOptions.IgnoreCase);
-        //        //Match = regex.Match(Entry.NRIC.Trim());
+                        if (!fileresult.Valid)
+                        {
+                            return fileresult;
+                        }
 
-        //        //if (!Match.Success)
-        //        //{
-        //        //    return new ValidationResult(false) { ReasonForFailure = "NRIC is Invalid!", ResponseForFailure = "NRIC is Invalid!"/*ErrorMessageGeneric*/ };
-        //        //}
-
-
-        //        //regex = new Regex(ValidationRegexReceiptNo, RegexOptions.IgnoreCase);
-        //        //Match = regex.Match(Entry.ReceiptNo.Trim());
-
-        //        //if (!Match.Success)
-        //        //{
-        //        //    return new ValidationResult(false) { ReasonForFailure = "ReceiptNo is Invalid!", ResponseForFailure = ErrorMessageGeneric };
-        //        //}
-
-
-        //        //regex = new Regex(ValidationRegexEmail, RegexOptions.IgnoreCase);
-        //        //Match = regex.Match(Entry.Email.Trim());
-
-        //        //if (!Match.Success)
-        //        //{
-        //        //return new ValidationResult(false) { ReasonForFailure = "Email is Invalid!", ResponseForFailure = ErrorMessageGeneric };
-        //        //}
-        //    }
-        //    if (type == "Whatsapp")
-        //    {
-        //        if (string.IsNullOrEmpty(Entry.FileLink))
-        //        {
-        //            return new ValidationResult(false) { ReasonForFailure = "Image is required!", ResponseForFailure = errMessage };
-        //        }
-        //    }
-        //    #endregion
-
-        //    if (Convert.ToDecimal(Entry.Amount) < TierAmount)
-        //    {
-        //        return new ValidationResult(false) { ReasonForFailure = "Amount is below " + TierAmount.ToString() + "!", ResponseForFailure = ErrorMessageAmount.Replace("{tierAmount}", TierAmount.ToString()) };
-        //    }
-
-        //    var EntryMobile = (Entry.MobileNo.Substring(0, 1) == "+" ?/*2*/ Entry.MobileNo.Substring(1, Entry.MobileNo.Length - 1) :/*2*/ Entry.MobileNo);
-
-        //    //Remove leading 0 on receiptNo
-        //    Entry.ReceiptNo = Entry.ReceiptNo.TrimStart('0');
-
-        //    //Check for duplicates
+                        props["FileLink"] = fl;
+                    }
+                }
 
 
-        //    /*Check For Receipt*/
-        //    //var ReceiptCheckQuery = db.BC_241226_POKKACNY25.Where(s => s.IsValid == true).Where(s => s.ReceiptNo.ToUpper() == Entry.ReceiptNo.ToUpper());
-        //    //var ReceiptCheckCount = ReceiptCheckQuery.Count();
-        //    //if (ReceiptCheckCount > 0)
-        //    //{
-        //    //    /* When repeated message contains {uploadlink} */
-        //    //    return new ValidationResult(false)
-        //    //    {
-        //    //        ReasonForFailure = "Repeated entry!",
-        //    //        ResponseForFailure = RepeatedMessageSMS.Replace("{uploadlink}", UploadLink + "?i=" + ReceiptCheckQuery.FirstOrDefault().VerificationCode)
-        //    //    };
 
-        //    //    // return new ValidationResult(false) { ReasonForFailure = "Repeated entry!", ResponseForFailure = RepeatedMessageSMS };
-        //    //}
 
-        //    /*Check For Receipt AND Mobile*/
-        //    var ReceiptMobileCheckQuery = db.BC_241226_POKKACNY25.Where(s => s.IsValid == true).Where(s => s.ReceiptNo.ToUpper() == Entry.ReceiptNo.ToUpper()
-        //    &&
-        //    (s.MobileNo.Substring(0, 1) == "+" ?/*1*/ s.MobileNo.Substring(1, s.MobileNo.Length - 1) ==
-        //    EntryMobile
-        //    :/*1*/  s.MobileNo ==
-        //    EntryMobile));
-        //    var ReceiptMobileCheckCount = ReceiptMobileCheckQuery.Count();
-        //    if (ReceiptMobileCheckCount > 0)
-        //    {
-        //        /* When repeated message contains {uploadlink} */
+                //Decide whether to save entryfields based on validity
+                int EntryID;
 
-        //        return new ValidationResult(false)
-        //        {
-        //            ReasonForFailure = "Repeated entry!",
-        //            ResponseForFailure = RepeatedMessageSMS.Replace("{uploadlink}", UploadLink + "?i=" + ReceiptMobileCheckQuery.FirstOrDefault().VerificationCode)
-        //        };
+                var temp = SaveEntry(props);
+            }
+            return new FunctionResults<string>();
+        }
 
-        //        //return new ValidationResult(false) { ReasonForFailure = "Repeated entry!", ResponseForFailure = RepeatedMessageSMS };
-        //    }
-        //    //if managed to pass all logics then return true
-        //    return new ValidationResult(true);
-        //}
+        public async Task<bool> CheckUniqueOfEntryAsync(string contestUniqueCode, IEnumerable<ContestFieldDetails> uniqueFields, Dictionary<string, object> props)
+        {
+            await _sqlConnection.OpenAsync();
+            try
+            {
+                var uniqueProps = new Dictionary<string, object>();
+                foreach (var item in uniqueFields)
+                {
+                    uniqueProps.Add(item.FieldName, props[item.FieldName]);
+                }
+                var entries = await _unitOfWork.LinqToSQL.FindEntries(contestUniqueCode, uniqueProps, _sqlConnection);
+                if(entries.Count() > 0)
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                await _sqlConnection.CloseAsync();
+                return false;
+            }
+        }
 
         public FunctionResults<string> PreMatchFieldValidations(Contest contest, DateTime dt)
         {

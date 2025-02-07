@@ -35,6 +35,7 @@ namespace Entities.Models
         public string? MissingFieldResponse { get; set; }
         public string? EntryExclusionFields { get; set; }
         public string? WinnerExclusionFields { get; set; }
+        public string? RepeatValidation { get; set; }
         public decimal Amount { get; set; }
         public decimal TierAmount { get; set; } = 0;
 

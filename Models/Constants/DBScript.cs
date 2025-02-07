@@ -55,11 +55,37 @@ namespace Entities.Constants
             "CHECK CONSTRAINT[FK_BC_230101_KEYWORD_EntryID] " +
             "GO ";
 
+        public const string DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD_Logs = "SET ANSI_NULLS ON" +
+            "GO" +
+            "SET QUOTED_IDENTIFIER ON"+
+            "GO" +
+            "CREATE TABLE [dbo].[BC_230101_KEYWORD_Log](" +
+            "[LogID] [int] IDENTITY(1,1) NOT NULL," +
+            "[LogDate] [datetime2](7) NOT NULL," +
+            "[Recipient] [nvarchar](100) NOT NULL," +
+            "[LogType] [nvarchar](500) NOT NULL," +
+            "[Content] [nvarchar](500) NOT NULL," +
+            "[CreditsUsed] [nvarchar](500) NOT NULL," +
+            "CONSTRAINT [PK_BC_230101_KEYWORD_LOG] PRIMARY KEY CLUSTERED " +
+            "[LogID] ASC" +
+            ")WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]" +
+            ") ON [PRIMARY]" +
+            "GO";
+
+
         public const string DBSCRIPT_GET_ALL_ENTRIES = "SELECT * FROM [dbo].[BC_230101_KEYWORD] ORDER BY [EntryID] OFFSET {SkipRow} row FETCH NEXT {TakeRow} ROWS ONLY; ";
         public const string DBSCRIPT_GET_ALL_ENTRIES_NOPAGING = "SELECT * FROM [dbo].[BC_230101_KEYWORD] ORDER BY [EntryID]; ";
 
         public const string DBSCRIPT_PURGE_SELECTED_ENTRIES = "DELETE FROM [dbo].[BC_230101_KEYWORD] WHERE EntryID IN ({entriesID})";
 
         public const string DBSCRIPT_PURGE_ALL_ENTRIES = "DELETE FROM [dbo].[BC_230101_KEYWORD]";
+
+        public const string DBSCRIPT_SELECT_ENTRIES_BY_CONDITION = "SELECT * FROM @table where @condition";
+        public enum TYPETABLE
+        {
+            ENTRIES,
+            WINNERS,
+            LOG,
+        }
     }
 }

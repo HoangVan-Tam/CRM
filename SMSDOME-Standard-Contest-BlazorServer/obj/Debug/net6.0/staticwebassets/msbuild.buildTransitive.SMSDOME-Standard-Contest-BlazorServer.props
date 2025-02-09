@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\buildMultiTargeting\SMSDOME-Standard-Contest-BlazorServer.props" />
+  <Import Project="../buildMultiTargeting/SMSDOME-Standard-Contest-BlazorServer.props" />
 </Project>

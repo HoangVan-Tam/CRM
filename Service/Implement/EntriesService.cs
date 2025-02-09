@@ -286,8 +286,8 @@ namespace Services.Implement
                     var BuildingRegex = "";
                     for (int k = 0; k < FieldsL.Count; k++)
                     {
-                        var CurrentFieldRegex = contest.ContestFieldDetails.Where(p=>p.FieldName == FieldsL[k]).Select(p=>p.RegexValidation.Pattern).FirstOrDefault();
-                        if(CurrentFieldRegex != null)
+                        var CurrentFieldRegex = contest.ContestFieldDetails.Where(p => p.FieldName == FieldsL[k]).Select(p => p.RegexValidation.Pattern).FirstOrDefault();
+                        if (CurrentFieldRegex != null)
                         {
                             if (BuildingRegex == "")
                             {
@@ -331,14 +331,14 @@ namespace Services.Implement
                         byte[] imageBytes = webClient.DownloadData(props["FileLink"].ToString());
 
                         string fl;
-                        var fileresult = SendByteToAzureStorage(FunctRes.Entry, imageBytes, filename, out fl);
+                        //var fileresult = SendByteToAzureStorage(FunctRes.Entry, imageBytes, filename, out fl);
 
-                        if (!fileresult.Valid)
-                        {
-                            return fileresult;
-                        }
+                        // if (!fileresult.Valid)
+                        // {
+                        //     return fileresult;
+                        // }
 
-                        props["FileLink"] = fl;
+                        // props["FileLink"] = fl;
                     }
                 }
 
@@ -348,7 +348,7 @@ namespace Services.Implement
                 //Decide whether to save entryfields based on validity
                 int EntryID;
 
-                var temp = SaveEntry(props);
+                //var temp = SaveEntry(props);
             }
             return new FunctionResults<string>();
         }
@@ -364,7 +364,7 @@ namespace Services.Implement
                     uniqueProps.Add(item.FieldName, props[item.FieldName]);
                 }
                 var entries = await _unitOfWork.LinqToSQL.FindEntries(contestUniqueCode, uniqueProps, _sqlConnection);
-                if(entries.Count() > 0)
+                if (entries.Count() > 0)
                 {
                     return false;
                 }

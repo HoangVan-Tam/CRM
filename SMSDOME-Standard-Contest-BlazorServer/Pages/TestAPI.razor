@@ -1,0 +1,64 @@
+﻿@page "/testapi"
+@using System.ComponentModel.DataAnnotations
+@using Entities.DTO
+@using Services.Interface
+@using System.Net.Http.Json
+@using System.Web
+
+@inject IToastService _toastSerivce
+@inject HttpClient _http
+<div>
+    <h1 class="text-center">SMSDome Contest API Test</h1>
+    <EditForm Model="@model" OnValidSubmit="@HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <div class="container mt-4">
+            <div class="col-10 m-auto">
+                <!-- Mobile Number -->
+                <div class="mb-3">
+                    <InputText class="form-control" @bind-Value="model.MobileNo" />
+                    <ValidationMessage For="@(() => model.MobileNo)" class="text-danger" />
+                </div>
+
+                <!-- Message -->
+                <div class="mb-3">
+                    <InputText class="form-control" @bind-Value="model.Message" />
+                    <ValidationMessage For="@(() => model.Message)" class="text-danger" />
+                </div>
+
+                <!-- Date Entry -->
+                <div class="mb-3">
+                    <InputDate class="form-control" @bind-Value="model.DateEntry" />
+                    <ValidationMessage For="@(() => model.DateEntry)" class="text-danger" />
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </EditForm>
+</div>
+
+@code {
+    public TestAPIPageModel model = new TestAPIPageModel();
+
+    private async Task HandleValidSubmit()
+    {
+        var url = new System.Uri(Page.Request.Url, ResolveClientUrl("~")).AbsoluteUri;
+
+        //http://smsdome-contest-base-sea-web-prd-development.azurewebsites.net/api/Rest?CreatedOn=2016-01-01&MobileNo=88690652&Message=BASE%20XXXXX&FIleLink=
+
+        var uri = url + "REST/Add/?CreatedOn=" +
+        HttpUtility.UrlEncode((repo.FromLocalToUTC(model.DateEntry)).ToString("yyyy-MM-dd HH:mm:ss")) + "&MobileNo=" +
+        HttpUtility.UrlEncode(model.MobileNo) + "&Message=" + HttpUtility.UrlEncode(model.Message) + "&FileLink=";
+
+        using (var client = new HttpClient())
+        {
+            var response =
+            client.GetAsync(uri).Result;
+            var code = response.StatusCode;
+
+            //On success
+            _toastSerivce.ShowSuccess(code.ToString());
+        }
+    }
+}

@@ -13,6 +13,7 @@ using DAL.Interface;
 using DAL.Implement;
 using Services.Interface;
 using Services.Implement;
+using Entities.Helper;
 
 var builder = WebApplication.CreateBuilder(args);
 var SMSDOMEAllowSpecificOrigins = "_SMSDOMEAllowSpecificOrigins";
@@ -44,6 +45,7 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
                      .InstancePerLifetimeScope();
 });
 
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 //CORS
 builder.Services.AddCors(options =>
 {

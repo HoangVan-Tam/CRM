@@ -35,5 +35,23 @@ namespace SMSDOME_Standard_Contest_BlazorServer.Controllers
             });
             return Ok();
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("Add/")]
+        public async Task<IActionResult> Add(string contestUniqueCode, string createdon, string MobileNo, string Message, string FileLink = "")
+        { 
+            var res = _restService.GetAndPostFunction(new Parameters
+            {
+                CreatedOn = createdon,
+                MobileNo = MobileNo,
+                Message = Message,
+                FileLink = FileLink,
+                EntrySource = (FileLink != null && FileLink.ToString() != "") ? "MMS" : "SMS",
+                SendResponse = true,
+                ContestUniqueCode = contestUniqueCode
+            });
+            return Ok();
+        }
     }
 }

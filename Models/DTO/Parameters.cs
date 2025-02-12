@@ -16,5 +16,6 @@ namespace Entities.DTO
         public string MobileNo { get; set; }
         public string Message { get; set; }
         public string FileLink { get; set; }
+        public string ContestUniqueCode { get; set; }
     }
 }

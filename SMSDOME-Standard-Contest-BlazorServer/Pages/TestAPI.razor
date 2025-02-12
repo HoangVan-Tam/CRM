@@ -43,22 +43,22 @@
 
     private async Task HandleValidSubmit()
     {
-        var url = new System.Uri(Page.Request.Url, ResolveClientUrl("~")).AbsoluteUri;
+        // var url = new System.Uri(Page.Request.Url, ResolveClientUrl("~")).AbsoluteUri;
 
-        //http://smsdome-contest-base-sea-web-prd-development.azurewebsites.net/api/Rest?CreatedOn=2016-01-01&MobileNo=88690652&Message=BASE%20XXXXX&FIleLink=
+        // //http://smsdome-contest-base-sea-web-prd-development.azurewebsites.net/api/Rest?CreatedOn=2016-01-01&MobileNo=88690652&Message=BASE%20XXXXX&FIleLink=
 
-        var uri = url + "REST/Add/?CreatedOn=" +
-        HttpUtility.UrlEncode((repo.FromLocalToUTC(model.DateEntry)).ToString("yyyy-MM-dd HH:mm:ss")) + "&MobileNo=" +
-        HttpUtility.UrlEncode(model.MobileNo) + "&Message=" + HttpUtility.UrlEncode(model.Message) + "&FileLink=";
+        // var uri = url + "REST/Add/?CreatedOn=" +
+        // HttpUtility.UrlEncode((repo.FromLocalToUTC(model.DateEntry)).ToString("yyyy-MM-dd HH:mm:ss")) + "&MobileNo=" +
+        // HttpUtility.UrlEncode(model.MobileNo) + "&Message=" + HttpUtility.UrlEncode(model.Message) + "&FileLink=";
 
-        using (var client = new HttpClient())
-        {
-            var response =
-            client.GetAsync(uri).Result;
-            var code = response.StatusCode;
+        // using (var client = new HttpClient())
+        // {
+        //     var response =
+        //     client.GetAsync(uri).Result;
+        //     var code = response.StatusCode;
 
-            //On success
-            _toastSerivce.ShowSuccess(code.ToString());
-        }
+        //     //On success
+        //     _toastSerivce.ShowSuccess(code.ToString());
+        // }
     }
 }

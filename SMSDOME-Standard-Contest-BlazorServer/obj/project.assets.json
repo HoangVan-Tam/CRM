@@ -3769,35 +3769,44 @@
     ]
   },
   "packageFolders": {
-    "/Users/tamhoang/.nuget/packages/": {}
+    "C:\\Users\\tam.hoang\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/SMSDOME-Standard-Contest-BlazorServer.csproj",
+      "projectUniqueName": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj",
       "projectName": "SMSDOME-Standard-Contest-BlazorServer",
-      "projectPath": "/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/SMSDOME-Standard-Contest-BlazorServer.csproj",
-      "packagesPath": "/Users/tamhoang/.nuget/packages/",
-      "outputPath": "/Users/tamhoang/Projects/CRM/SMSDOME-Standard-Contest-BlazorServer/obj/",
+      "projectPath": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\SMSDOME-Standard-Contest-BlazorServer\\SMSDOME-Standard-Contest-BlazorServer.csproj",
+      "packagesPath": "C:\\Users\\tam.hoang\\.nuget\\packages\\",
+      "outputPath": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\SMSDOME-Standard-Contest-BlazorServer\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/Users/tamhoang/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\tam.hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/tamhoang/Projects/CRM/Models/Entities.csproj": {
-              "projectPath": "/Users/tamhoang/Projects/CRM/Models/Entities.csproj"
+            "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Models\\Entities.csproj": {
+              "projectPath": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Models\\Entities.csproj"
             },
-            "/Users/tamhoang/Projects/CRM/Service/Services.csproj": {
-              "projectPath": "/Users/tamhoang/Projects/CRM/Service/Services.csproj"
+            "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Service\\Services.csproj": {
+              "projectPath": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Service\\Services.csproj"
             }
           }
         }
@@ -3811,7 +3820,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net6.0": {
@@ -3871,20 +3881,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.36, 6.0.36]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.osx-arm64",
-            "version": "[6.0.36, 6.0.36]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.36, 6.0.36]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -3893,7 +3889,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

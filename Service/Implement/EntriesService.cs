@@ -50,7 +50,7 @@ namespace Services.Implement
                 ContestUniqueCode = "010101_TIGER";
                 var contest = await _unitOfWork.Contest.FindAsync(p => p.ContestUniqueCode == ContestUniqueCode);
                 var entryExclusionFields = contest.EntryExclusionFields.Split(",").ToList();
-                response.Data = await _unitOfWork.LinqToSQL.GetAllEntries(ContestUniqueCode, option, entryExclusionFields, _sqlConnection);
+                response.Data = await _unitOfWork.LinqToSQL.GetAllEntries(ContestUniqueCode, option, entryExclusionFields);
                 await _sqlConnection.CloseAsync();
             }
             catch (Exception ex)
@@ -68,7 +68,7 @@ namespace Services.Implement
             await _sqlConnection.OpenAsync();
             try
             {
-                await _unitOfWork.LinqToSQL.PurgeSelectedEntries(ContestUniqueCode, String.Join(", ", entriesID.ConvertAll<string>(x => x.ToString())), _sqlConnection);
+                await _unitOfWork.LinqToSQL.PurgeSelectedEntries(ContestUniqueCode, String.Join(", ", entriesID.ConvertAll<string>(x => x.ToString())));
                 await _sqlConnection.CloseAsync();
                 response.Data = "Deleted Selected Entries";
             }
@@ -87,7 +87,7 @@ namespace Services.Implement
             await _sqlConnection.OpenAsync();
             try
             {
-                await _unitOfWork.LinqToSQL.PurgeAllEntries(ContestUniqueCode, _sqlConnection);
+                await _unitOfWork.LinqToSQL.PurgeAllEntries(ContestUniqueCode);
                 await _sqlConnection.CloseAsync();
                 response.Data = "Deleted All Entries";
             }
@@ -138,7 +138,7 @@ namespace Services.Implement
                     + "'0', " + "'0', " + "'', " + "'', " + "'', " + "'1', " + "'WEB', ";
                 completionValue = completionValue + values;
                 var nameTable = "BC_" + ContestUniqueCode;
-                await _unitOfWork.LinqToSQL.InsertAsync(nameTable, completionColumns, completionValue, _sqlConnection);
+              //  await _unitOfWork.LinqToSQL.InsertAsync(nameTable, completionColumns, completionValue);
                 response.Message = "Insert Entry Successfully";
                 await _sqlConnection.CloseAsync();
             }
@@ -165,7 +165,7 @@ namespace Services.Implement
                 ContestUniqueCode = "010101_TIGER";
                 var contest = await _unitOfWork.Contest.FindAsync(p => p.ContestUniqueCode == ContestUniqueCode);
                 var entryExclusionFields = contest.EntryExclusionFields.Split(",").ToList();
-                var dataEntries = await _unitOfWork.LinqToSQL.GetAllEntries(ContestUniqueCode, entryExclusionFields, _sqlConnection);
+                var dataEntries = await _unitOfWork.LinqToSQL.GetAllEntries(ContestUniqueCode, entryExclusionFields);
                 response.Data = Common.Helper.ExportToCsv(dataEntries);
                 //using (var writer = new StreamWriter("entries.csv"))
                 //using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
@@ -191,33 +191,32 @@ namespace Services.Implement
             return response;
         }
 
-        public async Task<FunctionResults<string>> APISubmitEntry(Parameters parameters, string contestUniqueCode)
+        public async Task<FunctionResults<Dictionary<string, object>>> APISubmitEntry(Parameters body, Contest contest)
         {
-            // DateEntry, EntryText, IsValid, Reason, Response, VerificationCode, Chances, EntrySource,
-            var contest = await _unitOfWork.Contest.FindAsync(p => p.ContestUniqueCode == contestUniqueCode, c => c.ContestFieldDetails, c => c.ContestFieldDetails.Select(o => o.RegexValidation));
-            if (contest != null)
+            var res = new FunctionResults<Dictionary<string, object>>();
+            try
             {
                 var props = new Dictionary<string, object>();
-                var nameTable = "BC_" + contestUniqueCode;
-                if (parameters.EntrySource.Equals("Sms", StringComparison.InvariantCultureIgnoreCase))
+                var nameTable = "BC_" + body.ContestUniqueCode;
+                if (body.EntrySource.Equals("Sms", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    props.Add("EntrySource", "SMS");
+                    props.Add("@EntrySource", "SMS");
                 }
-                else if (parameters.EntrySource.Equals("Whatsapp", StringComparison.InvariantCultureIgnoreCase))
+                else if (body.EntrySource.Equals("Whatsapp", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    props.Add("EntrySource", "Whatsapp");
+                    props.Add("@EntrySource", "Whatsapp");
                 }
                 FunctionResults<string> response = new FunctionResults<string>();
-                var CleanedMessage = Helper.CleanMessage(parameters, contest.Keyword);
-                var CreatedOn = parameters.CreatedOn != null && parameters.CreatedOn != "" ? DateTime.Parse(parameters.CreatedOn.ToString()).ToUniversalTime() : System.DateTime.UtcNow;
-                props.Add("DateEntry", CreatedOn);
+                var CleanedMessage = Helper.CleanMessage(body, contest.Keyword);
+                var CreatedOn = body.CreatedOn != null && body.CreatedOn != "" ? DateTime.Parse(body.CreatedOn.ToString()).ToUniversalTime() : System.DateTime.UtcNow;
+                props.Add("@DateEntry", CreatedOn);
 
                 var ValidationResults = PreMatchFieldValidations(contest, CreatedOn);
                 if (!ValidationResults.IsSuccess)
                 {
-                    props.Add("IsValid", false);
-                    props.Add("Reasons", ValidationResults.Error);
-                    props.Add("Response", ValidationResults.Message);
+                    props.Add("@IsValid", false);
+                    props.Add("@Reasons", ValidationResults.Error);
+                    props.Add("@ProcessEntryStatus", Constants.ProcessEntryStatus.NotInCampaignPeriod);
                 }
 
                 #region SpecificRegexMatching
@@ -225,9 +224,9 @@ namespace Services.Implement
                 var MatchedMessage = regex.Match(CleanedMessage.Trim());
 
                 // Set Fields which dont require validation
-                props.Add("MobileNo", parameters.MobileNo);
-                props.Add("EntryText", parameters.Message.ToString());
-                props.Add("FileLink", (parameters.EntrySource == "MMS" || parameters.EntrySource == "Whatsapp") && !string.IsNullOrEmpty(parameters.FileLink) ? parameters.FileLink.ToString() : "");
+                props.Add("@MobileNo", body.MobileNo);
+                props.Add("@EntryText", body.Message.ToString());
+                props.Add("@FileLink", (body.EntrySource == "MMS" || body.EntrySource == "Whatsapp") && !string.IsNullOrEmpty(body.FileLink) ? body.FileLink.ToString() : "");
 
                 if (MatchedMessage.Success)
                 {
@@ -270,13 +269,13 @@ namespace Services.Implement
                     }
                     //Check Repeat Validation
                     var uniqueFields = contest.ContestFieldDetails.Where(p => p.IsUnique == true);
-                    var isUniqueEntry = await CheckUniqueOfEntryAsync(contestUniqueCode, uniqueFields, props);
+                    var isUniqueEntry = await CheckUniqueOfEntryAsync(body.ContestUniqueCode, uniqueFields, props);
                     if (!isUniqueEntry)
                     {
-                        props.Add("IsValid", false);
-                        props.Add("ProcessEntryStatus", Constants.ProcessEntryStatus.Repeated);
+                        props.Add("@IsValid", false);
+                        props.Add("@ProcessEntryStatus", Constants.ProcessEntryStatus.Repeated);
                     }
-                    props.Add("IsSaveable", false);
+                    props.Add("@IsSaveable", false);
                 }
                 else
                 {
@@ -306,14 +305,14 @@ namespace Services.Implement
                             if (!MatchNowOrNot.Success)
                             {
                                 //Validation has failed at this field, therefore we assume this field to be the one causing the error.
-                                props.Add("Reason", FieldsL[k] + " Is Not Valid!");
+                                props.Add("@Reason", FieldsL[k] + " Is Not Valid!");
                             }
                         }
                     }
 
-                    props.Add("IsValid", false);
-                    props.Add("IsSaveable", false);
-                    props.Add("ProcessEntryStatus", Constants.ProcessEntryStatus.FieldInvalid);
+                    props.Add("@IsValid", false);
+                    props.Add("@IsSaveable", false);
+                    props.Add("@ProcessEntryStatus", Constants.ProcessEntryStatus.FieldInvalid);
                 }
                 #endregion
 
@@ -347,10 +346,16 @@ namespace Services.Implement
 
                 //Decide whether to save entryfields based on validity
                 int EntryID;
-
+                res.Data = props;
                 //var temp = SaveEntry(props);
+                return res;
             }
-            return new FunctionResults<string>();
+            catch (Exception ex)
+            {
+                res.Error = ex.Message;
+                res.IsSuccess = false;
+                return res;
+            }
         }
 
         public async Task<bool> CheckUniqueOfEntryAsync(string contestUniqueCode, IEnumerable<ContestFieldDetails> uniqueFields, Dictionary<string, object> props)
@@ -363,7 +368,7 @@ namespace Services.Implement
                 {
                     uniqueProps.Add(item.FieldName, props[item.FieldName]);
                 }
-                var entries = await _unitOfWork.LinqToSQL.FindEntries(contestUniqueCode, uniqueProps, _sqlConnection);
+                var entries = await _unitOfWork.LinqToSQL.FindEntries(contestUniqueCode, uniqueProps);
                 if (entries.Count() > 0)
                 {
                     return false;

@@ -22,6 +22,7 @@ namespace Entities.Constants
             FieldInvalid,
             Repeated,
             AmountInvalid,
+            NotInCampaignPeriod
         }
     }
 }

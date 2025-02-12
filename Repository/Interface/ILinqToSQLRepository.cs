@@ -12,12 +12,12 @@ namespace DAL.Interface
 {
     public interface ILinqToSQLRepository
     {
-        Task CreateContestTableAsync(string nameTable, List<FieldsForNewContest> columns, SqlConnection sqlConnection, SqlTransaction sqlTransaction, Constants.TYPETABLE type);
-        Task InsertAsync(string tableName, string columns, string value, SqlConnection sqlConnection);
-        Task<List<Dictionary<string, object>>> GetAllEntries(string nameTable, Option option, List<string> entryExclusionFields,  SqlConnection sqlConnection);
-        Task<List<Dictionary<string, object>>> GetAllEntries(string nameTable, List<string> entryExclusionFields, SqlConnection sqlConnection);
-        Task PurgeSelectedEntries(string nameTable, string entriesID, SqlConnection sqlConnection);
-        Task PurgeAllEntries(string nameTable, SqlConnection sqlConnection);
-        Task<List<Dictionary<string, object>>> FindEntries(string nameTable, Dictionary<string, object> props, SqlConnection sqlConnection);
+        Task CreateContestTableAsync(string nameTable, List<FieldsForNewContest> columns, SqlTransaction sqlTransaction, Constants.TYPETABLE type);
+        Task InsertAsync(string tableName, Dictionary<string, object> props);
+        Task<List<Dictionary<string, object>>> GetAllEntries(string nameTable, Option option, List<string> entryExclusionFields);
+        Task<List<Dictionary<string, object>>> GetAllEntries(string nameTable, List<string> entryExclusionFields);
+        Task PurgeSelectedEntries(string nameTable, string entriesID);
+        Task PurgeAllEntries(string nameTable);
+        Task<List<Dictionary<string, object>>> FindEntries(string nameTable, Dictionary<string, object> props);
     }
 }

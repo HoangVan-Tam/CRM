@@ -16,19 +16,27 @@ namespace DAL.Implement
 {
     public class LinqToSQLRepository : ILinqToSQLRepository
     {
-        public LinqToSQLRepository()
+        private SqlConnection _sqlConnection;
+        public LinqToSQLRepository(SqlConnection sqlConnection)
         {
+            _sqlConnection = sqlConnection;
         }
-        public async Task InsertAsync(string tableName, string columns, string value, SqlConnection sqlConnection)
+        public async Task InsertAsync(string tableName, Dictionary<string, object> props)
         {
-            string queryString = "INSERT INTO " + tableName + " (" + columns + ") " + "VALUES " + "(" + value + ")";
+            string queryString = "INSERT INTO " + tableName + " (@column) " + "VALUES " + "(@value)";
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = sqlConnection;
+            cmd.Parameters.AddWithValue("(@column)", string.Join(",", props.Keys).Replace("@",""));
+            cmd.Parameters.AddWithValue("(@value)", string.Join(",", props.Keys));
+            foreach (var prop in props)
+            {
+                cmd.Parameters.AddWithValue(prop.Key, prop.Value ?? DBNull.Value);
+            }
+            cmd.Connection = _sqlConnection;
             cmd.CommandText = queryString;
             await cmd.ExecuteNonQueryAsync();
         }
 
-        public async Task CreateContestTableAsync(string nameTable, List<FieldsForNewContest> columns, SqlConnection sqlConnection, SqlTransaction sqlTransaction, Constants.TYPETABLE  type)
+        public async Task CreateContestTableAsync(string nameTable, List<FieldsForNewContest> columns, SqlTransaction sqlTransaction, Constants.TYPETABLE  type)
         {
             string queryString = "";
             switch (type)
@@ -78,7 +86,7 @@ namespace DAL.Implement
 
             }
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = sqlConnection;
+            cmd.Connection = _sqlConnection;
             cmd.Transaction = sqlTransaction;
             var lstCmd = queryString.Split("GO").ToList();
             foreach (var item in lstCmd)
@@ -88,13 +96,13 @@ namespace DAL.Implement
             }
         }
 
-        public async Task<List<Dictionary<string, object>>> GetAllEntries(string nameTable, Option option, List<string> entryExclusionFields, SqlConnection sqlConnection)
+        public async Task<List<Dictionary<string, object>>> GetAllEntries(string nameTable, Option option, List<string> entryExclusionFields)
         {
             nameTable = "[BC_010101_TIGER]";
             var skipRow = option.PageSize * (option.PageNumber - 1);
             string queryString = Constants.DBSCRIPT_GET_ALL_ENTRIES.Replace("[BC_230101_KEYWORD]", nameTable).Replace("{SkipRow}", skipRow.ToString()).Replace("{TakeRow}", option.PageSize.ToString());
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = sqlConnection;
+            cmd.Connection = _sqlConnection;
             cmd.CommandText = queryString;
             List<Dictionary<string, object>> lstDictionaries = new List<Dictionary<string, object>>();
             using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
@@ -109,12 +117,12 @@ namespace DAL.Implement
             return lstDictionaries;
         }
 
-        public async Task<List<Dictionary<string, object>>> GetAllEntries(string nameTable, List<string> entryExclusionFields, SqlConnection sqlConnection)
+        public async Task<List<Dictionary<string, object>>> GetAllEntries(string nameTable, List<string> entryExclusionFields)
         {
             nameTable = "[BC_010101_TIGER]";
             string queryString = Constants.DBSCRIPT_GET_ALL_ENTRIES_NOPAGING.Replace("[BC_230101_KEYWORD]", nameTable);
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = sqlConnection;
+            cmd.Connection = _sqlConnection;
             cmd.CommandText = queryString;
             List<Dictionary<string, object>> lstDictionaries = new List<Dictionary<string, object>>();
             using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
@@ -129,27 +137,27 @@ namespace DAL.Implement
             return lstDictionaries;
         }
 
-        public async Task PurgeSelectedEntries(string nameTable, string entriesID, SqlConnection sqlConnection)
+        public async Task PurgeSelectedEntries(string nameTable, string entriesID)
         {
             nameTable = "[BC_010101_TIGER]";
             string queryString = Constants.DBSCRIPT_PURGE_SELECTED_ENTRIES.Replace("[BC_230101_KEYWORD]", nameTable).Replace("{entriesID}", entriesID);
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = sqlConnection;
+            cmd.Connection = _sqlConnection;
             cmd.CommandText = queryString;
             await cmd.ExecuteNonQueryAsync();
         }
 
-        public async Task PurgeAllEntries(string nameTable, SqlConnection sqlConnection)
+        public async Task PurgeAllEntries(string nameTable)
         {
             nameTable = "[BC_010101_TIGER]";
             string queryString = Constants.DBSCRIPT_PURGE_ALL_ENTRIES.Replace("[BC_230101_KEYWORD]", nameTable);
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = sqlConnection;
+            cmd.Connection = _sqlConnection;
             cmd.CommandText = queryString;
             await cmd.ExecuteNonQueryAsync();
         }
 
-        public async Task<List<Dictionary<string, object>>> FindEntries (string nameTable,Dictionary<string, object> props, SqlConnection sqlConnection)
+        public async Task<List<Dictionary<string, object>>> FindEntries (string nameTable,Dictionary<string, object> props)
         {
             var conditionCmds = new List<string>();
             foreach(var item in props)
@@ -160,7 +168,7 @@ namespace DAL.Implement
             SqlCommand cmd = new SqlCommand();
             cmd.Parameters.AddWithValue("@table", nameTable);
             cmd.Parameters.AddWithValue("@condition", string.Join("and", conditionCmds));
-            cmd.Connection = sqlConnection;
+            cmd.Connection = _sqlConnection;
             cmd.CommandText = queryString;
             List<Dictionary<string, object>> lstDictionaries = new List<Dictionary<string, object>>();
             using (SqlDataReader reader = await cmd.ExecuteReaderAsync())

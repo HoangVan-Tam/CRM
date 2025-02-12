@@ -1,4 +1,5 @@
 ﻿using Entities.DTO;
+using Entities.Models;
 using Microsoft.AspNetCore.Components.Forms;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,6 @@ namespace Services.Interface
         Task<FunctionResults<string>> PurgeSelectedEntriesAsync(string ContestEntriesTableName, List<int> entriesID);
         Task<FunctionResults<string>> PurgeAllEntriesAsync(string ContestEntriesTableName);
         Task<FunctionResults<byte[]>> GetEntriesCSV(string ContestUniqueCode);
-        //Task<FunctionResults<string>> APISubmitEntry(Parameters parameters, string contestUniqueCode);
+        Task<FunctionResults<Dictionary<string, object>>> APISubmitEntry(Parameters body, Contest contest);
     }
 }

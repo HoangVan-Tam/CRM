@@ -1,16 +1,32 @@
 ﻿using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
+using DAL.Implement;
+using DAL.Interface;
 using Entities.DTO;
+using Entities.Helper;
+using Entities.Models;
 using Newtonsoft.Json;
 using System.Data;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Web;
+using System.Xml;
 
 namespace Services.Common
 {
     public static class Helper
     {
+        private static AppSettings _appSettings;
+        private static IUnitOfWork _unitOfWork;
+
+        public static void Initialize(AppSettings appSettings, IUnitOfWork unitOfWork)
+        {
+            _appSettings = appSettings;
+            _unitOfWork = unitOfWork;
+        }
+
         public static Dictionary<string, TValue> ToDictionary<TValue>(object obj)
         {
             var json = JsonConvert.SerializeObject(obj);
@@ -65,7 +81,7 @@ namespace Services.Common
         public static byte[] ExportToCsv(List<Dictionary<string, object>> data)
         {
             StringBuilder sbRtn = new StringBuilder();
-            var header = "";  
+            var header = "";
             foreach (var item in data[0])
             {
                 if (header == "")
@@ -151,6 +167,120 @@ namespace Services.Common
             json = param.MobileNo.ToString() + " " + json;
 
             return json;
+        }
+
+        public static async Task<string> SendSms(Contest contest, string receivers, string content)
+        {
+            try
+            {
+                // create the web request with the url to the web
+                // service with the method name added to the end
+                HttpWebRequest httpReq = (HttpWebRequest)WebRequest.Create("http://www.smsdome.com/api/http/sendsms.aspx");
+
+                // add the parameters as key valued pairs making
+                // sure they are URL encoded where needed
+                ASCIIEncoding encoding = new ASCIIEncoding();
+                //byte[] postData = encoding.GetBytes("CreatedOn=" + dt + "&MobileNo=" + MobileNo + "&Message=" + Message);
+                byte[] postData = encoding.GetBytes("AppID=" +  contest.AppId + "&AppSecret=" + contest.AppSecret + "&receivers=" + receivers + "&content=" + HttpUtility.UrlEncode(content) + "&responseformat=XML");
+                httpReq.ContentType = "application/x-www-form-urlencoded";
+                httpReq.Method = "POST";
+                httpReq.ContentLength = postData.Length;
+
+                // convert the request to a steeam object and send it on its way
+                Stream ReqStrm = httpReq.GetRequestStream();
+                ReqStrm.Write(postData, 0, postData.Length);
+                ReqStrm.Close();
+
+                // get the response from the web server and
+                // read it all back into a string variable
+                HttpWebResponse httpResp = (HttpWebResponse)httpReq.GetResponse();
+                StreamReader respStrm = new StreamReader(httpResp.GetResponseStream(), Encoding.ASCII);
+                string result = respStrm.ReadToEnd();
+                httpResp.Close();
+                respStrm.Close();
+
+                // Get Credits used for sms
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(result);
+                XmlNodeList parentNode = xmlDoc.GetElementsByTagName("receiver");
+                var creditsUsed = "";
+                foreach (XmlNode node in parentNode)
+                {
+                    creditsUsed = node.Attributes["credits"].Value;
+                }
+
+                var log = new Dictionary<string, object>();
+                log.Add("LogDate", DateTime.UtcNow);
+                log.Add("Recipient", receivers);
+                log.Add("Content", content);
+                log.Add("LogType", "SMS");
+                log.Add("CreditsUsed", creditsUsed == "" ? "0" : creditsUsed);
+                await _unitOfWork.LinqToSQL.InsertAsync("BC" + contest.ContestUniqueCode, log);
+
+                return result;
+                // show the result the test box for testing purposes
+                //string result2 = result;
+
+                ////////////////////////////////////////////////////////
+
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+                //WriteToLogFile("Campaign Error: " + ex.Message);
+            }
+        }
+
+        public static async Task<string> SendWhatsapp(Contest contest, string mobileNo, string messageType, string messageText)
+        {
+            try
+            {     
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                //call outbound url
+                string uri = _appSettings.OutboundURL;
+
+                var log = new Dictionary<string, object>();
+                log.Add("LogDate", DateTime.UtcNow);
+                log.Add("Recipient", mobileNo);
+                log.Add("Content", messageText);
+                log.Add("LogType", "Whatsapp");
+                log.Add("CreditsUsed", "1");
+                await _unitOfWork.LinqToSQL.InsertAsync("BC" + contest.ContestUniqueCode, log);
+
+                HttpWebRequest httpReq = (HttpWebRequest)WebRequest.Create(uri);
+
+                httpReq.ContentType = "application/json; charset=utf-8";
+                httpReq.Method = "POST";
+                using (var streamWriter = new StreamWriter(httpReq.GetRequestStream()))
+                {
+                    OutboundMessage Outbound_webapp = new OutboundMessage
+                    {
+                        ContestId = contest.ContestID,
+                        MobileNo = mobileNo,
+                        MessageType = messageType,
+                        MessageText = messageText
+                    };
+
+                    string outboundWebapp = JsonConvert.SerializeObject(Outbound_webapp);
+
+                    streamWriter.Write(outboundWebapp);
+                }
+                string content = string.Empty;
+
+                using (var response = (HttpWebResponse)httpReq.GetResponse())
+                using (var receiveStream = response.GetResponseStream())
+                using (var reader = new StreamReader(receiveStream))
+                {
+                    content = reader.ReadToEnd();
+                    // parse your content, etc.
+                }
+                return content;
+
+            }
+            catch (WebException ex)
+            {
+                return "Exception : " + ex.Message;
+            }
         }
     }
 }

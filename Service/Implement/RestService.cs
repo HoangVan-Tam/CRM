@@ -1,4 +1,6 @@
-﻿using Entities.DTO;
+﻿using DAL.Interface;
+using Entities.DTO;
+using Services.Common;
 using Services.Interface;
 using System;
 using System.Collections.Generic;
@@ -10,44 +12,52 @@ namespace Services.Implement
 {
     public class RestService : IRestService
     {
-        public RestService() { }
-        public async Task<FunctionResults<string>> GetAndPostFunction(Parameters parameters)
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IEntriesService _entriesService;
+        public RestService(IUnitOfWork unitOfWork, IEntriesService entriesService) 
         {
-            // try
-            // {
-            //     //UserID and Keyword
-            //     DateTime dt = DateTime.UtcNow;
+            _unitOfWork = unitOfWork;
+            _entriesService = entriesService;
+        }
+        public async Task<FunctionResults<string>> GetAndPostFunction(Parameters body)
+        {
+            var res = new FunctionResults<string>();
+            try
+            {
+                //UserID and Keyword
+                DateTime dt = DateTime.UtcNow;
+                var contest = await _unitOfWork.Contest.FindAsync(p => p.ContestUniqueCode == body.ContestUniqueCode);
+                if (contest != null) 
+                {
+                    var Result = await _entriesService.APISubmitEntry(body, contest);
+                    string response = string.Empty;
 
-            //     var Result = Repo.SubmitEntry(body);
-            //     string response = string.Empty;
+                    if (body.SendResponse && (Result.IsSuccess && contest.AppId.ToString() != "" && contest.AppSecret != ""))/* && body.EntrySource !="API" */ //UnComment this to prevent API Entries from sending responses. 
+                    {
+                        if ((contest.AppId.ToString() != "" && contest.AppSecret != "") &&
+                                Result.Data["@EntrySource"].ToString().Equals("SMS", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            response = await Helper.SendSms(contest, body.MobileNo.ToString(),
+                                        Result.Data["@Response"].ToString());
+                        }
+                        else if (Result.Data["@EntrySource"].ToString().Equals("Whatsapp", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            response = await Helper.SendWhatsapp(contest, body.MobileNo.ToString(),
+                                      "text", Result.Data["@Response"].ToString());
+                        }
 
-            //     if (body.SendResponse && (Result.IsSendSMS && Repo.AppID != "" && Repo.AppSecret != ""))/* && body.EntrySource !="API" */ //UnComment this to prevent API Entries from sending responses. 
-            //     {
-            //         if ((Repo.AppID != "" && Repo.AppSecret != "") &&
-            //                 Result.Entry.EntrySource.Equals("SMS", StringComparison.InvariantCultureIgnoreCase))
-            //         {
-            //             response = GeneralFunctions.SendSms(Convert.ToInt32(Repo.AppID), new Guid(Repo.AppSecret), body.MobileNo.ToString(),
-            //                         Result.Entry.Response);
-            //         }
-            //         else if (Result.Entry.EntrySource.Equals("Whatsapp", StringComparison.InvariantCultureIgnoreCase))
-            //         {
-            //             response = GeneralFunctions.SendWhatsapp(body.MobileNo.ToString(),
-            //                       "text", Result.Entry.Response);
-            //         }
+                    }
 
-            //     }
-
-            //     return "OK";
-
-            // }
-            // catch (Exception ex)
-            // {
-            //     var ErrMsg = "Error : " + ex.Message + ex.StackTrace.ToString();
-            //     Repo.ErrorLog(ErrMsg);
-            //     return ErrMsg;
-            // }
-
-            return new FunctionResults<string>();
+                    return res;
+                }
+            }
+            catch (Exception ex)
+            {
+                var ErrMsg = "Error : " + ex.Message + ex.StackTrace.ToString();
+                res.IsSuccess = false;
+                res.Error = ErrMsg;
+                return res;
+            }
         }
     }
 }

@@ -15,19 +15,19 @@ namespace Entities.Constants
                 "CREATE TABLE [dbo].[BC_230101_KEYWORD]( " +
                 "[EntryID][int] IDENTITY(1, 1) NOT NULL, " +
                 "[DateEntry] [datetime2] (7) NOT NULL, " +
-                "[IsValid] [bit] NOT NULL, " +             
+                "[IsValid] [bit] NOT NULL, " +
                 "[Reason] [varchar] (250) NOT NULL, " +
                 "[Response] [nvarchar] (500) NOT NULL, " +
                 "[VerificationCode] [varchar] (20) NOT NULL, " +
                 "[Chances] [int] NOT NULL, " +
-                "[EntrySource] [varchar] (50) NOT NULL, " +               
+                "[EntrySource] [varchar] (50) NOT NULL, " +
                 "AddMoreColumn" +
                 "CONSTRAINT [PK_BC_230101_KEYWORD] PRIMARY KEY CLUSTERED " +
                 "( " +
                 "[EntryID] ASC " +
                 ") WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY] " +
                 ") ON [PRIMARY] " +
-                "GO; ";
+                "GO;";
 
         public const string DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD_Winner = "SET ANSI_NULLS ON" +
             "GO " +
@@ -53,12 +53,14 @@ namespace Entities.Constants
             "GO " +
             "ALTER TABLE[dbo].[BC_230101_KEYWORD_Winners] " +
             "CHECK CONSTRAINT[FK_BC_230101_KEYWORD_EntryID] " +
-            "GO ";
+            "GO";
 
         public const string DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD_Logs = "SET ANSI_NULLS ON" +
             "GO" +
-            "SET QUOTED_IDENTIFIER ON"+
+
+            "SET QUOTED_IDENTIFIER ON" +
             "GO" +
+
             "CREATE TABLE [dbo].[BC_230101_KEYWORD_Log](" +
             "[LogID] [int] IDENTITY(1,1) NOT NULL," +
             "[LogDate] [datetime2](7) NOT NULL," +
@@ -66,7 +68,8 @@ namespace Entities.Constants
             "[LogType] [nvarchar](500) NOT NULL," +
             "[Content] [nvarchar](500) NOT NULL," +
             "[CreditsUsed] [nvarchar](500) NOT NULL," +
-            "CONSTRAINT [PK_BC_230101_KEYWORD_LOG] PRIMARY KEY CLUSTERED " +
+            "CONSTRAINT [PK_BC_230101_KEYWORD_Log] PRIMARY KEY CLUSTERED" +
+            "(" +
             "[LogID] ASC" +
             ")WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]" +
             ") ON [PRIMARY]" +

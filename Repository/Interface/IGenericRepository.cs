@@ -11,6 +11,7 @@ namespace DAL.Interface
         void Update(T obj);
         void Delete(object id);
         Task<T> FindAsync(Expression<Func<T, bool>> filterExpression);
+        Task<T> FindAsyncWithIncludeAsync(Expression<Func<T, bool>> filterExpression, params Expression<Func<T, Object>>[] includes);
         Task<T> FindAsync(Expression<Func<T, bool>> filterExpression, params Expression<Func<T, Object>>[] includes);
         Task<List<T>> FindAllAsync(Expression<Func<T, bool>> filterExpression);
         Task<List<T>> FindAllWithIncludeAsync(Expression<Func<T, bool>> filterExpression, params Expression<Func<T, Object>>[] includes);

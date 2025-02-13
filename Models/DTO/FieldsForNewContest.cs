@@ -35,5 +35,6 @@ namespace Entities.DTO
         public bool ShowOnlinePage { get; set; } = false;
         public bool ShowOnlineCompletion { get; set; } = false;
         public bool IsRequired { get; set; } = false;
+        public bool IsUnique { get; set; } = false;
     }
 }

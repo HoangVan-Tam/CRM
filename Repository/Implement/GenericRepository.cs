@@ -49,6 +49,16 @@ namespace DAL.Implement
         {
             return await table.Where(filterExpression).FirstOrDefaultAsync();
         }
+        public async Task<T> FindAsyncWithIncludeAsync(Expression<Func<T, bool>> filterExpression, params Expression<Func<T, Object>>[] includes)
+        {
+            IQueryable<T> query = null;
+            foreach (var include in includes)
+            {
+                query = table.Include(include);
+            }
+            query = query.Where(filterExpression);
+            return await query.FirstOrDefaultAsync();
+        }
         public async Task<T> FindAsync(Expression<Func<T, bool>> filterExpression, params Expression<Func<T, Object>>[] includes)
         {
             IQueryable<T> query = null;

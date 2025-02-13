@@ -138,7 +138,7 @@ namespace Services.Implement
                     + "'0', " + "'0', " + "'', " + "'', " + "'', " + "'1', " + "'WEB', ";
                 completionValue = completionValue + values;
                 var nameTable = "BC_" + ContestUniqueCode;
-              //  await _unitOfWork.LinqToSQL.InsertAsync(nameTable, completionColumns, completionValue);
+                //  await _unitOfWork.LinqToSQL.InsertAsync(nameTable, completionColumns, completionValue);
                 response.Message = "Insert Entry Successfully";
                 await _sqlConnection.CloseAsync();
             }
@@ -262,7 +262,7 @@ namespace Services.Implement
                                 var matchRegex = rgx.Match(MatchedResultList[k]);
                                 if (matchRegex.Success)
                                 {
-                                    props.Add(FieldsL[k], MatchedResultList[k]);
+                                    props.Add("@" + FieldsL[k], MatchedResultList[k]);
                                 }
                             }
                         }
@@ -341,11 +341,7 @@ namespace Services.Implement
                     }
                 }
 
-
-
-
-                //Decide whether to save entryfields based on validity
-                int EntryID;
+                await _unitOfWork.LinqToSQL.InsertAsync(contest.ContestUniqueCode, props);
                 res.Data = props;
                 //var temp = SaveEntry(props);
                 return res;

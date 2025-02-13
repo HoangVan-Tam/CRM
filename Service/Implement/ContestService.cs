@@ -71,10 +71,10 @@ namespace Services.Implement
                     contestColumnDetail.ContestID = newContest.ContestID;
                     await _unitOfWork.ContestFieldDetail.InsertAsync(contestColumnDetail);
                 }
+                await _unitOfWork.SaveAsync();
                 await _unitOfWork.LinqToSQL.CreateContestTableAsync(contestUniqueCode, newContestIfno.contestFields, transaction, Constants.TYPETABLE.ENTRIES);
                 await _unitOfWork.LinqToSQL.CreateContestTableAsync(contestUniqueCode, null, transaction, Constants.TYPETABLE.WINNERS);
                 await _unitOfWork.LinqToSQL.CreateContestTableAsync(contestUniqueCode, null, transaction, Constants.TYPETABLE.LOG);
-                await _unitOfWork.SaveAsync();
                 await transaction.CommitAsync();
                 await _sqlConnection.CloseAsync();
             }

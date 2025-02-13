@@ -14,7 +14,7 @@ namespace SMSDOME_Standard_Contest_BlazorServer.Controllers
     public class RESTController : ControllerBase
     {
         private IRestService _restService;
-        public RESTController(IRestService restService) 
+        public RESTController(IRestService restService)
         {
             _restService = restService;
         }
@@ -24,7 +24,7 @@ namespace SMSDOME_Standard_Contest_BlazorServer.Controllers
         [Route("Add/")]
         public async Task<IActionResult> Add([FromBody] FormDataCollection body)
         {
-            var rtn = _restService.GetAndPostFunction(new Parameters
+            var rtn = await _restService.GetAndPostFunctionAsync(new Parameters
             {
                 CreatedOn = body.Get("CreatedOn") == null ? null : body["CreatedOn"].ToString(),
                 MobileNo = body.Get("MobileNo") == null ? null : body["MobileNo"].ToString(),
@@ -40,18 +40,18 @@ namespace SMSDOME_Standard_Contest_BlazorServer.Controllers
         [AllowAnonymous]
         [Route("Add/")]
         public async Task<IActionResult> Add(string contestUniqueCode, string createdon, string MobileNo, string Message, string FileLink = "")
-        { 
-            var res = _restService.GetAndPostFunction(new Parameters
+        {
+            var res = await _restService.GetAndPostFunctionAsync(new Parameters
             {
                 CreatedOn = createdon,
                 MobileNo = MobileNo,
                 Message = Message,
                 FileLink = FileLink,
-                EntrySource = (FileLink != null && FileLink.ToString() != "") ? "MMS" : "SMS",
+                EntrySource = (FileLink != null && FileLink.ToString() != "" && FileLink.ToString() != "\"\"") ? "MMS" : "SMS",
                 SendResponse = true,
                 ContestUniqueCode = contestUniqueCode
             });
-            return Ok();
+            return Ok(res.Message);
         }
     }
 }

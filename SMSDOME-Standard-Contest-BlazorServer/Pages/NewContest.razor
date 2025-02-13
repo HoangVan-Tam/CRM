@@ -82,9 +82,10 @@
                     <th>Field Name</th>
                     <th>Field Label</th>
                     <th>Field Type</th>
-                    <th>Show Online Page</th>
-                    <th>Show Online Completion</th>
+                    <th>Online Page</th>
+                    <th>Online Completion</th>
                     <th>Required</th>
+                    <th>Is Unique</th>
                     <th>Order</th>
                     <th>Regex</th>
                     <th></th>
@@ -128,6 +129,9 @@
                         <td>
                             <InputCheckbox @bind-Value="item.IsRequired"></InputCheckbox>
                         </td>
+                        <td>
+                            <InputCheckbox @bind-Value="item.IsUnique"></InputCheckbox>
+                        </td>
                         <td style="min-width: 100px; width: 100px">
                             <InputNumber class="form-control" @bind-Value="item.Order" />
                         </td>
@@ -137,7 +141,7 @@
                                 <option value=0 selected>
                                     - Select -
                                 </option>
-                                @foreach (var regex in lstRegexValidations)
+                                @foreach (var regex in regexValidations)
                                 {
                                     <option value="@regex.RegexID">
                                         @regex.Name
@@ -269,12 +273,12 @@
 </EditForm>
 
 <!-- Modal -->
-<NewRegexValidationPopup RegexValidations="lstRegexValidations" OnCreateNewRegexValidation="HandleCreateNewRegexClick">
+<NewRegexValidationPopup RegexValidations="regexValidations" OnCreateNewRegexValidation="HandleCreateNewRegexClick">
 </NewRegexValidationPopup>
 
 @code {
     private NewContestInfomation newContest = new NewContestInfomation();
-    private List<RegexValidation> lstRegexValidations = new List<RegexValidation>();
+    private List<RegexValidation> regexValidations = new List<RegexValidation>();
     private List<DropDownItemData<string>> lstContestFieldsForSMS = new List<DropDownItemData<string>>();
     int currentEdit = -1;
     private bool divSMSSubmission = false;
@@ -285,7 +289,8 @@
     {
         var ddlField = await _contestColumnsService.LoadAllColumn();
         var regexValidationServiceResponse = await _regexValidationService.LoadAllRegexAsync();
-        lstRegexValidations = regexValidationServiceResponse.Data;
+        regexValidations = regexValidationServiceResponse.Data;
+        InitDataForFieldsForNewContest();
     }
 
     private async Task CreateNewContest()
@@ -313,7 +318,7 @@
     private void HandleCreateNewRegexClick(RegexValidation arg)
     {
         // Handle the event from the child component
-        lstRegexValidations.Add(arg);
+        regexValidations.Add(arg);
     }
     private void OnSelectRegexValueChange(ChangeEventArgs __e, FieldsForNewContest selectedField)
     {
@@ -336,20 +341,20 @@
         var regexsFullString = "";
         foreach (var item in selectedRegexIDs)
         {
-            var regexPattern = lstRegexValidations.Where(p => p.RegexID == item).Select(p => p.Pattern).FirstOrDefault();
+            var regexPattern = regexValidations.Where(p => p.RegexID == item).Select(p => p.Pattern).FirstOrDefault();
             if (regexPattern != null)
             {
                 if (regexsFullString == "")
                 {
-                    regexsFullString = "(" + regexPattern + ")";
+                    regexsFullString = "(" + Regex.Replace(regexPattern, @"^\^|\$$", "") + ")";
                 }
                 else
                 {
-                    regexsFullString = regexsFullString + "( " + regexPattern + ")";
+                    regexsFullString = regexsFullString + "( " + Regex.Replace(regexPattern, @"^\^|\$$", "") + ")";
                 }
             }
         }
-        newContest.ValidationRegexFull = regexsFullString;
+        newContest.ValidationRegexFull = "^" + regexsFullString + "$";
     }
 
 
@@ -362,5 +367,45 @@
             field.Code = value;
         }
         FieldsOfSMSOnChange(lstContestFieldsForSMS);
+    }
+
+    private void InitDataForFieldsForNewContest()
+    {
+        newContest.contestFields.Add(new FieldsForNewContest()
+            {
+                FieldLabel = "Name",
+                FieldName = "Name",
+                FieldType = "String",
+                IsRequired = true,
+                Order = 0,
+                RegexValidationID = regexValidations.Where(p => p.Name == "Name").FirstOrDefault() != null ?
+            regexValidations.Where(p => p.Name == "Name").FirstOrDefault().RegexID : 0,
+                ShowOnlineCompletion = true,
+                ShowOnlinePage = true,
+            });
+        newContest.contestFields.Add(new FieldsForNewContest()
+            {
+                FieldLabel = "Mobile Number",
+                FieldName = "MobileNumber",
+                FieldType = "String",
+                IsRequired = true,
+                Order = 1,
+                RegexValidationID = regexValidations.Where(p => p.Name == "Mobile Number").FirstOrDefault() != null ?
+            regexValidations.Where(p => p.Name == "Mobile Number").FirstOrDefault().RegexID : 0,
+                ShowOnlineCompletion = true,
+                ShowOnlinePage = true,
+            });
+        newContest.contestFields.Add(new FieldsForNewContest()
+            {
+                FieldLabel = "Receipt Number",
+                FieldName = "ReceiptNumber",
+                FieldType = "String",
+                IsRequired = true,
+                Order = 2,
+                RegexValidationID = regexValidations.Where(p => p.Name == "Receipt Number").FirstOrDefault() != null ?
+            regexValidations.Where(p => p.Name == "Receipt Number").FirstOrDefault().RegexID : 0,
+                ShowOnlineCompletion = true,
+                ShowOnlinePage = true,
+            });
     }
 }

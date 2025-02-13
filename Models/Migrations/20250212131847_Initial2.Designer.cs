@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entities.Migrations
 {
     [DbContext(typeof(StandardContest2023Context))]
-    [Migration("20250205084334_Initial3")]
-    partial class Initial3
+    [Migration("20250212131847_Initial2")]
+    partial class Initial2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -70,6 +70,9 @@ namespace Entities.Migrations
 
                     b.Property<string>("NameContest")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RepeatValidation")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RepeatedOnlinePageResponse")
@@ -147,6 +150,9 @@ namespace Entities.Migrations
                     b.Property<bool?>("IsRequired")
                         .HasColumnType("bit");
 
+                    b.Property<bool?>("IsUnique")
+                        .HasColumnType("bit");
+
                     b.Property<int>("Order")
                         .HasColumnType("int");
 
@@ -170,11 +176,11 @@ namespace Entities.Migrations
 
             modelBuilder.Entity("Entities.Models.RegexValidation", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("RegexID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RegexID"), 1L, 1);
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -187,9 +193,32 @@ namespace Entities.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("RegexID");
 
                     b.ToTable("RegexValidations");
+
+                    b.HasData(
+                        new
+                        {
+                            RegexID = -1,
+                            Description = "Regex for Name",
+                            Name = "Name",
+                            Pattern = "^[a-zA-Z ]+$"
+                        },
+                        new
+                        {
+                            RegexID = -2,
+                            Description = "Regex for Mobile Number",
+                            Name = "Mobile Number",
+                            Pattern = "^\\+*\\d+$"
+                        },
+                        new
+                        {
+                            RegexID = -3,
+                            Description = "Regex for Receipt Number",
+                            Name = "Receipt Number",
+                            Pattern = "^\\S*\\d\\S*$"
+                        });
                 });
 
             modelBuilder.Entity("Entities.Models.ContestFieldDetails", b =>

@@ -9,6 +9,6 @@ namespace Services.Interface
 {
     public interface IRestService
     {
-        Task<FunctionResults<string>> GetAndPostFunction(Parameters parameters);
+        Task<FunctionResults<string>> GetAndPostFunctionAsync(Parameters parameters);
     }
 }

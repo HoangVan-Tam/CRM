@@ -21,11 +21,12 @@ namespace DAL.Implement
         {
             _sqlConnection = sqlConnection;
         }
-        public async Task InsertAsync(string tableName, Dictionary<string, object> props)
+        public async Task InsertAsync(string contestUniqueCode, Dictionary<string, object> props)
         {
+            var tableName = "BC_" + contestUniqueCode;
             string queryString = "INSERT INTO " + tableName + " (@column) " + "VALUES " + "(@value)";
             SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.AddWithValue("(@column)", string.Join(",", props.Keys).Replace("@",""));
+            cmd.Parameters.AddWithValue("(@column)", string.Join(",", props.Keys).Replace("@", ""));
             cmd.Parameters.AddWithValue("(@value)", string.Join(",", props.Keys));
             foreach (var prop in props)
             {
@@ -36,7 +37,7 @@ namespace DAL.Implement
             await cmd.ExecuteNonQueryAsync();
         }
 
-        public async Task CreateContestTableAsync(string nameTable, List<FieldsForNewContest> columns, SqlTransaction sqlTransaction, Constants.TYPETABLE  type)
+        public async Task CreateContestTableAsync(string nameTable, List<FieldsForNewContest> columns, SqlTransaction sqlTransaction, Constants.TYPETABLE type)
         {
             string queryString = "";
             switch (type)
@@ -77,10 +78,10 @@ namespace DAL.Implement
                     }
                     break;
                 case Constants.TYPETABLE.WINNERS:
-                    queryString = Constants.DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD_Winner.Replace("230101_KEYWORD", nameTable); 
+                    queryString = Constants.DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD_Winner.Replace("230101_KEYWORD", nameTable);
                     break;
                 case Constants.TYPETABLE.LOG:
-                    queryString = Constants.DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD_Logs.Replace("230101_KEYWORD", nameTable); 
+                    queryString = Constants.DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD_Logs.Replace("230101_KEYWORD", nameTable);
                     break;
                 default: break;
 
@@ -88,7 +89,7 @@ namespace DAL.Implement
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = _sqlConnection;
             cmd.Transaction = sqlTransaction;
-            var lstCmd = queryString.Split("GO").ToList();
+            var lstCmd = queryString.Split("GO", StringSplitOptions.RemoveEmptyEntries).ToList();
             foreach (var item in lstCmd)
             {
                 cmd.CommandText = item;
@@ -110,7 +111,7 @@ namespace DAL.Implement
                 while (reader.Read())
                 {
                     var keyValuePair = Enumerable.Range(0, reader.FieldCount)
-                 .ToDictionary(reader.GetName, reader.GetValue).Where(p => !entryExclusionFields.Any(o => p.Key.Contains(o))).ToDictionary(p=>p.Key, p=>p.Value);
+                 .ToDictionary(reader.GetName, reader.GetValue).Where(p => !entryExclusionFields.Any(o => p.Key.Contains(o))).ToDictionary(p => p.Key, p => p.Value);
                     lstDictionaries.Add(keyValuePair);
                 }
             }
@@ -157,10 +158,10 @@ namespace DAL.Implement
             await cmd.ExecuteNonQueryAsync();
         }
 
-        public async Task<List<Dictionary<string, object>>> FindEntries (string nameTable,Dictionary<string, object> props)
+        public async Task<List<Dictionary<string, object>>> FindEntries(string nameTable, Dictionary<string, object> props)
         {
             var conditionCmds = new List<string>();
-            foreach(var item in props)
+            foreach (var item in props)
             {
                 conditionCmds.Add(item.Key + " = " + item.Value.ToString());
             }

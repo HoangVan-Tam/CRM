@@ -5,6 +5,7 @@ using Services.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,20 +15,20 @@ namespace Services.Implement
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IEntriesService _entriesService;
-        public RestService(IUnitOfWork unitOfWork, IEntriesService entriesService) 
+        public RestService(IUnitOfWork unitOfWork, IEntriesService entriesService)
         {
             _unitOfWork = unitOfWork;
             _entriesService = entriesService;
         }
-        public async Task<FunctionResults<string>> GetAndPostFunction(Parameters body)
+        public async Task<FunctionResults<string>> GetAndPostFunctionAsync(Parameters body)
         {
             var res = new FunctionResults<string>();
             try
             {
                 //UserID and Keyword
                 DateTime dt = DateTime.UtcNow;
-                var contest = await _unitOfWork.Contest.FindAsync(p => p.ContestUniqueCode == body.ContestUniqueCode);
-                if (contest != null) 
+                var contest = await _unitOfWork.Contest.FindAsyncWithIncludeAsync(p => p.ContestUniqueCode == body.ContestUniqueCode, x => x.ContestFieldDetails);
+                if (contest != null)
                 {
                     var Result = await _entriesService.APISubmitEntry(body, contest);
                     string response = string.Empty;
@@ -45,11 +46,11 @@ namespace Services.Implement
                             response = await Helper.SendWhatsapp(contest, body.MobileNo.ToString(),
                                       "text", Result.Data["@Response"].ToString());
                         }
-
                     }
-
                     return res;
                 }
+                res.IsSuccess = false;
+                return res;
             }
             catch (Exception ex)
             {

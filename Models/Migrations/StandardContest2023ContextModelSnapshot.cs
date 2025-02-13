@@ -70,6 +70,9 @@ namespace Entities.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("RepeatValidation")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("RepeatedOnlinePageResponse")
                         .HasColumnType("nvarchar(max)");
 
@@ -145,6 +148,9 @@ namespace Entities.Migrations
                     b.Property<bool?>("IsRequired")
                         .HasColumnType("bit");
 
+                    b.Property<bool?>("IsUnique")
+                        .HasColumnType("bit");
+
                     b.Property<int>("Order")
                         .HasColumnType("int");
 
@@ -188,6 +194,29 @@ namespace Entities.Migrations
                     b.HasKey("RegexID");
 
                     b.ToTable("RegexValidations");
+
+                    b.HasData(
+                        new
+                        {
+                            RegexID = -1,
+                            Description = "Regex for Name",
+                            Name = "Name",
+                            Pattern = "^[a-zA-Z ]+$"
+                        },
+                        new
+                        {
+                            RegexID = -2,
+                            Description = "Regex for Mobile Number",
+                            Name = "Mobile Number",
+                            Pattern = "^\\+*\\d+$"
+                        },
+                        new
+                        {
+                            RegexID = -3,
+                            Description = "Regex for Receipt Number",
+                            Name = "Receipt Number",
+                            Pattern = "^\\S*\\d\\S*$"
+                        });
                 });
 
             modelBuilder.Entity("Entities.Models.ContestFieldDetails", b =>

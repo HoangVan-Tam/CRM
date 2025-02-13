@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entities.Migrations
 {
     [DbContext(typeof(StandardContest2023Context))]
-    [Migration("20250206051908_init1")]
-    partial class init1
+    [Migration("20250212130434_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -72,6 +72,9 @@ namespace Entities.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("RepeatValidation")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("RepeatedOnlinePageResponse")
                         .HasColumnType("nvarchar(max)");
 
@@ -122,11 +125,11 @@ namespace Entities.Migrations
 
             modelBuilder.Entity("Entities.Models.ContestFieldDetails", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("FieldDetailID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FieldDetailID"), 1L, 1);
 
                     b.Property<string>("ContestID")
                         .IsRequired()
@@ -147,6 +150,9 @@ namespace Entities.Migrations
                     b.Property<bool?>("IsRequired")
                         .HasColumnType("bit");
 
+                    b.Property<bool?>("IsUnique")
+                        .HasColumnType("bit");
+
                     b.Property<int>("Order")
                         .HasColumnType("int");
 
@@ -159,7 +165,7 @@ namespace Entities.Migrations
                     b.Property<bool?>("ShowOnlinePage")
                         .HasColumnType("bit");
 
-                    b.HasKey("ID");
+                    b.HasKey("FieldDetailID");
 
                     b.HasIndex("ContestID");
 
@@ -170,11 +176,11 @@ namespace Entities.Migrations
 
             modelBuilder.Entity("Entities.Models.RegexValidation", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("RegexID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RegexID"), 1L, 1);
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -187,7 +193,7 @@ namespace Entities.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("RegexID");
 
                     b.ToTable("RegexValidations");
                 });

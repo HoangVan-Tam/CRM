@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Entities.Migrations
 {
-    public partial class Initial3 : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -39,6 +39,7 @@ namespace Entities.Migrations
                     MissingFieldResponse = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EntryExclusionFields = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     WinnerExclusionFields = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RepeatValidation = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     TierAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
@@ -51,7 +52,7 @@ namespace Entities.Migrations
                 name: "RegexValidations",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
+                    RegexID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Pattern = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -59,7 +60,7 @@ namespace Entities.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RegexValidations", x => x.ID);
+                    table.PrimaryKey("PK_RegexValidations", x => x.RegexID);
                 });
 
             migrationBuilder.CreateTable(
@@ -70,6 +71,7 @@ namespace Entities.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ShowOnlinePage = table.Column<bool>(type: "bit", nullable: true),
                     ShowOnlineCompletion = table.Column<bool>(type: "bit", nullable: true),
+                    IsUnique = table.Column<bool>(type: "bit", nullable: true),
                     IsRequired = table.Column<bool>(type: "bit", nullable: true),
                     FieldLabel = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FieldName = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -92,7 +94,7 @@ namespace Entities.Migrations
                         name: "FK_ContestFieldDetails_RegexValidations_RegexValidationID",
                         column: x => x.RegexValidationID,
                         principalTable: "RegexValidations",
-                        principalColumn: "ID",
+                        principalColumn: "RegexID",
                         onDelete: ReferentialAction.Cascade);
                 });
 

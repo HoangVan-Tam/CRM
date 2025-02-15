@@ -5,6 +5,7 @@ using DAL.Interface;
 using Entities.DTO;
 using Entities.Helper;
 using Entities.Models;
+using Microsoft.Data.SqlClient;
 using Newtonsoft.Json;
 using System.Data;
 using System.Net;
@@ -215,7 +216,7 @@ namespace Services.Common
                 log.Add("Content", content);
                 log.Add("LogType", "SMS");
                 log.Add("CreditsUsed", creditsUsed == "" ? "0" : creditsUsed);
-                await _unitOfWork.LinqToSQL.InsertAsync("BC" + contest.ContestUniqueCode, log);
+                await _unitOfWork.SQL.InsertAsync("BC" + contest.ContestUniqueCode, log);
 
                 return result;
                 // show the result the test box for testing purposes
@@ -245,7 +246,7 @@ namespace Services.Common
                 log.Add("Content", messageText);
                 log.Add("LogType", "Whatsapp");
                 log.Add("CreditsUsed", "1");
-                await _unitOfWork.LinqToSQL.InsertAsync("BC" + contest.ContestUniqueCode, log);
+                await _unitOfWork.SQL.InsertAsync("BC" + contest.ContestUniqueCode, log);
 
                 HttpWebRequest httpReq = (HttpWebRequest)WebRequest.Create(uri);
 
@@ -281,6 +282,34 @@ namespace Services.Common
             {
                 return "Exception : " + ex.Message;
             }
+        }
+
+        public static async Task<List<ColumnMetadata>> GetTableColumnsAsync(string contestUniqueCode)
+        {
+            var columns = new List<ColumnMetadata>();
+            string query = @"
+            SELECT COLUMN_NAME, DATA_TYPE
+            FROM INFORMATION_SCHEMA.COLUMNS
+            WHERE TABLE_NAME = @TableName";
+
+            var connection = _unitOfWork.GetDbConnection();
+            using (var command = new SqlCommand(query, (SqlConnection)connection, (SqlTransaction)_unitOfWork.CurrentDbTransaction))
+            {
+                command.Parameters.AddWithValue("@TableName", "BC_" + contestUniqueCode);
+
+                using (var reader = await command.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        columns.Add(new ColumnMetadata
+                        {
+                            ColumnName = reader["COLUMN_NAME"].ToString(),
+                            DataType = reader["DATA_TYPE"].ToString()
+                        });
+                    }
+                }
+            }
+            return columns;
         }
     }
 }

@@ -1,8 +1,11 @@
 ﻿
 
+
 using DAL.Interface;
+using Entities.Helper;
 using Entities.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -49,27 +52,7 @@ namespace DAL.Implement
         {
             return await table.Where(filterExpression).FirstOrDefaultAsync();
         }
-        public async Task<T> FindAsyncWithIncludeAsync(Expression<Func<T, bool>> filterExpression, params Expression<Func<T, Object>>[] includes)
-        {
-            IQueryable<T> query = null;
-            foreach (var include in includes)
-            {
-                query = table.Include(include);
-            }
-            query = query.Where(filterExpression);
-            return await query.FirstOrDefaultAsync();
-        }
-        public async Task<T> FindAsync(Expression<Func<T, bool>> filterExpression, params Expression<Func<T, Object>>[] includes)
-        {
-            IQueryable<T> query = null;
-            foreach (var include in includes)
-            {
-                query = includes.Aggregate(query,
-                  (current, include) => current.Include(include));
-            }
-            query = query.Where(filterExpression);
-            return await query.FirstOrDefaultAsync();
-        }
+
         public async Task<List<T>> FindAllAsync(Expression<Func<T, bool>> filterExpression)
         {
             return await table.Where(filterExpression).ToListAsync();

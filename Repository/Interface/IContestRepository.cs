@@ -9,5 +9,6 @@ namespace DAL.Interface
 {
     public interface IContestRepository : IGenericRepository<Contest>
     {
+        Task<Contest> GetContestWithContestFieldDetailsAndRegexValidationsAsync(string contestUniqueCode);
     }
 }

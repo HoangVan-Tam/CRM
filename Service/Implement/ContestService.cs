@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Azure;
 using DAL.Interface;
 using Entities.Constants;
 using Entities.DTO;
@@ -19,15 +20,14 @@ namespace Services.Implement
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        private SqlConnection _sqlConnection;
+        private readonly ITransactionService _transactionService;
         private IConfiguration _config;
-        public ContestService(IUnitOfWork unitOfWork, IMapper mapper, SqlConnection sqlConnection, IConfiguration config)
+        public ContestService(IUnitOfWork unitOfWork, IMapper mapper, SqlConnection sqlConnection, IConfiguration config, ITransactionService transactionService)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
-            _sqlConnection = sqlConnection;
             _config = config;
-            _sqlConnection.ConnectionString = _config.GetConnectionString("BaseDB");
+            _transactionService = transactionService;
         }
 
         public async Task<FunctionResults<List<ContestOverView>>> LoadAllContestAsync()
@@ -56,9 +56,7 @@ namespace Services.Implement
         public async Task<FunctionResults<List<string>>> CreateNewContestAsync(NewContestInfomation newContestIfno)
         {
             FunctionResults<List<string>> response = new FunctionResults<List<string>>();
-            await _sqlConnection.OpenAsync();
-            var transaction = _sqlConnection.BeginTransaction();
-            try
+            await _transactionService.ExecuteTransactionAsync(async () =>
             {
                 var newContest = _mapper.Map<Contest>(newContestIfno);
                 var contestUniqueCode = (newContest.StartDate.ToString("yyMMdd") + "_" + newContest.Keyword).ToUpper();
@@ -72,19 +70,10 @@ namespace Services.Implement
                     await _unitOfWork.ContestFieldDetail.InsertAsync(contestColumnDetail);
                 }
                 await _unitOfWork.SaveAsync();
-                await _unitOfWork.LinqToSQL.CreateContestTableAsync(contestUniqueCode, newContestIfno.contestFields, transaction, Constants.TYPETABLE.ENTRIES);
-                await _unitOfWork.LinqToSQL.CreateContestTableAsync(contestUniqueCode, null, transaction, Constants.TYPETABLE.WINNERS);
-                await _unitOfWork.LinqToSQL.CreateContestTableAsync(contestUniqueCode, null, transaction, Constants.TYPETABLE.LOG);
-                await transaction.CommitAsync();
-                await _sqlConnection.CloseAsync();
-            }
-            catch (Exception ex)
-            {
-                await transaction.RollbackAsync();
-                await _sqlConnection.CloseAsync();
-                response.Error = ex.Message;
-                response.IsSuccess = false;
-            }
+                await _unitOfWork.SQL.CreateContestTableAsync(contestUniqueCode, newContestIfno.contestFields, Constants.TYPETABLE.ENTRIES);
+                _unitOfWork.SQL.CreateContestTableAsync(contestUniqueCode, null, Constants.TYPETABLE.LOG);
+                _unitOfWork.SQL.CreateContestTableAsync(contestUniqueCode, null, Constants.TYPETABLE.WINNERS);
+            });
             return response;
         }
 

@@ -28,7 +28,7 @@ builder.Services.AddDbContext<StandardContest2023Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("BaseDB"));
 });
 //builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-builder.Services.AddScoped(typeof(ILinqToSQLRepository), typeof(LinqToSQLRepository));
+builder.Services.AddScoped(typeof(ISQLRepository), typeof(SQLRepository));
 builder.Services.AddScoped<SqlConnection>();
 builder.Services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
 builder.Services.AddScoped(typeof(IToastService), typeof(ToastService));

@@ -39,7 +39,7 @@ namespace SMSDOME_Standard_Contest_BlazorServer.Controllers
         [HttpGet]
         [AllowAnonymous]
         [Route("Add/")]
-        public async Task<IActionResult> Add(string contestUniqueCode, string createdon, string MobileNo, string Message, string FileLink = "")
+        public async Task<IActionResult> Add(string contestUniqueCode, string createdon, string MobileNo, string Message, string? FileLink = "")
         {
             var res = await _restService.GetAndPostFunctionAsync(new Parameters
             {

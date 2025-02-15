@@ -27,7 +27,7 @@ namespace Services.Implement
             {
                 //UserID and Keyword
                 DateTime dt = DateTime.UtcNow;
-                var contest = await _unitOfWork.Contest.FindAsyncWithIncludeAsync(p => p.ContestUniqueCode == body.ContestUniqueCode, x => x.ContestFieldDetails);
+                var contest = await _unitOfWork.Contest.GetContestWithContestFieldDetailsAndRegexValidationsAsync(body.ContestUniqueCode);
                 if (contest != null)
                 {
                     var Result = await _entriesService.APISubmitEntry(body, contest);

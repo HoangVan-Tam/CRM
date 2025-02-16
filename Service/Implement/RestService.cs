@@ -38,12 +38,12 @@ namespace Services.Implement
                         if ((contest.AppId.ToString() != "" && contest.AppSecret != "") &&
                                 Result.Data["@EntrySource"].ToString().Equals("SMS", StringComparison.InvariantCultureIgnoreCase))
                         {
-                            response = await Helper.SendSms(contest, body.MobileNo.ToString(),
+                            response = await Helpers.SendSms(contest, body.MobileNo.ToString(),
                                         Result.Data["@Response"].ToString());
                         }
                         else if (Result.Data["@EntrySource"].ToString().Equals("Whatsapp", StringComparison.InvariantCultureIgnoreCase))
                         {
-                            response = await Helper.SendWhatsapp(contest, body.MobileNo.ToString(),
+                            response = await Helpers.SendWhatsapp(contest, body.MobileNo.ToString(),
                                       "text", Result.Data["@Response"].ToString());
                         }
                     }

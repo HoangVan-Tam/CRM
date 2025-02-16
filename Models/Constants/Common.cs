@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Constants
 {
-    public static partial class Constants
+    public static partial class GlobalConstants
     {
         public const string REPEATVALIDATION_RECEIPTNO = "ReceipNo";
         public const string REPEATVALIDATION_RECEIPTNO_MOBILENO = "Receipt MobileNo";

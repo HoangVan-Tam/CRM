@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Models\Entities
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "Repository\DAL.csproj", "{B6C1C29F-8BC2-44C4-B678-10FB60F80611}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{058CB042-D07C-4065-95D7-4B50DCFE658C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{B84F9F78-C23E-4CF5-B7AF-409DFD9ED748}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{B6C1C29F-8BC2-44C4-B678-10FB60F80611}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6C1C29F-8BC2-44C4-B678-10FB60F80611}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6C1C29F-8BC2-44C4-B678-10FB60F80611}.Release|Any CPU.Build.0 = Release|Any CPU
-		{058CB042-D07C-4065-95D7-4B50DCFE658C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{058CB042-D07C-4065-95D7-4B50DCFE658C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{058CB042-D07C-4065-95D7-4B50DCFE658C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{058CB042-D07C-4065-95D7-4B50DCFE658C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B84F9F78-C23E-4CF5-B7AF-409DFD9ED748}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B84F9F78-C23E-4CF5-B7AF-409DFD9ED748}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B84F9F78-C23E-4CF5-B7AF-409DFD9ED748}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B84F9F78-C23E-4CF5-B7AF-409DFD9ED748}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

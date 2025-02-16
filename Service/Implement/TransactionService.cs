@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Polly;
 using Polly.Retry;
+using Services.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Services.Implement
 {
-    public class TransactionService
+    public class TransactionService : ITransactionService
     {
         private readonly StandardContest2023Context _context;
         private readonly AsyncRetryPolicy _retryPolicy;

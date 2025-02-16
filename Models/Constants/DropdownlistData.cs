@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entities.Constants
 {
-    public partial class Constants
+    public partial class GlobalConstants
     {
-        public static readonly Dictionary<string, object> DROPDOWNLIST_FIELDTYPE = new Dictionary<string, object>(){{"String", "String" }, { "DateTime", "DateTime" }, { "Int", "Int" }, { "Decimal", "Decimal" }, { "Boolean", "Boolean" } };
+        public static readonly Dictionary<string, object> DROPDOWNLIST_FIELDTYPE = new Dictionary<string, object>() { { "String", "String" }, { "DateTime", "DateTime" }, { "Int", "Int" }, { "Decimal", "Decimal" }, { "Boolean", "Boolean" } };
     }
 }

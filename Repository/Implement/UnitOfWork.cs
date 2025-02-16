@@ -16,7 +16,8 @@ namespace DAL.Implement
     {
         private bool _disposed;
         private StandardContest2023Context _context;
-        private IDbConnection _connection;
+        private IDbConnection _dbConnection;
+        private IDbContextTransaction _efConnection;
         private IDbTransaction _currentDbTransaction;
         private IDbContextTransaction _currentEfTransaction;
         private IContestRepository _contestRepository;
@@ -29,11 +30,12 @@ namespace DAL.Implement
             _context = context;
             _sql = sql;
         }
-        public IContestRepository Contest { 
-            get 
+        public IContestRepository Contest
+        {
+            get
             {
                 return _contestRepository = _contestRepository ?? new ContestRepository(_context);
-            } 
+            }
         }
 
         public IContestFieldDetailsRepository ContestFieldDetail
@@ -90,7 +92,7 @@ namespace DAL.Implement
             if (connection.State != ConnectionState.Open)
                 await connection.OpenAsync();
             _currentDbTransaction = await connection.BeginTransactionAsync();
-            _connection = connection;
+            _dbConnection = connection;
         }
 
         public async Task BeginEfTransactionAsync()
@@ -159,7 +161,12 @@ namespace DAL.Implement
 
         public IDbConnection GetDbConnection()
         {
-            return _connection; 
+            return _dbConnection;
+        }
+
+        public IDbContextTransaction GetDbEfConnection()
+        {
+            return _efConnection;
         }
     }
 }

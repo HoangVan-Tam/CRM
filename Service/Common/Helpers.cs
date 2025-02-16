@@ -2,6 +2,7 @@
 using Azure.Storage.Blobs.Models;
 using DAL.Implement;
 using DAL.Interface;
+using Entities.Constants;
 using Entities.DTO;
 using Entities.Helper;
 using Entities.Models;
@@ -17,7 +18,7 @@ using System.Xml;
 
 namespace Services.Common
 {
-    public static class Helper
+    public static class Helpers
     {
         private static AppSettings _appSettings;
         private static IUnitOfWork _unitOfWork;
@@ -182,7 +183,7 @@ namespace Services.Common
                 // sure they are URL encoded where needed
                 ASCIIEncoding encoding = new ASCIIEncoding();
                 //byte[] postData = encoding.GetBytes("CreatedOn=" + dt + "&MobileNo=" + MobileNo + "&Message=" + Message);
-                byte[] postData = encoding.GetBytes("AppID=" +  contest.AppId + "&AppSecret=" + contest.AppSecret + "&receivers=" + receivers + "&content=" + HttpUtility.UrlEncode(content) + "&responseformat=XML");
+                byte[] postData = encoding.GetBytes("AppID=" + contest.AppId + "&AppSecret=" + contest.AppSecret + "&receivers=" + receivers + "&content=" + HttpUtility.UrlEncode(content) + "&responseformat=XML");
                 httpReq.ContentType = "application/x-www-form-urlencoded";
                 httpReq.Method = "POST";
                 httpReq.ContentLength = postData.Length;
@@ -216,7 +217,7 @@ namespace Services.Common
                 log.Add("Content", content);
                 log.Add("LogType", "SMS");
                 log.Add("CreditsUsed", creditsUsed == "" ? "0" : creditsUsed);
-                await _unitOfWork.SQL.InsertAsync("BC" + contest.ContestUniqueCode, log);
+                await _unitOfWork.SQL.InsertLogAsync("BC" + contest.ContestUniqueCode, log);
 
                 return result;
                 // show the result the test box for testing purposes
@@ -235,7 +236,7 @@ namespace Services.Common
         public static async Task<string> SendWhatsapp(Contest contest, string mobileNo, string messageType, string messageText)
         {
             try
-            {     
+            {
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 //call outbound url
                 string uri = _appSettings.OutboundURL;
@@ -246,7 +247,7 @@ namespace Services.Common
                 log.Add("Content", messageText);
                 log.Add("LogType", "Whatsapp");
                 log.Add("CreditsUsed", "1");
-                await _unitOfWork.SQL.InsertAsync("BC" + contest.ContestUniqueCode, log);
+                await _unitOfWork.SQL.InsertLogAsync("BC" + contest.ContestUniqueCode, log);
 
                 HttpWebRequest httpReq = (HttpWebRequest)WebRequest.Create(uri);
 
@@ -282,34 +283,6 @@ namespace Services.Common
             {
                 return "Exception : " + ex.Message;
             }
-        }
-
-        public static async Task<List<ColumnMetadata>> GetTableColumnsAsync(string contestUniqueCode)
-        {
-            var columns = new List<ColumnMetadata>();
-            string query = @"
-            SELECT COLUMN_NAME, DATA_TYPE
-            FROM INFORMATION_SCHEMA.COLUMNS
-            WHERE TABLE_NAME = @TableName";
-
-            var connection = _unitOfWork.GetDbConnection();
-            using (var command = new SqlCommand(query, (SqlConnection)connection, (SqlTransaction)_unitOfWork.CurrentDbTransaction))
-            {
-                command.Parameters.AddWithValue("@TableName", "BC_" + contestUniqueCode);
-
-                using (var reader = await command.ExecuteReaderAsync())
-                {
-                    while (await reader.ReadAsync())
-                    {
-                        columns.Add(new ColumnMetadata
-                        {
-                            ColumnName = reader["COLUMN_NAME"].ToString(),
-                            DataType = reader["DATA_TYPE"].ToString()
-                        });
-                    }
-                }
-            }
-            return columns;
         }
     }
 }

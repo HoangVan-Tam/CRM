@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Constants
 {
-    public static partial class Constants
+    public static partial class GlobalConstants
     {
         public const string DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD = "SET ANSI_NULLS ON " +
                 "GO " +
@@ -84,6 +84,7 @@ namespace Entities.Constants
         public const string DBSCRIPT_PURGE_ALL_ENTRIES = "DELETE FROM [dbo].[BC_230101_KEYWORD]";
 
         public const string DBSCRIPT_SELECT_ENTRIES_BY_CONDITION = "SELECT * FROM @table where @condition";
+        public const string DBSCRIPT_SELECT_COLUMN_METADATA = @"SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = @TableName";
         public enum TYPETABLE
         {
             ENTRIES,

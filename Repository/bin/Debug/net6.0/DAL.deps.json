@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v6.0": {
       "DAL/1.0.0": {
         "dependencies": {
-          "Common": "1.0.0",
           "Entities": "1.0.0"
         },
         "runtime": {
@@ -55,22 +54,22 @@
           "runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm",
             "assetType": "native",
-            "fileVersion": "2.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "2.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "2.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "2.1.1.0"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -457,17 +456,6 @@
           }
         }
       },
-      "Common/1.0.0": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "6.0.12"
-        },
-        "runtime": {
-          "Common.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "Entities/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.12",
@@ -767,11 +755,6 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
-    },
-    "Common/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "Entities/1.0.0": {
       "type": "project",

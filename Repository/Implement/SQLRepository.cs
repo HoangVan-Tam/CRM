@@ -2,17 +2,22 @@
 using DAL.Interface;
 using Entities.Constants;
 using Entities.DTO;
+using Entities.Helper;
 using Entities.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Logging;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,8 +32,7 @@ namespace DAL.Implement
             _context = context;
         }
 
-
-        public async Task InsertAsync(string contestUniqueCode, Dictionary<string, object> props)
+        public async Task InsertLogAsync(string contestUniqueCode, Dictionary<string, object> props)
         {
             var tableName = "BC_" + contestUniqueCode;
             string queryString = "INSERT INTO " + tableName + " {columns} " + "VALUES " + "{values}";
@@ -37,14 +41,32 @@ namespace DAL.Implement
             var sqlParams = props.Select(p => new SqlParameter(p.Key, p.Value ?? DBNull.Value)).ToArray();
             await _context.Database.ExecuteSqlRawAsync(queryString, sqlParams);
         }
+        public async Task InsertEntriesAsync(string contestUniqueCode, Dictionary<string, object> props, List<ColumnMetadata> tableColumns, IDbContextTransaction transaction)
+        {
+            var tableName = "BC_" + contestUniqueCode;
+            string queryString = "INSERT INTO " + tableName + " {columns} " + "VALUES " + "{values}";
+            queryString = queryString.Replace("columns", string.Join(",", props.Keys).Replace("@", ""));
+            queryString = queryString.Replace("values", string.Join(",", props.Keys));
+            var tableColumnNames = tableColumns.Select(p => p.ColumnName);
+            var matchingProperties = props.Where(p => tableColumnNames.Contains(p.Key));
+            var sqlParams = new List<SqlParameter>();
+            foreach (var item in matchingProperties)
+            {
+                var tableColumnMetadata = tableColumns.Where(p => p.ColumnName == item.Key).FirstOrDefault();
+                var sqlDbType = SqlTypeHelper.GetSqlDbType(tableColumnMetadata != null ? tableColumnMetadata.DataType : "nvarchar");
+                var param = new SqlParameter(item.Key, sqlDbType) { Value = item.Value };
+                sqlParams.Add(param);
+            }
+            await _context.Database.ExecuteSqlRawAsync(queryString, sqlParams);
+        }
 
-        public async Task CreateContestTableAsync(string nameTable, List<FieldsForNewContest> columns, Constants.TYPETABLE type)
+        public async Task CreateContestTableAsync(string nameTable, List<FieldsForNewContest> columns, GlobalConstants.TYPETABLE type)
         {
             string queryString = "";
             switch (type)
             {
-                case Constants.TYPETABLE.ENTRIES:
-                    queryString = Constants.DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD.Replace("230101_KEYWORD", nameTable);
+                case GlobalConstants.TYPETABLE.ENTRIES:
+                    queryString = GlobalConstants.DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD.Replace("230101_KEYWORD", nameTable);
                     if (columns.Count() == 0)
                     {
                         queryString = queryString.Replace("AddMoreColumn", "");
@@ -78,11 +100,11 @@ namespace DAL.Implement
                         queryString = queryString.Replace("AddMoreColumn", additionalColumn);
                     }
                     break;
-                case Constants.TYPETABLE.WINNERS:
-                    queryString = Constants.DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD_Winner.Replace("230101_KEYWORD", nameTable);
+                case GlobalConstants.TYPETABLE.WINNERS:
+                    queryString = GlobalConstants.DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD_Winner.Replace("230101_KEYWORD", nameTable);
                     break;
-                case Constants.TYPETABLE.LOG:
-                    queryString = Constants.DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD_Logs.Replace("230101_KEYWORD", nameTable);
+                case GlobalConstants.TYPETABLE.LOG:
+                    queryString = GlobalConstants.DBSCRIPT_CREATE_TABLE_BC_230101_KEYWORD_Logs.Replace("230101_KEYWORD", nameTable);
                     break;
                 default: break;
 
@@ -157,15 +179,15 @@ namespace DAL.Implement
             //await cmd.ExecuteNonQueryAsync();
         }
 
-        public async Task<Dictionary<string, object>> FindEntries(string contestUniqueCode, Dictionary<string, object> props, IDbTransaction transaction = null)
+        public async Task<Dictionary<string, object>> FindEntries(string contestUniqueCode, Dictionary<string, object> props, List<ColumnMetadata> tableColumns, IDbContextTransaction transaction)
         {
             var dictionary = new Dictionary<string, object>();
             var conditionCmds = new List<string>();
             foreach (var item in props)
             {
-                conditionCmds.Add(item.Key.Replace("@", "") + " = " + item.Key);
+                conditionCmds.Add(item.Key + " = @" + item.Key);
             }
-            string queryString = Constants.DBSCRIPT_SELECT_ENTRIES_BY_CONDITION.Replace("@table", "[BC_" + contestUniqueCode + "]");
+            string queryString = GlobalConstants.DBSCRIPT_SELECT_ENTRIES_BY_CONDITION.Replace("@table", "[BC_" + contestUniqueCode + "]");
             queryString = queryString.Replace("@condition", string.Join(" and ", conditionCmds));
 
             using (var connection = _context.Database.GetDbConnection())
@@ -176,16 +198,20 @@ namespace DAL.Implement
                 }
                 using (var command = connection.CreateCommand())
                 {
-
                     if (transaction != null)
                     {
-                        command.Transaction = (DbTransaction?)transaction;
+                        command.Transaction = transaction.GetDbTransaction();
                     }
                     command.CommandText = queryString;
                     foreach (var item in props)
                     {
-                        var param = new SqlParameter(item.Key, SqlDbType.NVarChar) { Value = item.Value};
-                        command.Parameters.Add(param);
+                        var columnMetadata = tableColumns.Where(p => p.ColumnName == item.Key).FirstOrDefault();
+                        if (columnMetadata != null)
+                        {
+                            var sqlDbType = SqlTypeHelper.GetSqlDbType(columnMetadata.DataType);
+                            var param = new SqlParameter(item.Key, sqlDbType) { Value = item.Value };
+                            command.Parameters.Add(param);
+                        }
                     }
                     using (var reader = await command.ExecuteReaderAsync())
                     {
@@ -196,24 +222,42 @@ namespace DAL.Implement
                     }
                 }
             }
-
-            //List<Dictionary<string, object>> lstDictionaries = new List<Dictionary<string, object>>();
-            //var sqlParams = props.Select(p => new SqlParameter(p.Key, p.Value ?? DBNull.Value)).ToArray();
-            //var connection = _context.Database.GetDbConnection();
-            //await connection.OpenAsync();
-            //using (var command = connection.CreateCommand())
-            //{
-            //    command.CommandText = "SELECT Id, Name FROM Contests";
-            //    using (var reader = await command.ExecuteReaderAsync())
-            //    {
-            //        while (await reader.ReadAsync())
-            //        {
-            //            dictionary.Add(reader.GetString(0), reader.GetValue(1));
-            //        }
-            //    }
-            //}
-            //await connection.CloseAsync();
             return dictionary;
         }
+
+        public async Task<List<ColumnMetadata>> GetTableColumnsAsync(string contestUniqueCode, IDbContextTransaction transaction)
+        {
+            var columns = new List<ColumnMetadata>();
+            string query = GlobalConstants.DBSCRIPT_SELECT_COLUMN_METADATA;
+
+            var connection = _context.Database.GetDbConnection();
+            if (connection.State == ConnectionState.Closed)
+            {
+                await connection.OpenAsync();
+            }
+            using (var command = connection.CreateCommand())
+            {
+                command.Transaction = transaction.GetDbTransaction(); // Link transaction
+                command.CommandText = query;
+
+                var param = new SqlParameter("@TableName", DbType.String) { Value = "BC_" + contestUniqueCode };
+                command.Parameters.Add(param);
+
+                using (var reader = await command.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        columns.Add(new ColumnMetadata
+                        {
+                            ColumnName = reader["COLUMN_NAME"].ToString(),
+                            DataType = reader["DATA_TYPE"].ToString()
+                        });
+                    }
+                }
+            }
+
+            return columns;
+        }
+
     }
 }

@@ -15,9 +15,9 @@
 @if (entries != null)
 {
     <EditForm Model="@entries" OnValidSubmit="@Submit" OnInvalidSubmit="@InvalidSubmit">
-        <DataAnnotationsValidator />
-        <ValidationSummary />
-        @foreach (var p in entries.GetType().GetProperties())
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    @foreach (var p in entries.GetType().GetProperties())
         {
             <label>
                 @p.GetCustomAttributesData()[0].ConstructorArguments[0].Value
@@ -26,9 +26,8 @@
                     case "System.String":
                         if (p.Name != "FileLink")
                         {
-                            <input type="text" class="form-control"
-               value="@p.GetValue(entries)"
-               @onchange="(e) => Helper.SetValue(e, p, entries)">
+                            <input type="text" class="form-control" value="@p.GetValue(entries)"
+                                @onchange="(e) => Helpers.SetValue(e, p, entries)">
                         }
                         else
                         {
@@ -71,10 +70,11 @@
             {
                 lstColumnLabel.Add(item.FieldLabel);
                 lstColumnName.Add(item.Field.FieldName);
-                lstColumnType.Add(Helper.GetType(item.Field.FieldType));
+                lstColumnType.Add(Helpers.GetType(item.Field.FieldType));
                 lstIsRequired.Add(item.Field.IsRequired);
             }
-            entries = CCB.CreateObject(lstColumnName.ToArray(), lstColumnType.ToArray(), lstIsRequired.ToArray(), lstColumnLabel.ToArray());
+            entries = CCB.CreateObject(lstColumnName.ToArray(), lstColumnType.ToArray(), lstIsRequired.ToArray(),
+            lstColumnLabel.ToArray());
             StateHasChanged();
         }
 
@@ -89,7 +89,7 @@
     {
         string columns = "";
         string values = "";
-        var data = Helper.ToDictionary<string>(entries);
+        var data = Helpers.ToDictionary<string>(entries);
         foreach (var item in data)
         {
             columns = columns == "" ? columns + item.Key : columns + ", " + item.Key;

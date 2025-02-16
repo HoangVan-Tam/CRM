@@ -4,10 +4,12 @@ using CsvHelper;
 using DAL.Interface;
 using Entities.Constants;
 using Entities.DTO;
+using Entities.Helper;
 using Entities.Models;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using Services.Common;
@@ -166,7 +168,7 @@ namespace Services.Implement
                 var contest = await _unitOfWork.Contest.FindAsync(p => p.ContestUniqueCode == ContestUniqueCode);
                 var entryExclusionFields = contest.EntryExclusionFields.Split(",").ToList();
                 var dataEntries = await _unitOfWork.SQL.GetAllEntries(ContestUniqueCode, entryExclusionFields);
-                response.Data = Common.Helper.ExportToCsv(dataEntries);
+                response.Data = Common.Helpers.ExportToCsv(dataEntries);
                 //using (var writer = new StreamWriter("entries.csv"))
                 //using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
                 //{
@@ -193,12 +195,12 @@ namespace Services.Implement
 
         public async Task<FunctionResults<Dictionary<string, object>>> APISubmitEntry(Parameters body, Contest contest)
         {
-            await _unitOfWork.BeginDbTransactionAsync();
+            await _unitOfWork.BeginEfTransactionAsync();
             var res = new FunctionResults<Dictionary<string, object>>();
             try
             {
                 var props = new Dictionary<string, object>();
-                var nameTable = "BC_" + body.ContestUniqueCode;
+                var tableColumns = await _unitOfWork.SQL.GetTableColumnsAsync(body.ContestUniqueCode, _unitOfWork.CurrentEfTransaction);
                 if (body.EntrySource.Equals("Sms", StringComparison.InvariantCultureIgnoreCase))
                 {
                     props.Add("EntrySource", "SMS");
@@ -208,7 +210,7 @@ namespace Services.Implement
                     props.Add("EntrySource", "Whatsapp");
                 }
                 FunctionResults<string> response = new FunctionResults<string>();
-                var CleanedMessage = Helper.CleanMessage(body, contest.Keyword);
+                var CleanedMessage = Helpers.CleanMessage(body, contest.Keyword);
                 var CreatedOn = body.CreatedOn != null && body.CreatedOn != "" ? DateTime.Parse(body.CreatedOn.ToString()).ToUniversalTime() : System.DateTime.UtcNow;
                 props.Add("DateEntry", CreatedOn);
 
@@ -217,7 +219,7 @@ namespace Services.Implement
                 {
                     props.Add("IsValid", false);
                     props.Add("Reasons", ValidationResults.Error);
-                    props.Add("ProcessEntryStatus", Constants.ProcessEntryStatus.NotInCampaignPeriod);
+                    props.Add("ProcessEntryStatus", GlobalConstants.ProcessEntryStatus.NotInCampaignPeriod);
                 }
 
                 #region SpecificRegexMatching
@@ -225,8 +227,6 @@ namespace Services.Implement
                 var MatchedMessage = regex.Match(CleanedMessage.Trim());
 
                 // Set Fields which dont require validation
-                props.Add("MobileNo", body.MobileNo);
-                props.Add("EntryText", body.Message.ToString());
                 props.Add("FileLink", (body.EntrySource == "MMS" || body.EntrySource == "Whatsapp") && !string.IsNullOrEmpty(body.FileLink) ? body.FileLink.ToString() : "");
 
                 if (MatchedMessage.Success)
@@ -270,11 +270,11 @@ namespace Services.Implement
                     }
                     //Check Repeat Validation
                     var uniqueFields = contest.ContestFieldDetails.Where(p => p.IsUnique == true);
-                    var isUniqueEntry = await CheckUniqueOfEntryAsync(body.ContestUniqueCode, uniqueFields, props, _unitOfWork.CurrentDbTransaction);
+                    var isUniqueEntry = await CheckUniqueOfEntryAsync(body.ContestUniqueCode, uniqueFields, props, tableColumns, _unitOfWork.CurrentEfTransaction);
                     if (!isUniqueEntry)
                     {
                         props.Add("IsValid", false);
-                        props.Add("ProcessEntryStatus", Constants.ProcessEntryStatus.Repeated);
+                        props.Add("ProcessEntryStatus", GlobalConstants.ProcessEntryStatus.Repeated);
                     }
                     props.Add("IsSaveable", false);
                 }
@@ -313,7 +313,7 @@ namespace Services.Implement
 
                     props.Add("IsValid", false);
                     props.Add("IsSaveable", false);
-                    props.Add("ProcessEntryStatus", Constants.ProcessEntryStatus.FieldInvalid);
+                    props.Add("ProcessEntryStatus", GlobalConstants.ProcessEntryStatus.FieldInvalid);
                 }
                 #endregion
 
@@ -342,7 +342,7 @@ namespace Services.Implement
                     }
                 }
 
-                await _unitOfWork.SQL.InsertAsync(contest.ContestUniqueCode, props);
+                await _unitOfWork.SQL.InsertEntriesAsync(contest.ContestUniqueCode, props, tableColumns, _unitOfWork.CurrentEfTransaction);
                 res.Data = props;
                 //var temp = SaveEntry(props);
 
@@ -358,15 +358,15 @@ namespace Services.Implement
             }
         }
 
-        public async Task<bool> CheckUniqueOfEntryAsync(string contestUniqueCode, IEnumerable<ContestFieldDetails> uniqueFields, Dictionary<string, object> props, IDbTransaction transaction = null)
+        public async Task<bool> CheckUniqueOfEntryAsync(string contestUniqueCode, IEnumerable<ContestFieldDetails> uniqueFields, Dictionary<string, object> props, List<ColumnMetadata> tableColumns, IDbContextTransaction transaction)
         {
 
             var uniqueProps = new Dictionary<string, object>();
             foreach (var item in uniqueFields)
             {
-               props.Add("" + item.FieldName, props[item.FieldName]);
+                uniqueProps.Add(item.FieldName, props[item.FieldName]);
             }
-            var entries = await _unitOfWork.SQL.FindEntries(contestUniqueCode, uniqueProps, transaction);
+            var entries = await _unitOfWork.SQL.FindEntries(contestUniqueCode, uniqueProps, tableColumns, transaction);
             if (entries.Count() > 0)
             {
                 return false;

@@ -8,6 +8,6 @@ namespace Services.Interface
 {
     public interface ITransactionService
     {
-        Task ExecuteTransactionAsync(Func<Task> operation);
+        Task ExecuteTransactionAsync(Func<Task> operation, int timeoutSeconds = 10);
     }
 }

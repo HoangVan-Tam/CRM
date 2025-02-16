@@ -7,16 +7,13 @@
 @if (entries != null)
 {
     <EditForm Model="@entries" OnValidSubmit="@Submit">
-        <DataAnnotationsValidator />
-        <ValidationSummary />
-        @foreach (var p in entries.GetType().GetProperties())
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    @foreach (var p in entries.GetType().GetProperties())
         {
-            <input type="text"
-           placeholder="@p.Name"
-           value="@p.GetValue(entries)"
-           @onchange="(e) => SetValue(e, p, entries)">
-           <br />
-           <ValidationMessage For="() => p" />
+            <input type="text" placeholder="@p.Name" value="@p.GetValue(entries)" @onchange="(e) => SetValue(e, p, entries)">
+            <br />
+            <ValidationMessage For="() => p" />
         }
         <button type="submit">Submit</button>
     </EditForm>
@@ -31,7 +28,7 @@
     {
         string columns = "";
         string values = "";
-        var data = Helper.ToDictionary<string>(entries);
+        var data = Helpers.ToDictionary<string>(entries);
         foreach (var item in data)
         {
             if (columns == "")
@@ -57,7 +54,8 @@
 
     private void LoadForm_Click()
     {
-        entries = CCB.CreateObject(new string[3] { "ID", "Name", "Address" }, new Type[3] { typeof(int), typeof(string), typeof(string) }, null, null);
+        entries = CCB.CreateObject(new string[3] { "ID", "Name", "Address" }, new Type[3] { typeof(int), typeof(string),
+typeof(string) }, null, null);
     }
 
     private void SetValue(Microsoft.AspNetCore.Components.ChangeEventArgs e, PropertyInfo propertyInfo, object o)

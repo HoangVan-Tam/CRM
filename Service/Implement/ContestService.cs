@@ -70,9 +70,9 @@ namespace Services.Implement
                     await _unitOfWork.ContestFieldDetail.InsertAsync(contestColumnDetail);
                 }
                 await _unitOfWork.SaveAsync();
-                await _unitOfWork.SQL.CreateContestTableAsync(contestUniqueCode, newContestIfno.contestFields, Constants.TYPETABLE.ENTRIES);
-                _unitOfWork.SQL.CreateContestTableAsync(contestUniqueCode, null, Constants.TYPETABLE.LOG);
-                _unitOfWork.SQL.CreateContestTableAsync(contestUniqueCode, null, Constants.TYPETABLE.WINNERS);
+                await _unitOfWork.SQL.CreateContestTableAsync(contestUniqueCode, newContestIfno.contestFields, GlobalConstants.TYPETABLE.ENTRIES);
+                await _unitOfWork.SQL.CreateContestTableAsync(contestUniqueCode, null, GlobalConstants.TYPETABLE.LOG);
+                await _unitOfWork.SQL.CreateContestTableAsync(contestUniqueCode, null, GlobalConstants.TYPETABLE.WINNERS);
             });
             return response;
         }

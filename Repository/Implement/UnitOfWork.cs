@@ -22,7 +22,6 @@ namespace DAL.Implement
         private IDbContextTransaction _currentEfTransaction;
         private IContestRepository _contestRepository;
         private IContestFieldDetailsRepository _contestFieldDetailRepository;
-        private IContestFieldsRepository _contestFieldsRepository;
         private IRegexValidationRepository _regexValidationRepository;
         private ISQLRepository _sql;
         public UnitOfWork(StandardContest2023Context context, ISQLRepository sql)
@@ -51,14 +50,6 @@ namespace DAL.Implement
             get
             {
                 return _sql;
-            }
-        }
-
-        public IContestFieldsRepository ContestFields
-        {
-            get
-            {
-                return _contestFieldsRepository = _contestFieldsRepository ?? new ContestFieldsRepository(_context);
             }
         }
 

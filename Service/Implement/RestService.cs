@@ -1,6 +1,5 @@
 ﻿using DAL.Interface;
 using Entities.DTO;
-using Services.Common;
 using Services.Interface;
 using System;
 using System.Collections.Generic;
@@ -15,10 +14,12 @@ namespace Services.Implement
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IEntriesService _entriesService;
-        public RestService(IUnitOfWork unitOfWork, IEntriesService entriesService)
+        private readonly IUtilityService _utilityService;
+        public RestService(IUnitOfWork unitOfWork, IEntriesService entriesService, IUtilityService utilityService)
         {
             _unitOfWork = unitOfWork;
             _entriesService = entriesService;
+            _utilityService = utilityService;
         }
         public async Task<FunctionResults<string>> GetAndPostFunctionAsync(Parameters body)
         {
@@ -30,21 +31,21 @@ namespace Services.Implement
                 var contest = await _unitOfWork.Contest.GetContestWithContestFieldDetailsAndRegexValidationsAsync(body.ContestUniqueCode);
                 if (contest != null)
                 {
-                    var Result = await _entriesService.APISubmitEntry(body, contest);
+                    var Result = await _entriesService.SubmitEntryAPI(body, contest);
                     string response = string.Empty;
 
                     if (body.SendResponse && (Result.IsSuccess && contest.AppId.ToString() != "" && contest.AppSecret != ""))/* && body.EntrySource !="API" */ //UnComment this to prevent API Entries from sending responses. 
                     {
                         if ((contest.AppId.ToString() != "" && contest.AppSecret != "") &&
-                                Result.Data["@EntrySource"].ToString().Equals("SMS", StringComparison.InvariantCultureIgnoreCase))
+                                Result.Data["EntrySource"].ToString().Equals("SMS", StringComparison.InvariantCultureIgnoreCase))
                         {
-                            response = await Helpers.SendSms(contest, body.MobileNo.ToString(),
-                                        Result.Data["@Response"].ToString());
+                            response = await _utilityService.SendSms(contest, body.MobileNo.ToString(),
+                                        Result.Data["Response"].ToString());
                         }
-                        else if (Result.Data["@EntrySource"].ToString().Equals("Whatsapp", StringComparison.InvariantCultureIgnoreCase))
+                        else if (Result.Data["EntrySource"].ToString().Equals("Whatsapp", StringComparison.InvariantCultureIgnoreCase))
                         {
-                            response = await Helpers.SendWhatsapp(contest, body.MobileNo.ToString(),
-                                      "text", Result.Data["@Response"].ToString());
+                            response = await _utilityService.SendWhatsapp(contest, body.MobileNo.ToString(),
+                                      "text", Result.Data["Response"].ToString());
                         }
                     }
                     return res;

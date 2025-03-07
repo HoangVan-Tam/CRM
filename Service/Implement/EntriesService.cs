@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Azure;
+using Azure.Storage.Blobs;
+using Common;
 using CsvHelper;
 using DAL.Interface;
 using Entities.Constants;
@@ -11,12 +13,14 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Linq;
-using Services.Common;
+using Polly;
 using Services.Interface;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Globalization;
 using System.Linq;
@@ -30,17 +34,45 @@ namespace Services.Implement
     public class EntriesService : IEntriesService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IUtilityService _utilityService;
         private readonly IMapper _mapper;
         private SqlConnection _sqlConnection;
         private IConfiguration _config;
 
-        public EntriesService(IUnitOfWork unitOfWork, IMapper mapper, SqlConnection sqlConnection, IConfiguration config)
+        public EntriesService(IUnitOfWork unitOfWork, IMapper mapper, SqlConnection sqlConnection, IOptions<AppConfig> appConfig, IConfiguration config, IUtilityService utilityService)
         {
             _unitOfWork = unitOfWork;
+            _utilityService = utilityService;
             _mapper = mapper;
             _sqlConnection = sqlConnection;
             _config = config;
             _sqlConnection.ConnectionString = _config.GetConnectionString("BaseDB");
+        }
+
+        public async Task<FunctionResults<Dictionary<string, object>>> GetEntryByVerificationCode(string ContestUniqueCode, string verificationCode)
+        {
+            await _unitOfWork.BeginEfTransactionAsync();
+            FunctionResults<Dictionary<string, object>> response = new FunctionResults<Dictionary<string, object>>();
+
+            try
+            {
+                var conditionProps = new Dictionary<string, object>();
+                conditionProps.Add("VerificationCode", verificationCode);
+                var tableName = "BC_" + ContestUniqueCode;
+                var entries = await _unitOfWork.SQL.GetEntriesByCondition(tableName, conditionProps, _unitOfWork.CurrentEfTransaction);
+                if (entries != null)
+                {
+                    response.Data = entries.FirstOrDefault();
+                }
+                await _unitOfWork.CommitAsync();
+            }
+            catch (Exception ex)
+            {
+                await _unitOfWork.RollbackAsync();
+                response.IsSuccess = false;
+                response.Error = ex.Message;
+            }
+            return response;
         }
 
         public async Task<FunctionResults<List<Dictionary<string, object>>>> GetAllEntriesAsync(string ContestUniqueCode, Option option)
@@ -121,36 +153,130 @@ namespace Services.Implement
         }
 
         /// <summary>
-        /// Save entries to database
+        /// Inserts an entry into the database while performing validation and uniqueness checks.
         /// </summary>
-        /// <param name="ContestUniqueCode"></param>
-        /// <param name="columns"></param>
-        /// <param name="values"></param>
-        /// <returns></returns>
-        public async Task<FunctionResults<string>> SaveEntries(string ContestUniqueCode, string columns, string values, IBrowserFile file)
+        /// <param name="contestUniqueCode">Unique code of the contest.</param>
+        /// <param name="props">Dictionary containing entry details.</param>
+        /// <param name="file">Optional file to be uploaded.</param>
+        /// <returns>FunctionResults containing success status and message.</returns>
+        public async Task<FunctionResults<string>> InsertEntry(string contestUniqueCode, Dictionary<string, object> props, IBrowserFile file)
         {
-            FunctionResults<string> response = new FunctionResults<string>();
-            await _sqlConnection.OpenAsync();
+            var response = new FunctionResults<string>();
+
+            // Start a database transaction to ensure atomicity
+            await _unitOfWork.BeginEfTransactionAsync();
             try
             {
-                var completionColumns = "DateEntry, EntryText, IsValid, IsVerified, IsRejected, Reason, Response, VerificationCode, Chances, EntrySource, ";
-                completionColumns = completionColumns + columns;
-                var dateEntry = DateTime.UtcNow;
-                var completionValue = "'" + dateEntry + "', " + "'', " + "'1', "
-                    + "'0', " + "'0', " + "'', " + "'', " + "'', " + "'1', " + "'WEB', ";
-                completionValue = completionValue + values;
-                var nameTable = "BC_" + ContestUniqueCode;
-                //  await _unitOfWork.SQL.InsertAsync(nameTable, completionColumns, completionValue);
-                response.Message = "Insert Entry Successfully";
-                await _sqlConnection.CloseAsync();
+                // Fetch contest details
+                var contest = await _unitOfWork.Contest
+     .FindAsync(p => p.ContestUniqueCode.ToLower() == contestUniqueCode.ToLower());
+
+                // Retrieve table columns dynamically
+                var tableColumns = await _unitOfWork.SQL.GetTableColumnsAsync(contestUniqueCode, _unitOfWork.CurrentEfTransaction);
+
+                // Initialize default values
+                props["EntrySource"] = "WEB";
+                props["IsValid"] = true;
+                props["ProcessEntryStatus"] = GlobalConstants.ProcessEntryStatus.Success;
+
+                // Perform pre-match field validation
+                var validationResults = PreMatchFieldValidations(contest, DateTime.UtcNow);
+                if (!validationResults.IsSuccess)
+                {
+                    props["IsValid"] = false;
+                    props["Reason"] = validationResults.Error;
+                    props["ProcessEntryStatus"] = GlobalConstants.ProcessEntryStatus.NotInCampaignPeriod;
+                }
+
+                // Check if the entry is unique based on predefined contest fields
+                var uniqueFields = contest.ContestFieldDetails.Where(p => p.IsUnique == true);
+                var isUniqueEntry = await CheckUniqueOfEntryAsync(contestUniqueCode, uniqueFields, props, tableColumns, _unitOfWork.CurrentEfTransaction);
+                if (!isUniqueEntry)
+                {
+                    props["IsValid"] = false;
+                    props["ProcessEntryStatus"] = GlobalConstants.ProcessEntryStatus.Repeated;
+                }
+
+                // Upload file to Azure if necessary
+                if (!string.IsNullOrEmpty(props["FileLink"]?.ToString()))
+                {
+                    props["FileLink"] = await _utilityService.UploadFileAsync(file, props["ReceiptNumber"].ToString());
+                }
+
+                // Generate response message based on entry processing status
+                if (props["ProcessEntryStatus"] is GlobalConstants.ProcessEntryStatus status)
+                {
+                    props["Response"] = MessagesHelpers.GetResponse(status, contest, props["EntrySource"].ToString());
+                }
+
+                // Insert the entry into the database, excluding the "EntryID" column
+                if (Convert.ToBoolean(props["IsValid"]))
+                {
+                    await _unitOfWork.SQL.InsertEntriesAsync(contest, props, tableColumns.Where(p => p.ColumnName != "EntryID"), _unitOfWork.CurrentEfTransaction);
+                }
+
+                // Commit the transaction after successful insertion
+                response.Message = props["Response"] == null ? "" : props["Response"].ToString();
+                await _unitOfWork.CommitAsync();
             }
             catch (Exception ex)
             {
-                await _sqlConnection.CloseAsync();
+                // Rollback transaction in case of an error
+                await _unitOfWork.RollbackAsync();
                 response.IsSuccess = false;
-                response.Error = ex.Message;
+                response.Error = $"Error inserting entry: {ex.Message}";
             }
+
             return response;
+        }
+
+        public async Task<FunctionResults<string>> CompleteEntry(string contestCode, string verificationCode, Dictionary<string, object> entryData, IBrowserFile file)
+        {
+            var result = new FunctionResults<string>();
+
+            await _unitOfWork.BeginEfTransactionAsync();
+            try
+            {
+                // Fetch contest details
+                var contest = await _unitOfWork.Contest.FindAsync(p => p.ContestUniqueCode.ToLower() == contestCode.ToLower());
+                var entrySearchParams = new Dictionary<string, object>();
+                entrySearchParams.Add("MobileNumber", entryData["MobileNumber"]);
+                entrySearchParams.Add("VerificationCode", verificationCode);
+                var searchConditions = new List<ColumnMetadata>();
+                searchConditions.Add(new ColumnMetadata() { ColumnName = "MobileNumber", DataType = "NvarChar" });
+                searchConditions.Add(new ColumnMetadata() { ColumnName = "VerificationCode", DataType = "NvarChar" });
+                var tableName = "BC_" + contestCode;
+                var existingEntries = await _unitOfWork.SQL.FindEntriesAsync(tableName, entrySearchParams, searchConditions, _unitOfWork.CurrentEfTransaction);
+                if (existingEntries.Count == 0)
+                {
+                    result.Message = "Unable to find Entry.";
+                }
+                else
+                {
+                    // Upload file to Azure if necessary
+                    if (!string.IsNullOrEmpty(entryData["FileLink"]?.ToString()))
+                    {
+                        entryData["FileLink"] = await _utilityService.UploadFileAsync(file, entryData["ReceiptNumber"].ToString());
+                    }
+
+                    var tableColumns = await _unitOfWork.SQL.GetTableColumnsAsync(contestCode, _unitOfWork.CurrentEfTransaction);
+                    tableColumns = tableColumns.Where(p => entryData.Keys.Contains(p.ColumnName)).ToList();
+                    await _unitOfWork.SQL.UpdateEntriesAsync(tableName, verificationCode, tableColumns, entryData, _unitOfWork.CurrentEfTransaction);
+                }
+
+                // Commit the transaction after successful insertion
+                result.Message = contest.ValidOnlineCompletionResponse;
+                await _unitOfWork.CommitAsync();
+            }
+            catch (Exception ex)
+            {
+                // Rollback transaction in case of an error
+                await _unitOfWork.RollbackAsync();
+                result.IsSuccess = false;
+                result.Error = $"Error inserting entry: {ex.Message}";
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -168,7 +294,7 @@ namespace Services.Implement
                 var contest = await _unitOfWork.Contest.FindAsync(p => p.ContestUniqueCode == ContestUniqueCode);
                 var entryExclusionFields = contest.EntryExclusionFields.Split(",").ToList();
                 var dataEntries = await _unitOfWork.SQL.GetAllEntries(ContestUniqueCode, entryExclusionFields);
-                response.Data = Common.Helpers.ExportToCsv(dataEntries);
+                response.Data = _utilityService.ExportToCsv(dataEntries);
                 //using (var writer = new StreamWriter("entries.csv"))
                 //using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
                 //{
@@ -193,158 +319,99 @@ namespace Services.Implement
             return response;
         }
 
-        public async Task<FunctionResults<Dictionary<string, object>>> APISubmitEntry(Parameters body, Contest contest)
+        /// <summary>
+        /// Processes and validates an entry submission for a contest.
+        /// - Validates input fields using regex and predefined criteria.
+        /// - Checks uniqueness of the entry.
+        /// - Uploads files to Azure if required.
+        /// - Saves the validated entry into the database.
+        /// - Handles errors with proper transaction management.
+        /// </summary>
+        public async Task<FunctionResults<Dictionary<string, object>>> SubmitEntryAPI(Parameters body, Contest contest)
         {
             await _unitOfWork.BeginEfTransactionAsync();
             var res = new FunctionResults<Dictionary<string, object>>();
+            var props = new Dictionary<string, object>
+    {
+        { "IsValid", true },
+        { "ProcessEntryStatus", GlobalConstants.ProcessEntryStatus.Success },
+        { "EntrySource", body.EntrySource.Equals("Sms", StringComparison.InvariantCultureIgnoreCase) ? "SMS" :
+                         body.EntrySource.Equals("Whatsapp", StringComparison.InvariantCultureIgnoreCase) ? "Whatsapp" : "" },
+        { "FileLink", (body.EntrySource == "MMS" || body.EntrySource == "Whatsapp") && !string.IsNullOrEmpty(body.FileLink) ? body.FileLink : "" },
+        { "DateEntry", string.IsNullOrEmpty(body.CreatedOn) ? DateTime.UtcNow : DateTime.Parse(body.CreatedOn).ToUniversalTime() }
+    };
+
             try
             {
-                var props = new Dictionary<string, object>();
                 var tableColumns = await _unitOfWork.SQL.GetTableColumnsAsync(body.ContestUniqueCode, _unitOfWork.CurrentEfTransaction);
-                if (body.EntrySource.Equals("Sms", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    props.Add("EntrySource", "SMS");
-                }
-                else if (body.EntrySource.Equals("Whatsapp", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    props.Add("EntrySource", "Whatsapp");
-                }
-                FunctionResults<string> response = new FunctionResults<string>();
-                var CleanedMessage = Helpers.CleanMessage(body, contest.Keyword);
-                var CreatedOn = body.CreatedOn != null && body.CreatedOn != "" ? DateTime.Parse(body.CreatedOn.ToString()).ToUniversalTime() : System.DateTime.UtcNow;
-                props.Add("DateEntry", CreatedOn);
+                var cleanedMessage = _utilityService.CleanMessage(body, contest.Keyword);
 
-                var ValidationResults = PreMatchFieldValidations(contest, CreatedOn);
-                if (!ValidationResults.IsSuccess)
+                // Validate contest entry timing
+                var validationResults = PreMatchFieldValidations(contest, (DateTime)props["DateEntry"]);
+                if (!validationResults.IsSuccess)
                 {
-                    props.Add("IsValid", false);
-                    props.Add("Reasons", ValidationResults.Error);
-                    props.Add("ProcessEntryStatus", GlobalConstants.ProcessEntryStatus.NotInCampaignPeriod);
+                    props["IsValid"] = false;
+                    props["ProcessEntryStatus"] = GlobalConstants.ProcessEntryStatus.NotInCampaignPeriod;
+                    props["Reason"] = validationResults.Error;
                 }
 
-                #region SpecificRegexMatching
-                Regex regex = new Regex(contest.ValidationRegexFull, RegexOptions.IgnoreCase);
-                var MatchedMessage = regex.Match(CleanedMessage.Trim());
+                // Perform regex validation on input fields
+                var regex = new Regex(contest.ValidationRegexFull, RegexOptions.IgnoreCase);
+                var matchedMessage = regex.Match(cleanedMessage.Trim());
 
-                // Set Fields which dont require validation
-                props.Add("FileLink", (body.EntrySource == "MMS" || body.EntrySource == "Whatsapp") && !string.IsNullOrEmpty(body.FileLink) ? body.FileLink.ToString() : "");
-
-                if (MatchedMessage.Success)
+                if (matchedMessage.Success)
                 {
-                    //Matched fields will now have a space infront of them because the space is now inside the regex of each field.
-                    var MatchedResultList = MatchedMessage.Groups.Cast<Group>().Select(match => match.Value).Skip(1).ToList().Select(s => s.Trim()).ToList();
+                    var matchedValues = matchedMessage.Groups.Cast<Group>().Skip(1).Select(g => g.Value.Trim()).ToList();
+                    var fields = contest.SMSSubmitFields.Split(',').ToList();
 
-                    var FieldsL = contest.SMSSubmitFields.Split(',').ToList();
-                    for (int k = 0; k < FieldsL.Count; k++)
+                    for (int i = 0; i < fields.Count; i++)
                     {
-                        //logic will handle invalid or blank amounts
-                        var field = contest.ContestFieldDetails.Where(p => p.FieldName == FieldsL[k]).FirstOrDefault();
-                        if (field != null)
+                        var field = contest.ContestFieldDetails.FirstOrDefault(f => f.FieldName == fields[i]);
+                        if (field != null && new Regex(field.RegexValidation.Pattern).IsMatch(matchedValues[i]))
                         {
-                            //Other fields which require special Regex
-                            if (FieldsL[k] == "ReceiptNo")
-                            {
-                                var regexReceipt = new Regex(@field.RegexValidation.Pattern);
-                                Regex rgx = new Regex("[^a-zA-Z0-9]");
-                                var str = rgx.Replace(MatchedResultList[k], "");
-
-                                //var AMTmatch = regexReceipt.Match(MatchedResultList[k]);
-                                var rgxMatch = regexReceipt.Match(str);
-
-                                if (rgxMatch.Success)
-                                {
-                                    props.Add(FieldsL[k], rgxMatch.Value);
-                                }
-                            }
-                            else
-                            {
-                                var regexPattern = field.RegexValidation.Pattern;
-                                var rgx = new Regex(@regexPattern);
-                                var matchRegex = rgx.Match(MatchedResultList[k]);
-                                if (matchRegex.Success)
-                                {
-                                    props.Add("" + FieldsL[k], MatchedResultList[k]);
-                                }
-                            }
+                            props[fields[i]] = matchedValues[i];
                         }
                     }
-                    //Check Repeat Validation
-                    var uniqueFields = contest.ContestFieldDetails.Where(p => p.IsUnique == true);
-                    var isUniqueEntry = await CheckUniqueOfEntryAsync(body.ContestUniqueCode, uniqueFields, props, tableColumns, _unitOfWork.CurrentEfTransaction);
-                    if (!isUniqueEntry)
+
+                    // Check for unique entry constraint
+                    var uniqueFields = contest.ContestFieldDetails.Where(f => f.IsUnique == true);
+                    if (!await CheckUniqueOfEntryAsync(body.ContestUniqueCode, uniqueFields, props, tableColumns, _unitOfWork.CurrentEfTransaction))
                     {
-                        props.Add("IsValid", false);
-                        props.Add("ProcessEntryStatus", GlobalConstants.ProcessEntryStatus.Repeated);
+                        props["IsValid"] = false;
+                        props["ProcessEntryStatus"] = GlobalConstants.ProcessEntryStatus.Repeated;
                     }
-                    props.Add("IsSaveable", false);
+                    props["IsSaveable"] = false;
                 }
                 else
                 {
-                    //If Invalid, for loop form regex on the fly to determine which field have error(use Key) RegexKeyPairValue,
-
-                    var FieldsL = contest.SMSSubmitFields.Split(',').ToList();
-                    var BuildingRegex = "";
-                    for (int k = 0; k < FieldsL.Count; k++)
+                    // Identify specific field validation failures
+                    foreach (var field in contest.ContestFieldDetails)
                     {
-                        var CurrentFieldRegex = contest.ContestFieldDetails.Where(p => p.FieldName == FieldsL[k]).Select(p => p.RegexValidation.Pattern).FirstOrDefault();
-                        if (CurrentFieldRegex != null)
+                        if (!new Regex(field.RegexValidation.Pattern).IsMatch(cleanedMessage))
                         {
-                            if (BuildingRegex == "")
-                            {
-                                BuildingRegex = "(" + CurrentFieldRegex.Remove(CurrentFieldRegex.Length - 1).Remove(0, 1) + ")";
-                            }
-                            else
-                            {
-                                BuildingRegex = BuildingRegex + "(" + " " + CurrentFieldRegex.Remove(CurrentFieldRegex.Length - 1).Remove(0, 1) + ")";
-                            }
-
-                            var TestingRegex = k == FieldsL.Count - 1 ? "^" + BuildingRegex + "$" : "^" + BuildingRegex + "( ?)";
-
-                            Regex InvalidedRegex = new Regex(TestingRegex, RegexOptions.IgnoreCase);
-                            var MatchNowOrNot = InvalidedRegex.Match(CleanedMessage.Trim());
-
-                            if (!MatchNowOrNot.Success)
-                            {
-                                //Validation has failed at this field, therefore we assume this field to be the one causing the error.
-                                props.Add("Reason", FieldsL[k] + " Is Not Valid!");
-                            }
+                            props["Reason"] = field.FieldName + " is not valid!";
+                            break;
                         }
                     }
-
-                    props.Add("IsValid", false);
-                    props.Add("IsSaveable", false);
-                    props.Add("ProcessEntryStatus", GlobalConstants.ProcessEntryStatus.FieldInvalid);
+                    props["IsValid"] = false;
+                    props["ProcessEntryStatus"] = GlobalConstants.ProcessEntryStatus.FieldInvalid;
                 }
-                #endregion
 
-                //upload filelink to azure blob
-                if (props["FileLink"]?.ToString() != "" && props["EntrySource"]?.ToString() == "Whatsapp")
+                // Upload file to Azure if necessary
+                if (!string.IsNullOrEmpty(props["FileLink"].ToString()) && props["EntrySource"].ToString() == "Whatsapp")
                 {
-                    //get filename
-                    Uri uri = new Uri(props["FileLink"].ToString());
-                    string filename = string.Empty;
-
-                    filename = System.IO.Path.GetFileName(uri.LocalPath);
-
-                    using (var webClient = new WebClient())
-                    {
-                        byte[] imageBytes = webClient.DownloadData(props["FileLink"].ToString());
-
-                        string fl;
-                        //var fileresult = SendByteToAzureStorage(FunctRes.Entry, imageBytes, filename, out fl);
-
-                        // if (!fileresult.Valid)
-                        // {
-                        //     return fileresult;
-                        // }
-
-                        // props["FileLink"] = fl;
-                    }
+                    //props["FileLink"] = await Helpers.UploadFileToBlobAsync(props["FileLink"].ToString());
                 }
 
-                await _unitOfWork.SQL.InsertEntriesAsync(contest.ContestUniqueCode, props, tableColumns, _unitOfWork.CurrentEfTransaction);
+                // Generate response message based on processing status
+                if (props["ProcessEntryStatus"] is GlobalConstants.ProcessEntryStatus status)
+                {
+                    props["Response"] = MessagesHelpers.GetResponse(status, contest, props["EntrySource"].ToString());
+                }
+
+                // Save entry into database
+                await _unitOfWork.SQL.InsertEntriesAsync(contest, props, tableColumns.Where(p => p.ColumnName != "EntryID"), _unitOfWork.CurrentEfTransaction);
                 res.Data = props;
-                //var temp = SaveEntry(props);
 
                 await _unitOfWork.CommitAsync();
                 return res;
@@ -366,7 +433,7 @@ namespace Services.Implement
             {
                 uniqueProps.Add(item.FieldName, props[item.FieldName]);
             }
-            var entries = await _unitOfWork.SQL.FindEntries(contestUniqueCode, uniqueProps, tableColumns, transaction);
+            var entries = await _unitOfWork.SQL.FindEntriesAsync(contestUniqueCode, uniqueProps, tableColumns, transaction);
             if (entries.Count() > 0)
             {
                 return false;

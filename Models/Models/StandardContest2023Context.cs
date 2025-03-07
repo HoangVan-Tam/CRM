@@ -28,9 +28,10 @@ namespace Entities.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<RegexValidation>().HasData(
-                new RegexValidation { RegexID = -1, Description = "Regex for Name", Name = "Name", Pattern = "^[a-zA-Z ]+$" },
-                new RegexValidation { RegexID = -2, Description = "Regex for Mobile Number", Name = "Mobile Number", Pattern = @"^\+*\d+$" },
-                new RegexValidation { RegexID = -3, Description = "Regex for Receipt Number", Name = "Receipt Number", Pattern = @"^\S*\d\S*$" }
+                 new RegexValidation { RegexID = -1, Description = "No Regex", Name = "No Regex", Pattern = "" },
+                new RegexValidation { RegexID = -2, Description = "Regex for Name", Name = "Name", Pattern = "^[a-zA-Z ]+$" },
+                new RegexValidation { RegexID = -3, Description = "Regex for Mobile Number", Name = "Mobile Number", Pattern = @"^\+*\d+$" },
+                new RegexValidation { RegexID = -4, Description = "Regex for Receipt Number", Name = "Receipt Number", Pattern = @"^\S*\d\S*$" }
             );
         }
     }

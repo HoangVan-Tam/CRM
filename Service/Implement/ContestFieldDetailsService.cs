@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Entities.Constants.GlobalConstants;
 
 namespace Services.Implement
 {
@@ -20,16 +21,23 @@ namespace Services.Implement
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-
-        public async Task<FunctionResults<List<OnlinePageInfomation>>> GetAllFielsdOfTheContestForOnlinePageAsync(string contestUniqueCode)
+        public async Task<FunctionResults<List<FormField>>> GetAllFieldsOfTheContestForFormAsync(string contestUniqueCode, TypeSubmitForm type)
         {
-            FunctionResults<List<OnlinePageInfomation>> response = new FunctionResults<List<OnlinePageInfomation>>();
+            FunctionResults<List<FormField>> response = new FunctionResults<List<FormField>>();
             try
             {
-                var lstContests = await _unitOfWork.ContestFieldDetail.FindAllWithIncludeAsync(p => p.Contest.ContestUniqueCode == contestUniqueCode && p.ShowOnlinePage == true, x => x.RegexValidation);
-                if (lstContests.Count() > 0)
+                var fields = new List<ContestFieldDetails>();
+                if (type == TypeSubmitForm.OnlinePage)
                 {
-                    response.Data = _mapper.Map<List<OnlinePageInfomation>>(lstContests);
+                    fields = await _unitOfWork.ContestFieldDetail.FindAllWithIncludeAsync(p => p.Contest.ContestUniqueCode == contestUniqueCode && p.ShowOnlinePage == true, x => x.RegexValidation);
+                }
+                else
+                {
+                    fields = await _unitOfWork.ContestFieldDetail.FindAllWithIncludeAsync(p => p.Contest.ContestUniqueCode == contestUniqueCode && p.ShowOnlineCompletion == true, x => x.RegexValidation);
+                }
+                if (fields.Count() > 0)
+                {
+                    response.Data = _mapper.Map<List<FormField>>(fields);
                 }
                 else
                 {

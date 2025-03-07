@@ -8,14 +8,6 @@ namespace Entities.Constants
 {
     public static partial class GlobalConstants
     {
-        public const string REPEATVALIDATION_RECEIPTNO = "ReceipNo";
-        public const string REPEATVALIDATION_RECEIPTNO_MOBILENO = "Receipt MobileNo";
-        public enum RepeatValidation
-        {
-            ReceiptNo = 1,
-            ReceipNo_MobileNo = 2,
-        }
-
         public enum ProcessEntryStatus
         {
             Success,
@@ -23,6 +15,11 @@ namespace Entities.Constants
             Repeated,
             AmountInvalid,
             NotInCampaignPeriod
+        }
+        public enum TypeSubmitForm
+        {
+            OnlinePage,
+            OnlineCompletionPage
         }
     }
 }

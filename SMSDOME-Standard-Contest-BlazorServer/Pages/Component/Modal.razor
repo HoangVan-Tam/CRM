@@ -1,0 +1,38 @@
+﻿@inject IJSRuntime JSRuntime
+
+<div class="modal fade" id="@ModalId" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">          
+            <div class="modal-body">
+                @BodyContent
+            </div>
+            <div class="modal-footer">
+                @if(ShowSuccessButton){
+                    <button type="button" class="btn btn-primary" @onclick="OnOkClick">OK</button>
+                }
+                else{
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string ModalId { get; set; } = "myModal";
+    [Parameter] public string Title { get; set; } = "Popup Title";
+    [Parameter] public bool ShowSuccessButton { get; set; } = false;
+    [Parameter] public RenderFragment BodyContent { get; set; }
+    [Parameter] public EventCallback OnOkClick { get; set; }
+
+    public async Task Show()
+    {
+        await JSRuntime.InvokeVoidAsync("bootstrapModal.show", ModalId);
+    }
+
+    public async Task Hide()
+    {
+        await JSRuntime.InvokeVoidAsync("bootstrapModal.hide", ModalId);
+    }
+}

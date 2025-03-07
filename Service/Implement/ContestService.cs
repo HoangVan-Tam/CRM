@@ -55,8 +55,9 @@ namespace Services.Implement
 
         public async Task<FunctionResults<List<string>>> CreateNewContestAsync(NewContestInfomation newContestIfno)
         {
+            await _unitOfWork.BeginEfTransactionAsync();
             FunctionResults<List<string>> response = new FunctionResults<List<string>>();
-            await _transactionService.ExecuteTransactionAsync(async () =>
+            try
             {
                 var newContest = _mapper.Map<Contest>(newContestIfno);
                 var contestUniqueCode = (newContest.StartDate.ToString("yyMMdd") + "_" + newContest.Keyword).ToUpper();
@@ -70,10 +71,18 @@ namespace Services.Implement
                     await _unitOfWork.ContestFieldDetail.InsertAsync(contestColumnDetail);
                 }
                 await _unitOfWork.SaveAsync();
-                await _unitOfWork.SQL.CreateContestTableAsync(contestUniqueCode, newContestIfno.contestFields, GlobalConstants.TYPETABLE.ENTRIES);
-                await _unitOfWork.SQL.CreateContestTableAsync(contestUniqueCode, null, GlobalConstants.TYPETABLE.LOG);
-                await _unitOfWork.SQL.CreateContestTableAsync(contestUniqueCode, null, GlobalConstants.TYPETABLE.WINNERS);
-            });
+                await _unitOfWork.SQL.CreateContestTableAsync(contestUniqueCode, newContestIfno.contestFields, GlobalConstants.TYPETABLE.ENTRIES, _unitOfWork.CurrentEfTransaction);
+                await _unitOfWork.SQL.CreateContestTableAsync(contestUniqueCode, null, GlobalConstants.TYPETABLE.LOG, _unitOfWork.CurrentEfTransaction);
+                await _unitOfWork.SQL.CreateContestTableAsync(contestUniqueCode, null, GlobalConstants.TYPETABLE.WINNERS, _unitOfWork.CurrentEfTransaction);
+                await _unitOfWork.CommitAsync();
+            }
+            catch (Exception ex)
+            {
+                // Rollback transaction in case of an error
+                await _unitOfWork.RollbackAsync();
+                response.IsSuccess = false;
+                response.Error = $"Error inserting entry: {ex.Message}";
+            }
             return response;
         }
 

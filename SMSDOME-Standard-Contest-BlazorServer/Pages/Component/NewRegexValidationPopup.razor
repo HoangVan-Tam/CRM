@@ -112,7 +112,7 @@
     private void TestStringChanged(ChangeEventArgs __e)
     {
         newRegexValidation.TestString = __e?.Value?.ToString();
-        Regex regex = new Regex(@newRegexValidation.Pattern);
+        Regex regex = new Regex(newRegexValidation.Pattern == null ? @"" : newRegexValidation.Pattern);
         var matchResult = regex.Match(newRegexValidation.TestString);
         if (matchResult.Success == true)
         {

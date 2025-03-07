@@ -31,7 +31,6 @@ builder.Services.AddDbContext<StandardContest2023Context>(options =>
 builder.Services.AddScoped(typeof(ISQLRepository), typeof(SQLRepository));
 builder.Services.AddScoped<SqlConnection>();
 builder.Services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
-builder.Services.AddScoped(typeof(IToastService), typeof(ToastService));
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
 {
@@ -45,7 +44,7 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
                      .InstancePerLifetimeScope();
 });
 
-builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+builder.Services.Configure<AppConfig>(builder.Configuration.GetSection("AppConfig"));
 //CORS
 builder.Services.AddCors(options =>
 {

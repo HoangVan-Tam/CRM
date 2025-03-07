@@ -18,7 +18,6 @@ namespace DAL.Interface
         IContestRepository Contest { get; }
         IContestFieldDetailsRepository ContestFieldDetail { get; }
         ISQLRepository SQL{ get; }
-        IContestFieldsRepository ContestFields { get; }
         IRegexValidationRepository RegexValidation { get; }
         void Save();
         Task SaveAsync();

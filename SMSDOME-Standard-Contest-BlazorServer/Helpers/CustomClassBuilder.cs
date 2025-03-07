@@ -8,7 +8,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services.Common
+namespace SMSDOME_Standard_Contest_BlazorServer.Helpers
 {
     public partial class CustomClassBuilder
     {
@@ -17,43 +17,59 @@ namespace Services.Common
         {
             this.asemblyName = new AssemblyName(ClassName);
         }
-        public object CreateObject(string[] PropertyNames, Type[] Types, bool[] IsRequireds, string[] ColumnLabels)
+        public object CreateObject(string[] propertyNames, Type[] types, bool[] isRequired, string[] columnLabels, string[] regexPatterns)
         {
-            if (PropertyNames.Length != Types.Length)
+            if (propertyNames.Length != types.Length ||
+                propertyNames.Length != isRequired.Length ||
+                propertyNames.Length != columnLabels.Length ||
+                propertyNames.Length != regexPatterns.Length)
             {
-                Console.WriteLine("The number of property names should match their corresopnding types number");
+                throw new ArgumentException("All input arrays must have the same length.");
             }
 
-            TypeBuilder DynamicClass = this.CreateClass();
-            this.CreateConstructor(DynamicClass);
-            for (int ind = 0; ind < PropertyNames.Count(); ind++)
+            var typeBuilder = CreateClass();
+            CreateConstructor(typeBuilder);
+
+            for (int i = 0; i < propertyNames.Length; i++)
             {
-                List<CustomAttributeBuilder> lstCustomAttributeBuilders = new List<CustomAttributeBuilder>();
+                var attributes = new List<CustomAttributeBuilder>();
 
-                var columnLabel = ColumnLabels[ind];
-                if (!string.IsNullOrEmpty(columnLabel))
+                if (!string.IsNullOrEmpty(columnLabels[i]))
                 {
-                    Type[] constructorParameters = new Type[] { typeof(string) };
-                    var constructorInfo = typeof(DisplayNameAttribute).GetConstructor(constructorParameters);
-                    CustomAttributeBuilder customAttribute = new CustomAttributeBuilder(constructorInfo, new object[] { columnLabel });
-                    lstCustomAttributeBuilders.Add(customAttribute);
+                    var displayAttribute = new CustomAttributeBuilder(
+                        typeof(DisplayNameAttribute).GetConstructor(new[] { typeof(string) })!,
+                        new object[] { columnLabels[i] }
+                    );
+                    attributes.Add(displayAttribute);
                 }
 
-                if (IsRequireds[ind] == true)
+                if (isRequired[i])
                 {
-                    Type[] constructorParameters = new Type[] { };
-                    var constructorInfo = typeof(RequiredAttribute).GetConstructor(constructorParameters);
-                    PropertyInfo errorMessageProperty = typeof(RequiredAttribute).GetProperty("ErrorMessage");
-                    CustomAttributeBuilder customAttribute = new CustomAttributeBuilder(constructorInfo, new object[] {}, new PropertyInfo[] { errorMessageProperty }, new object[] { columnLabel + " is a required field!" });
-                    lstCustomAttributeBuilders.Add(customAttribute);
+                    var requiredAttribute = new CustomAttributeBuilder(
+                        typeof(RequiredAttribute).GetConstructor(Type.EmptyTypes)!,
+                        new object[] { },
+                        new[] { typeof(RequiredAttribute).GetProperty(nameof(RequiredAttribute.ErrorMessage))! },
+                        new object[] { $"{columnLabels[i]} is a required field!" }
+                    );
+                    attributes.Add(requiredAttribute);
                 }
-              
 
-                CreateProperty(DynamicClass, PropertyNames[ind], Types[ind], lstCustomAttributeBuilders);
+                if (!string.IsNullOrEmpty(regexPatterns[i]))
+                {
+                    var regexAttribute = new CustomAttributeBuilder(
+                        typeof(RegularExpressionAttribute).GetConstructor(new[] { typeof(string) })!,
+                        new object[] { regexPatterns[i] },
+                        new[] { typeof(RegularExpressionAttribute).GetProperty(nameof(RegularExpressionAttribute.ErrorMessage))! },
+                        new object[] { $"{columnLabels[i]} has an invalid format!" }
+                    );
+                    attributes.Add(regexAttribute);
+                }
+
+                CreateProperty(typeBuilder, propertyNames[i], types[i], attributes);
             }
-            Type type = DynamicClass.CreateType();
-                                                                                                                                                    
-            return Activator.CreateInstance(type);
+
+            Type dynamicType = typeBuilder.CreateType()!;
+            return Activator.CreateInstance(dynamicType)!;
         }
 
         private TypeBuilder CreateClass()

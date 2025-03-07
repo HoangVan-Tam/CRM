@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Entities.DTO;
+using Entities.Helper;
 using Entities.Models;
 
 namespace SMSDOME_Standard_Contest_BlazorServer.Mapper
@@ -10,13 +11,10 @@ namespace SMSDOME_Standard_Contest_BlazorServer.Mapper
         {
             CreateMap<Contest, ContestOverView>().ReverseMap();
             CreateMap<Contest, NewContestInfomation>().ReverseMap();
-            CreateMap<ContestFieldDetails, OnlinePageInfomation>().ForPath(dest => dest.Field.IsRequired, input => input.MapFrom(i => i.IsRequired))
-                .ForPath(dest => dest.Field.FieldName, input => input.MapFrom(i => i.FieldName))
-                .ForPath(dest => dest.Field.FieldType, input => input.MapFrom(i => i.FieldType)).ReverseMap();
+            CreateMap<ContestFieldDetails, FormField>().ForPath(dest => dest.Pattern, input => input.MapFrom(i => i.RegexValidation.Pattern)).ReverseMap();
             CreateMap<ContestFieldDetails, FieldsForNewContest>().ReverseMap().ForMember(p => p.FieldDetailID, opt => opt.Ignore());
-            CreateMap<ContestFields, Field>().ReverseMap();
-            CreateMap<ContestFields, FieldsForNewContest>().ReverseMap();
-            CreateMap<FieldsForNewContest, Field>().ReverseMap();
+//CreateMap<ContestFields, Field>().ReverseMap();
+            //CreateMap<FieldsForNewContest, Field>().ReverseMap();
             CreateMap<NewRegexValidation, RegexValidation>().ReverseMap();
 
         }

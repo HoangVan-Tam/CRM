@@ -1,33 +1,40 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tamhoang/Projects/CRM/Service/Services.csproj": {}
+    "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Service\\Services.csproj": {}
   },
   "projects": {
-    "/Users/tamhoang/Projects/CRM/Common/Common.csproj": {
+    "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tamhoang/Projects/CRM/Common/Common.csproj",
+        "projectUniqueName": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "/Users/tamhoang/Projects/CRM/Common/Common.csproj",
-        "packagesPath": "/Users/tamhoang/.nuget/packages/",
-        "outputPath": "/Users/tamhoang/Projects/CRM/Common/obj/",
+        "projectPath": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\tam.hoang\\.nuget\\packages\\",
+        "outputPath": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Common\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/tamhoang/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\tam.hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/tamhoang/Projects/CRM/Repository/DAL.csproj": {
-                "projectPath": "/Users/tamhoang/Projects/CRM/Repository/DAL.csproj"
+              "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Repository\\DAL.csproj": {
+                "projectPath": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Repository\\DAL.csproj"
               }
             }
           }
@@ -41,7 +48,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -57,41 +65,38 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/tamhoang/Projects/CRM/Models/Entities.csproj": {
+    "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Models\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tamhoang/Projects/CRM/Models/Entities.csproj",
+        "projectUniqueName": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Models\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "/Users/tamhoang/Projects/CRM/Models/Entities.csproj",
-        "packagesPath": "/Users/tamhoang/.nuget/packages/",
-        "outputPath": "/Users/tamhoang/Projects/CRM/Models/obj/",
+        "projectPath": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Models\\Entities.csproj",
+        "packagesPath": "C:\\Users\\tam.hoang\\.nuget\\packages\\",
+        "outputPath": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Models\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/tamhoang/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\tam.hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -109,7 +114,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -147,49 +153,46 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/tamhoang/Projects/CRM/Repository/DAL.csproj": {
+    "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Repository\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tamhoang/Projects/CRM/Repository/DAL.csproj",
+        "projectUniqueName": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Repository\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "/Users/tamhoang/Projects/CRM/Repository/DAL.csproj",
-        "packagesPath": "/Users/tamhoang/.nuget/packages/",
-        "outputPath": "/Users/tamhoang/Projects/CRM/Repository/obj/",
+        "projectPath": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Repository\\DAL.csproj",
+        "packagesPath": "C:\\Users\\tam.hoang\\.nuget\\packages\\",
+        "outputPath": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Repository\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/tamhoang/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\tam.hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/tamhoang/Projects/CRM/Models/Entities.csproj": {
-                "projectPath": "/Users/tamhoang/Projects/CRM/Models/Entities.csproj"
+              "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Models\\Entities.csproj": {
+                "projectPath": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Models\\Entities.csproj"
               }
             }
           }
@@ -203,7 +206,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -219,52 +223,49 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/tamhoang/Projects/CRM/Service/Services.csproj": {
+    "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Service\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tamhoang/Projects/CRM/Service/Services.csproj",
+        "projectUniqueName": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Service\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "/Users/tamhoang/Projects/CRM/Service/Services.csproj",
-        "packagesPath": "/Users/tamhoang/.nuget/packages/",
-        "outputPath": "/Users/tamhoang/Projects/CRM/Service/obj/",
+        "projectPath": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Service\\Services.csproj",
+        "packagesPath": "C:\\Users\\tam.hoang\\.nuget\\packages\\",
+        "outputPath": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Service\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/tamhoang/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\tam.hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/tamhoang/Projects/CRM/Common/Common.csproj": {
-                "projectPath": "/Users/tamhoang/Projects/CRM/Common/Common.csproj"
+              "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Common\\Common.csproj": {
+                "projectPath": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Common\\Common.csproj"
               },
-              "/Users/tamhoang/Projects/CRM/Repository/DAL.csproj": {
-                "projectPath": "/Users/tamhoang/Projects/CRM/Repository/DAL.csproj"
+              "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Repository\\DAL.csproj": {
+                "projectPath": "D:\\NET-CORE\\Test\\SMSDOME-Standard-Contest\\CRM\\Repository\\DAL.csproj"
               }
             }
           }
@@ -278,7 +279,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -290,7 +292,7 @@
             },
             "Azure.Storage.Blobs": {
               "target": "Package",
-              "version": "[12.16.0, )"
+              "version": "[12.23.0, )"
             },
             "CsvHelper": {
               "target": "Package",
@@ -324,22 +326,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.36, 6.0.36]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
